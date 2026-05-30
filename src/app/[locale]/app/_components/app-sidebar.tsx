@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@i18n/navigation";
 import type { AppTeam } from "@/lib/app/get-app-context";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 function NavLink({
   href,
@@ -117,6 +118,12 @@ export function AppSidebar({
       </nav>
 
       <div className="border-t border-border p-4">
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted">
+            {t("appearance")}
+          </span>
+          <ThemeToggle />
+        </div>
         <div className="truncate text-xs text-muted">{email ?? t("noEmail")}</div>
         <div className="mt-0.5 text-[10px] uppercase tracking-wide text-muted/80">{accountLabel}</div>
         {team ? (

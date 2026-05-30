@@ -127,7 +127,7 @@ export function TeamMembersSection({
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="truncate font-medium text-foreground">{primary}</span>
                     {isYou ? (
-                      <span className="rounded-md bg-accent/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-blue-200">
+                      <span className="rounded-md bg-accent-muted px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
                         {t("youBadge")}
                       </span>
                     ) : null}
@@ -160,7 +160,7 @@ export function TeamMembersSection({
                     type="button"
                     onClick={() => openRemoveModal(m)}
                     disabled={removePending || rolePending}
-                    className="rounded-lg border border-red-500/35 px-3 py-1.5 text-xs font-medium text-red-200 transition-colors hover:border-red-400/50 hover:bg-red-500/10 disabled:opacity-50"
+                    className="rounded-lg border border-danger-border px-3 py-1.5 text-xs font-medium text-danger-foreground transition-colors hover:bg-danger-muted disabled:opacity-50"
                   >
                     {t("removeMember")}
                   </button>

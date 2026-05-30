@@ -64,13 +64,13 @@ export function TransferOwnershipModal({
         if (e.target === e.currentTarget && !pending) onCancel();
       }}
     >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" aria-hidden />
+      <div className="absolute inset-0 bg-[var(--color-scrim)] backdrop-blur-sm" aria-hidden />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="transfer-ownership-modal-title"
-        className="relative z-10 w-full max-w-md rounded-2xl border border-amber-500/30 bg-surface p-6 shadow-2xl shadow-black/40"
+        className="relative z-10 w-full max-w-md rounded-2xl border border-amber-500/30 bg-surface p-6 shadow-elevated"
       >
         <h2
           id="transfer-ownership-modal-title"

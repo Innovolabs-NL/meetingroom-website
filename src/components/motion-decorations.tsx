@@ -10,16 +10,20 @@ export function AuroraWash({
   className?: string;
   intensity?: "subtle" | "normal" | "strong";
 }) {
-  const op =
-    intensity === "subtle" ? 0.12 : intensity === "strong" ? 0.35 : 0.22;
+  const strengthVar =
+    intensity === "subtle"
+      ? "--aurora-strength-subtle"
+      : intensity === "strong"
+        ? "--aurora-strength-strong"
+        : "--aurora-strength-normal";
   const blobs: {
     className: string;
     mx: number[];
     my: number[];
   }[] = [
-    { className: "left-[-10%] top-[-20%] h-[85%] w-[70%] bg-accent/35", mx: [-12, 18, -8], my: [-16, 10, -6] },
-    { className: "bottom-[-30%] right-[-15%] h-[75%] w-[65%] bg-violet-500/25", mx: [10, -14, 6], my: [8, -12, 14] },
-    { className: "left-[20%] bottom-[-25%] h-[55%] w-[50%] bg-cyan-500/18", mx: [-18, 12, -10], my: [-8, 16, -4] },
+    { className: "left-[-10%] top-[-20%] h-[85%] w-[70%] glow-accent", mx: [-12, 18, -8], my: [-16, 10, -6] },
+    { className: "bottom-[-30%] right-[-15%] h-[75%] w-[65%] glow-violet", mx: [10, -14, 6], my: [8, -12, 14] },
+    { className: "left-[20%] bottom-[-25%] h-[55%] w-[50%] glow-cyan", mx: [-18, 12, -10], my: [-8, 16, -4] },
   ];
   return (
     <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
@@ -28,7 +32,7 @@ export function AuroraWash({
           key={i}
           aria-hidden
           className={`absolute rounded-full blur-3xl ${b.className}`}
-          style={{ opacity: op }}
+          style={{ opacity: `var(${strengthVar})` }}
           animate={{
             x: b.mx,
             y: b.my,

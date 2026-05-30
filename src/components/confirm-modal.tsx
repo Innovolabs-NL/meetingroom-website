@@ -59,19 +59,19 @@ export function ConfirmModal({
         if (e.target === e.currentTarget && !pending) onCancel();
       }}
     >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" aria-hidden />
+      <div className="absolute inset-0 bg-[var(--color-scrim)] backdrop-blur-sm" aria-hidden />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`relative z-10 w-full max-w-md rounded-2xl border bg-surface p-6 shadow-2xl shadow-black/40 ${
-          isDanger ? "border-red-500/30" : "border-border"
+        className={`relative z-10 w-full max-w-md rounded-2xl border bg-surface p-6 shadow-elevated ${
+          isDanger ? "border-danger-border" : "border-border"
         }`}
       >
         <h2
           id={titleId}
-          className={`text-lg font-semibold tracking-tight ${isDanger ? "text-red-100" : "text-foreground"}`}
+          className={`text-lg font-semibold tracking-tight ${isDanger ? "text-danger-foreground" : "text-foreground"}`}
         >
           {title}
         </h2>
@@ -92,7 +92,7 @@ export function ConfirmModal({
             onClick={onConfirm}
             className={
               isDanger
-                ? "inline-flex h-10 items-center justify-center rounded-xl border border-red-500/50 bg-red-500/20 px-4 text-sm font-semibold text-red-100 transition-colors hover:bg-red-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+                ? "inline-flex h-10 items-center justify-center rounded-xl border border-danger-border bg-danger-muted px-4 text-sm font-semibold text-danger-foreground transition-colors hover:bg-danger-muted/80 disabled:cursor-not-allowed disabled:opacity-50"
                 : "inline-flex h-10 items-center justify-center rounded-xl bg-accent px-4 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50"
             }
           >

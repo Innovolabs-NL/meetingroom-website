@@ -14,6 +14,10 @@
     "account": "Account",
     "teams": "Teams"
   },
+  "theme": {
+    "switchToLight": "Naar lichte modus",
+    "switchToDark": "Naar donkere modus"
+  },
   "appShell": {
     "navAccount": "Account",
     "navOverview": "Overzicht",
@@ -26,6 +30,7 @@
     "accountKindPersonal": "Persoonlijk",
     "accountKindTeam": "Team",
     "backToWebsite": "← Terug naar website",
+    "appearance": "Weergave",
     "backToAccount": "Terug naar account",
     "noEmail": "Geen e-mail bekend",
     "configTitle": "Configuratie nodig",

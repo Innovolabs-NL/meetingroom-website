@@ -1,6 +1,6 @@
 export function AuthCard({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-border bg-surface/80 p-6 shadow-xl shadow-black/20 backdrop-blur-sm sm:p-8">
+    <div className="rounded-2xl border border-border bg-surface p-6 shadow-elevated sm:p-8">
       {children}
     </div>
   );

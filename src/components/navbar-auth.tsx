@@ -50,8 +50,8 @@ export function NavbarAuth({ mobile = false }: { mobile?: boolean }) {
         whileTap={{ scale: 0.97 }}
         className={
           mobile
-            ? "inline-flex rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface"
-            : "hidden rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground/90 transition-colors hover:bg-surface md:inline-flex"
+            ? "inline-flex rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-hover"
+            : "hidden rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-hover md:inline-flex"
         }
       >
         {t("account")}
@@ -83,7 +83,7 @@ export function NavbarAuth({ mobile = false }: { mobile?: boolean }) {
       <MotionLink
         href="/login"
         whileHover={{ y: -1 }}
-        className="px-3 py-2 text-sm text-muted transition-colors hover:text-foreground"
+        className="px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-foreground"
       >
         {t("signIn")}
       </MotionLink>

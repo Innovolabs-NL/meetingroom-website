@@ -62,33 +62,33 @@ export function JoinInviteClient({
   }
 
   if (inviteLoad.status === "bad_token") {
-    return <p className="text-sm text-red-200">{t("error.badToken")}</p>;
+    return <p className="text-sm text-danger-foreground">{t("error.badToken")}</p>;
   }
 
   if (inviteLoad.status === "config") {
-    return <p className="text-sm text-red-200">{t("notConfigured")}</p>;
+    return <p className="text-sm text-danger-foreground">{t("notConfigured")}</p>;
   }
 
   if (inviteLoad.status === "rpc_missing") {
     return (
-      <div className="space-y-3 text-sm text-red-200">
+      <div className="space-y-3 text-sm text-danger-foreground">
         <p>{t("error.rpcMissing")}</p>
-        <p className="font-mono text-xs text-red-200/80">{inviteLoad.detail}</p>
+        <p className="font-mono text-xs text-danger-foreground/80">{inviteLoad.detail}</p>
       </div>
     );
   }
 
   if (inviteLoad.status === "rpc_error") {
     return (
-      <div className="space-y-3 text-sm text-red-200">
+      <div className="space-y-3 text-sm text-danger-foreground">
         <p>{t("error.previewFailed")}</p>
-        <p className="font-mono text-xs text-red-200/80">{inviteLoad.detail}</p>
+        <p className="font-mono text-xs text-danger-foreground/80">{inviteLoad.detail}</p>
       </div>
     );
   }
 
   if (inviteLoad.status === "not_found") {
-    return <p className="text-sm text-red-200">{t("error.invalidOrExpired")}</p>;
+    return <p className="text-sm text-danger-foreground">{t("error.invalidOrExpired")}</p>;
   }
 
   if (!authChecked) {
@@ -170,7 +170,7 @@ export function JoinInviteClient({
         </div>
       ) : null}
       {error ? (
-        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+        <div className="rounded-xl border border-danger-border bg-danger-muted px-4 py-3 text-sm text-danger-foreground">
           {error}
         </div>
       ) : null}

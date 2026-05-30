@@ -38,7 +38,7 @@ export function FaqAccordion({ layout = "landing" }: FaqAccordionProps) {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.35) }}
           layout
-          className="overflow-hidden rounded-xl border border-border bg-background/90 shadow-sm backdrop-blur-sm transition-shadow hover:border-border-light hover:shadow-md"
+          className="overflow-hidden rounded-xl card-surface backdrop-blur-sm transition-shadow hover:border-border-light hover:shadow-md"
         >
           <motion.button
             layout
@@ -88,7 +88,7 @@ export function FaqAccordion({ layout = "landing" }: FaqAccordionProps) {
 
   if (layout === "landing") {
     return (
-      <section id="faq" className="border-t border-border/50 bg-surface/50 py-24 md:py-32">
+      <section id="faq" className="border-t border-border bg-section py-24 md:py-32">
         <div className="mx-auto max-w-3xl px-6">
           {header}
           {list}

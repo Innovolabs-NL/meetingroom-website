@@ -58,15 +58,15 @@ export function TeamDeleteModal({
         if (e.target === e.currentTarget && !pending) onCancel();
       }}
     >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" aria-hidden />
+      <div className="absolute inset-0 bg-[var(--color-scrim)] backdrop-blur-sm" aria-hidden />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="delete-team-modal-title"
-        className="relative z-10 w-full max-w-md rounded-2xl border border-red-500/30 bg-surface p-6 shadow-2xl shadow-black/40"
+        className="relative z-10 w-full max-w-md rounded-2xl border border-danger-border bg-surface p-6 shadow-elevated"
       >
-        <h2 id="delete-team-modal-title" className="text-lg font-semibold tracking-tight text-red-100">
+        <h2 id="delete-team-modal-title" className="text-lg font-semibold tracking-tight text-danger-foreground">
           {t("deleteTeamModalTitle", { team: teamName })}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-muted">{t("deleteTeamModalHint")}</p>
@@ -87,7 +87,7 @@ export function TeamDeleteModal({
           </AuthField>
 
           {confirmSlug.length > 0 && !slugMatches ? (
-            <p className="text-xs text-red-300">{t("deleteTeamSlugMismatch")}</p>
+            <p className="text-xs text-danger">{t("deleteTeamSlugMismatch")}</p>
           ) : null}
 
           {error ? <AuthAlert variant="error">{error}</AuthAlert> : null}
@@ -106,7 +106,7 @@ export function TeamDeleteModal({
             type="button"
             disabled={!canConfirm}
             onClick={onConfirm}
-            className="inline-flex h-10 items-center justify-center rounded-xl border border-red-500/50 bg-red-500/20 px-4 text-sm font-semibold text-red-100 transition-colors hover:bg-red-500/30 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-danger-border bg-danger-muted px-4 text-sm font-semibold text-danger-foreground transition-colors hover:bg-danger-muted/80 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {pending ? t("deleteTeamDeleting") : t("deleteTeamModalConfirm")}
           </button>

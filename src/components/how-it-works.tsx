@@ -42,7 +42,7 @@ export function HowItWorks() {
   const t = useTranslations("howItWorks");
 
   return (
-    <section className="relative overflow-hidden border-y border-border/50 bg-surface/50 py-24 md:py-32">
+    <section className="relative overflow-hidden border-y border-border bg-section py-24 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-3/4 max-w-2xl -translate-x-1/2 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -68,9 +68,9 @@ export function HowItWorks() {
               whileHover={{ y: -4 }}
               className="relative text-center"
             >
-              <div className="relative mx-auto mb-6 flex h-[7.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl border border-border/80 bg-background/60 shadow-inner">
+              <div className="relative mx-auto mb-6 flex h-[7.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
                 <motion.div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.12] via-transparent to-violet-500/10"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.12] via-transparent to-transparent"
                   animate={{ opacity: [0.65, 1, 0.65] }}
                   transition={{ duration: 4 + i * 0.8, repeat: Infinity, ease: "easeInOut" }}
                   aria-hidden

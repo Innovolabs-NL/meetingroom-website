@@ -9,7 +9,7 @@ export function GdprTrust() {
   const t = useTranslations("gdpr");
 
   return (
-    <section id="gdpr" className="border-y border-border/50 bg-surface/30 py-24 md:py-28">
+    <section id="gdpr" className="border-y border-border bg-section py-24 md:py-28">
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
@@ -56,7 +56,7 @@ export function GdprTrust() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: 0.08 + i * 0.05, duration: 0.45 }}
                 whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                className="flex gap-4 rounded-xl border border-border bg-background p-5 shadow-sm transition-shadow hover:border-border-light hover:shadow-md"
+                className="flex gap-4 rounded-xl card-surface p-5 transition-shadow hover:border-border-light hover:shadow-md"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent ring-1 ring-accent/15">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

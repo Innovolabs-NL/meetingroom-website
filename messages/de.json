@@ -14,6 +14,10 @@
     "account": "Konto",
     "teams": "Teams"
   },
+  "theme": {
+    "switchToLight": "Zum hellen Modus wechseln",
+    "switchToDark": "Zum dunklen Modus wechseln"
+  },
   "appShell": {
     "navAccount": "Konto",
     "navOverview": "Übersicht",
@@ -26,6 +30,7 @@
     "accountKindPersonal": "Persönlich",
     "accountKindTeam": "Team",
     "backToWebsite": "← Zur Website",
+    "appearance": "Darstellung",
     "backToAccount": "Zurück zum Konto",
     "noEmail": "Keine E-Mail hinterlegt",
     "configTitle": "Konfiguration erforderlich",

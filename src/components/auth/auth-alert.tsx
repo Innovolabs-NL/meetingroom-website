@@ -6,9 +6,9 @@ export function AuthAlert({
   children: React.ReactNode;
 }) {
   const styles = {
-    error: "border-red-500/30 bg-red-500/10 text-red-100",
-    success: "border-emerald-500/30 bg-emerald-500/10 text-emerald-100",
-    info: "border-border bg-background/60 text-muted",
+    error: "border-danger-border bg-danger-muted text-danger-foreground",
+    success: "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-100",
+    info: "border-border bg-section text-muted",
   };
 
   return (

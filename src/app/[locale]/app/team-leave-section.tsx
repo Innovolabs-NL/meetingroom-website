@@ -55,8 +55,8 @@ export function TeamLeaveSection({
 
   return (
     <>
-      <section className="rounded-2xl border border-red-500/25 bg-red-500/5 p-6 sm:p-8">
-        <h2 className="text-lg font-semibold tracking-tight text-red-100">{t("leaveTeamTitle")}</h2>
+      <section className="rounded-2xl border border-danger-border bg-danger-muted p-6 sm:p-8">
+        <h2 className="text-lg font-semibold tracking-tight text-danger-foreground">{t("leaveTeamTitle")}</h2>
         <p className="mt-2 max-w-xl text-sm text-muted">{t("leaveTeamHint")}</p>
 
         {!canLeave ? (
@@ -71,7 +71,7 @@ export function TeamLeaveSection({
           type="button"
           disabled={!canLeave || pending}
           onClick={openModal}
-          className="mt-5 inline-flex rounded-xl border border-red-500/40 px-4 py-2.5 text-sm font-semibold text-red-100 transition-colors hover:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-5 inline-flex rounded-xl border border-danger-border px-4 py-2.5 text-sm font-semibold text-danger-foreground transition-colors hover:bg-danger-muted/80 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {t("leaveTeamButton")}
         </button>

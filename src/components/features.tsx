@@ -67,16 +67,16 @@ export function Features() {
   return (
     <section id="features" className="relative overflow-hidden py-24 md:py-32">
       <DriftOrb
-        className="absolute -right-32 top-1/4 h-[420px] w-[420px] opacity-30 md:opacity-40"
-        colorClass="bg-accent/40"
+        className="section-orb absolute -right-32 top-1/4 h-[420px] w-[420px]"
+        colorClass="glow-accent"
         x={[0, 28, -12, 0]}
         y={[0, -22, 14, 0]}
         scale={[1, 1.12, 1.05, 1]}
         duration={20}
       />
       <DriftOrb
-        className="absolute -left-40 bottom-0 h-[360px] w-[360px] opacity-25 md:opacity-35"
-        colorClass="bg-violet-500/35"
+        className="section-orb absolute -left-40 bottom-0 h-[360px] w-[360px]"
+        colorClass="glow-violet"
         x={[0, -20, 16, 0]}
         y={[0, 24, -18, 0]}
         scale={[1, 1.08, 1, 1]}
@@ -124,7 +124,7 @@ export function Features() {
                 transition: { type: "spring", stiffness: 320, damping: 18 },
               }}
               style={{ transformPerspective: 900 }}
-              className="group relative rounded-2xl border border-border bg-surface/90 p-6 shadow-none backdrop-blur-sm transition-colors hover:border-accent/35 hover:bg-surface hover:shadow-lg hover:shadow-accent/5"
+              className="group relative rounded-2xl card-surface p-6 transition-all hover:border-accent/35 hover:shadow-md hover:shadow-accent/5"
             >
               <motion.div
                 className="absolute inset-px rounded-[15px] bg-gradient-to-br from-accent/[0.07] via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100"

@@ -54,10 +54,10 @@ export function Pricing() {
                   transition: { type: "spring", stiffness: 260, damping: 20 },
                 }}
                 layout
-                className={`relative flex flex-col rounded-2xl border p-8 backdrop-blur-sm ${
+                className={`relative flex flex-col rounded-2xl border p-8 ${
                   isPopular
-                    ? "border-accent bg-accent/[0.08] shadow-xl shadow-accent/15 ring-1 ring-accent/25 lg:scale-[1.03] lg:z-10"
-                    : "border-border bg-surface/80"
+                    ? "border-accent bg-accent-muted shadow-elevated ring-1 ring-accent/20 lg:scale-[1.03] lg:z-10"
+                    : "card-surface"
                 }`}
               >
                 {isPopular && (

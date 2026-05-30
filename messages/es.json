@@ -14,6 +14,10 @@
     "account": "Cuenta",
     "teams": "Equipos"
   },
+  "theme": {
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro"
+  },
   "appShell": {
     "navAccount": "Cuenta",
     "navOverview": "Resumen",
@@ -26,6 +30,7 @@
     "accountKindPersonal": "Personal",
     "accountKindTeam": "Equipo",
     "backToWebsite": "← Volver al sitio",
+    "appearance": "Apariencia",
     "backToAccount": "Volver a la cuenta",
     "noEmail": "Sin correo",
     "configTitle": "Configuración necesaria",
