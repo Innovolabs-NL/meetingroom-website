@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "title": "MeetingRoom — Notas de reunión con IA que se quedan en tu dispositivo",
+    "description": "Graba, transcribe y resume tus reuniones con IA local. Apto para el RGPD en empresas y organizaciones con información sensible. Tus datos nunca salen de tu dispositivo."
+  },
+  "nav": {
+    "features": "Características",
+    "gdpr": "RGPD",
+    "pricing": "Precios",
+    "faq": "Preguntas frecuentes",
+    "download": "Descargar",
+    "signIn": "Iniciar sesión",
+    "signUp": "Crear cuenta",
+    "account": "Cuenta",
+    "teams": "Equipos"
+  },
+  "appShell": {
+    "navAccount": "Cuenta",
+    "navOverview": "Resumen",
+    "navSetupTeam": "Configurar equipo",
+    "navAccountSettings": "Ajustes",
+    "navHelp": "Ayuda",
+    "navMembers": "Miembros",
+    "navInvites": "Invitaciones",
+    "navTeamSettings": "Ajustes del equipo",
+    "accountKindPersonal": "Personal",
+    "accountKindTeam": "Equipo",
+    "backToWebsite": "← Volver al sitio",
+    "backToAccount": "Volver a la cuenta",
+    "noEmail": "Sin correo",
+    "configTitle": "Configuración necesaria",
+    "configMissingEnv": "Añade NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY para la cuenta.",
+    "notSignedInTitle": "No has iniciado sesión",
+    "notSignedInHint": "Entra con la misma cuenta que en la app de escritorio.",
+    "goToSignIn": "Ir a iniciar sesión",
+    "overviewTitle": "Resumen",
+    "overviewPersonalSubtitle": "Tus reuniones permanecen en tu dispositivo. Usa la app de escritorio para grabar y transcribir.",
+    "overviewTeamSubtitle": "Gestiona tu equipo e invitaciones desde el menú.",
+    "overviewMemberSubtitle": "Estás en un equipo. Ábrelo desde el menú para ver los miembros.",
+    "overviewTeamSetupSubtitle": "Las cuentas de equipo incluyen un solo equipo. Créalo para invitar miembros.",
+    "memberOfTeam": "Miembro · {team}",
+    "memberDesktopHint": "Usa la app de escritorio MeetingRoom para reuniones. Tu membresía del equipo se gestiona aquí en la web.",
+    "viewTeam": "Abrir equipo",
+    "personalCardTitle": "Cuenta personal",
+    "personalCardHint": "Los equipos se gestionan por separado. Tu administrador puede activar el modo equipo.",
+    "downloadDesktop": "Descargar app de escritorio",
+    "gettingStartedTitle": "Primeros pasos",
+    "gettingStartedStep1": "Descarga e instala MeetingRoom para Windows.",
+    "gettingStartedStep2": "Inicia sesión con el mismo correo en la app de escritorio.",
+    "gettingStartedStep3": "Graba tu primera reunión — audio e IA en local.",
+    "yourTeamLabel": "Tu equipo",
+    "manageMembers": "Miembros",
+    "manageInvites": "Invitaciones",
+    "setupTeamPageTitle": "Configura tu equipo",
+    "setupTeamPageSubtitle": "Elige un nombre para tu organización. Después podrás invitar personas.",
+    "settingsTitle": "Cuenta",
+    "settingsSubtitle": "Inicio de sesión y tipo de cuenta.",
+    "settingsEmail": "Correo",
+    "settingsAccountKind": "Tipo de cuenta",
+    "settingsAccountKindHint": "Para cambiar personal/equipo: actualiza profiles.account_kind en Supabase.",
+    "profileSectionTitle": "Tu perfil",
+    "profileSectionHint": "Visible para los compañeros de equipo.",
+    "profileFullName": "Nombre completo",
+    "profileCompany": "Empresa",
+    "profileCompanyPlaceholder": "Opcional",
+    "profileFullNameRequired": "El nombre debe tener al menos 2 caracteres.",
+    "profileSave": "Guardar perfil",
+    "profileSaving": "Guardando…",
+    "profileSaved": "Perfil actualizado.",
+    "securityEmailTitle": "Cambiar correo",
+    "securityEmailHint": "Enviaremos un código de verificación a tu nueva dirección.",
+    "securityNewEmail": "Nuevo correo electrónico",
+    "securityUpdateEmail": "Actualizar correo",
+    "securityVerifyEmail": "Verificar correo",
+    "securityEmailInvalid": "Introduce un correo válido.",
+    "securityEmailSame": "Ese ya es tu correo electrónico.",
+    "securityEmailOtpSent": "Enviamos un código a {email}.",
+    "securityEmailOtpLead": "Introduce el código enviado a {email}.",
+    "securityEmailUpdated": "Correo actualizado a {email}. Vuelve a iniciar sesión en la app de escritorio si aún ves el anterior.",
+    "securityOtpLabel": "Código de verificación",
+    "securityOtpInvalid": "Código inválido o expirado.",
+    "securityPasswordTitle": "Cambiar contraseña",
+    "securityPasswordHint": "Elige una nueva contraseña para esta cuenta (web y escritorio).",
+    "securityNewPassword": "Nueva contraseña",
+    "securityConfirmPassword": "Confirmar nueva contraseña",
+    "securityUpdatePassword": "Actualizar contraseña",
+    "securityPasswordTooShort": "La contraseña debe tener al menos 8 caracteres.",
+    "securityPasswordMismatch": "Las contraseñas no coinciden.",
+    "securityPasswordUpdated": "Contraseña actualizada.",
+    "securitySaving": "Guardando…",
+    "securityCancel": "Cancelar",
+    "deleteAccountTitle": "Eliminar cuenta",
+    "deleteAccountHint": "Elimina permanentemente tu cuenta, perfil y membresías de equipo. No se puede deshacer.",
+    "deleteAccountButton": "Eliminar mi cuenta",
+    "deleteAccountDeleting": "Eliminando…",
+    "deleteAccountConfirm": "¿Eliminar tu cuenta permanentemente? No se puede deshacer.",
+    "deleteAccountModalTitle": "¿Eliminar la cuenta permanentemente?",
+    "deleteAccountModalHint": "Esto elimina tu cuenta, perfil y membresías de equipo. No se puede deshacer.",
+    "deleteAccountModalEmailLabel": "Escribe tu correo para confirmar",
+    "deleteAccountModalPasswordLabel": "Tu contraseña",
+    "deleteAccountModalCancel": "Cancelar",
+    "deleteAccountModalConfirm": "Eliminar cuenta",
+    "deleteAccountEmailMismatch": "El correo no coincide con tu cuenta.",
+    "deleteAccountInvalidPassword": "Contraseña incorrecta. Inténtalo de nuevo.",
+    "deleteAccountBlockedSoleOwner": "Eres el único propietario de un equipo. Promueve a otro propietario o elimina el equipo primero.",
+    "deleteAccountBlockedTeams": "Eres el único propietario de: {teams}. Transfiere la propiedad o elimina el equipo primero.",
+    "deleteAccountNotAuthenticated": "Vuelve a iniciar sesión.",
+    "deleteAccountErrorGeneric": "No se pudo eliminar la cuenta: {message}",
+    "signOut": "Cerrar sesión",
+    "signingOut": "Cerrando sesión…",
+    "helpTitle": "Ayuda",
+    "helpSubtitle": "Documentación y soporte.",
+    "helpDocs": "Documentación",
+    "helpFaq": "Preguntas frecuentes",
+    "helpChangelog": "Historial y descargas",
+    "helpContact": "Contacto",
+    "teamSettingsTitle": "Ajustes del equipo",
+    "teamSettingsSubtitle": "Información básica de este equipo.",
+    "teamSettingsName": "Nombre del equipo",
+    "teamSettingsSlug": "Nombre corto (slug)",
+    "teamSettingsYourRole": "Tu rol",
+    "dbErrorTitle": "No se pudo cargar la cuenta.",
+    "dbErrorHint": "¿Faltan migraciones? Aplica los SQL en supabase/migrations."
+  },
+  "appHub": {
+    "breadcrumbTeams": "Equipos",
+    "title": "Tu equipo",
+    "subtitle": "Invita por correo y gestiona el acceso (el pago va aparte).",
+    "notSignedInTitle": "No has iniciado sesión",
+    "notSignedInHint": "Entra con la misma cuenta que usas en la app de escritorio.",
+    "goToSignIn": "Ir a iniciar sesión",
+    "slugLabel": "Slug",
+    "roleLabel": "Rol",
+    "manageTeam": "Gestionar equipo",
+    "createFirstTitle": "Configura tu equipo",
+    "createFirstHint": "Elige un nombre para tu organización. Después podrás invitar a otros.",
+    "teamNamePlaceholder": "Empresa SL",
+    "createTeam": "Crear equipo",
+    "creatingTeam": "Creando…",
+    "errorNameRequired": "Escribe un nombre de equipo.",
+    "errorSlugConflict": "Ese nombre corto ya está en uso. Prueba otro.",
+    "errorTeamLimitReached": "Las cuentas de equipo solo pueden crear un equipo.",
+    "errorNotAuthenticated": "Vuelve a iniciar sesión.",
+    "unknownError": "Algo salió mal: {message}",
+    "dbErrorTitle": "No se pudieron cargar los equipos desde la base de datos.",
+    "dbErrorHint": "¿Faltan las migraciones de Supabase? Aplica los SQL en supabase/migrations de este repo.",
+    "personalModeTitle": "Esta es una cuenta personal",
+    "personalModeHint": "Los equipos están desactivados para cuentas personales. Para usar equipos, cambia tu cuenta a modo equipo en Supabase (profiles.account_kind = team).",
+    "configTitle": "Configuración necesaria",
+    "configMissingEnv": "Añade NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY para usar equipos en la web.",
+    "configUnexpected": "Error inesperado: ",
+    "configBackHome": "Volver al inicio"
+  },
+  "appTeam": {
+    "back": "← Resumen",
+    "slug": "Slug",
+    "members": "Miembros",
+    "membersSubtitle": "Personas en este equipo.",
+    "invitesSubtitle": "Invita por correo y comparte el enlace de invitación.",
+    "youPrefix": "Tú · ",
+    "inviteByEmail": "Invitar por correo",
+    "email": "Correo",
+    "emailPlaceholder": "tu@empresa.es",
+    "roleLabel": "Rol",
+    "roleMember": "Miembro",
+    "roleAdmin": "Administrador",
+    "roleOwner": "Propietario",
+    "memberCount": "{count, plural, one {# miembro} other {# miembros}}",
+    "yourRoleLabel": "Tu rol",
+    "inviteMembers": "Invitar personas",
+    "youBadge": "Tú",
+    "unknownMember": "Miembro del equipo",
+    "removeMemberConfirm": "¿Quitar a esta persona del equipo?",
+    "removeMemberModalTitle": "¿Eliminar miembro?",
+    "leaveTeamModalTitle": "¿Abandonar el equipo?",
+    "transferOwnershipModalTitle": "¿Transferir propiedad?",
+    "modalCancel": "Cancelar",
+    "sendInvite": "Enviar invitación",
+    "inviteSent": "Invitación creada. Copia el enlace inferior para compartirlo.",
+    "pendingInvites": "Invitaciones pendientes",
+    "expires": "Caduca el",
+    "inviteLinkHint": "Comparte este enlace (válido hasta que caduque o se revoque):",
+    "copyLink": "Copiar enlace",
+    "copied": "Copiado",
+    "revokeInvite": "Revocar",
+    "removeMember": "Quitar",
+    "changeMemberRole": "Cambiar rol",
+    "leaveTeamTitle": "Abandonar equipo",
+    "leaveTeamHint": "Perderás el acceso a este equipo en la web. Podrás volver si alguien te invita de nuevo.",
+    "leaveTeamButton": "Abandonar equipo",
+    "leaveTeamLeaving": "Saliendo…",
+    "leaveTeamConfirm": "¿Abandonar este equipo? Podrás ser invitado de nuevo más tarde.",
+    "leaveTeamBlockedSoleOwner": "Eres el único propietario. Transfiere la propiedad a otro miembro o elimina el equipo antes de salir.",
+    "transferOwnershipTitle": "Transferir propiedad",
+    "transferOwnershipHint": "Haz a otro miembro propietario. Pasarás a ser administrador y podrás abandonar el equipo después.",
+    "transferOwnershipSelectLabel": "Nuevo propietario",
+    "transferOwnershipSelectPlaceholder": "Elige un miembro…",
+    "transferOwnershipButton": "Transferir propiedad",
+    "transferOwnershipConfirm": "¿Transferir la propiedad a {name}? Pasarás a ser administrador.",
+    "transferOwnershipModalHint": "Estás transfiriendo la propiedad a {name}. Pasarás a ser administrador. No se puede deshacer desde aquí.",
+    "transferOwnershipModalEmailLabel": "Escribe tu correo para confirmar",
+    "transferOwnershipModalPasswordLabel": "Tu contraseña",
+    "transferOwnershipEmailMismatch": "El correo no coincide con tu cuenta.",
+    "transferOwnershipInvalidPassword": "Contraseña incorrecta. Inténtalo de nuevo.",
+    "transferOwnershipTransferring": "Transfiriendo…",
+    "transferOwnershipNoMembers": "Invita al menos a otro miembro antes de poder transferir la propiedad.",
+    "transferOwnershipSuccess": "Propiedad transferida. Ahora eres administrador con una cuenta personal.",
+    "deleteTeamTitle": "Eliminar equipo",
+    "deleteTeamHint": "Elimina permanentemente este equipo, todos los miembros e invitaciones pendientes. No se puede deshacer.",
+    "deleteTeamButton": "Eliminar equipo",
+    "deleteTeamModalTitle": "¿Eliminar {team}?",
+    "deleteTeamModalHint": "Todos los miembros perderán el acceso. No se puede deshacer.",
+    "deleteTeamModalSlugLabel": "Escribe {slug} para confirmar",
+    "deleteTeamModalCancel": "Cancelar",
+    "deleteTeamModalConfirm": "Eliminar equipo",
+    "deleteTeamSlugMismatch": "El slug no coincide.",
+    "deleteTeamDeleting": "Eliminando…",
+    "errors": {
+      "invalidEmail": "Introduce un correo válido.",
+      "pendingDuplicate": "Ya hay una invitación pendiente para ese correo.",
+      "notAuthenticated": "Vuelve a iniciar sesión.",
+      "notAMember": "No eres miembro de este equipo.",
+      "soleOwnerCannotLeave": "El único propietario no puede abandonar el equipo. Promueve a otro propietario primero.",
+      "cannotRemoveOwner": "Los propietarios no pueden ser eliminados del equipo. Deben salir por su cuenta o transferir la propiedad primero.",
+      "notOwner": "Solo los propietarios del equipo pueden hacer esto.",
+      "targetNotMember": "Esa persona no es miembro del equipo.",
+      "alreadyOwner": "Ya eres el propietario.",
+      "rpcNotApplied": "Falta la actualización de la base de datos. Ejecuta supabase/APPLY_transfer_ownership_and_delete_team.sql en el editor SQL de Supabase e inténtalo de nuevo.",
+      "rpcNotAppliedRole": "Los cambios de rol aún no están configurados en la base de datos. Ejecuta supabase/migrations/20260528240000_update_organization_member_role.sql en el editor SQL de Supabase.",
+      "cannotChangeOwner": "El rol del propietario no se puede cambiar aquí. Usa transferir propiedad.",
+      "cannotChangeSelf": "No puedes cambiar tu propio rol.",
+      "generic": "{message}"
+    }
+  },
+  "appJoin": {
+    "title": "Aceptar invitación al equipo",
+    "hint": "Debes estar conectado con el correo al que enviaron la invitación.",
+    "loading": "Cargando…",
+    "backToTeams": "Volver a la cuenta",
+    "missingToken": "Esta página necesita un token. Abre otra vez el enlace del correo.",
+    "accept": "Aceptar invitación",
+    "accepting": "Uniéndote…",
+    "success": "Ya estás dentro. Abre el equipo para continuar.",
+    "alreadyMember": "Ya eres miembro de este equipo.",
+    "goToTeam": "Abrir equipo",
+    "genericError": "No se pudo aceptar la invitación. Reintenta o pide otra.",
+    "notConfigured": "El inicio de sesión no está configurado en este sitio.",
+    "error": {
+      "emailRequired": "Tu sesión no tiene correo. Inicia sesión con correo/contraseña (o un proveedor que exponga el correo).",
+      "invalidOrExpired": "Enlace de invitación inválido o caducado.",
+      "emailMismatch": "Inicia sesión con el correo invitado."
+    }
+  },
+  "hero": {
+    "badge": "Apto para el RGPD y datos sensibles",
+    "headline": "Notas de reunión con IA que nunca salen de tu dispositivo",
+    "subheadline": "Graba, transcribe y resume tus reuniones completamente en tu máquina. Pensado para equipos y organizaciones que no pueden enviar el contenido de las reuniones a la nube.",
+    "cta": "Descargar gratis",
+    "ctaSecondary": "Ver precios",
+    "appScreenshot": "Captura de pantalla de la aplicación MeetingRoom"
+  },
+  "features": {
+    "label": "Características",
+    "headline": "Todo lo que necesitas para reuniones más inteligentes",
+    "subheadline": "IA potente que funciona localmente — sin internet, ningún dato sale de tu dispositivo.",
+    "transcription": {
+      "title": "Transcripción local",
+      "description": "Funciona completamente en tu dispositivo. Nunca se envía audio — tus conversaciones permanecen privadas."
+    },
+    "diarization": {
+      "title": "Identificación de hablantes",
+      "description": "Identifica automáticamente quién dijo qué, para que tus transcripciones se lean como una conversación real."
+    },
+    "summaries": {
+      "title": "Resúmenes con IA",
+      "description": "Plantillas personalizables extraen acciones, decisiones clave y conclusiones — incluso de reuniones largas."
+    },
+    "chat": {
+      "title": "Asistente de reunión",
+      "description": "Haz preguntas sobre tu reunión, adjunta documentos e imágenes y obtén respuestas instantáneas."
+    },
+    "multilingual": {
+      "title": "Multilingüe",
+      "description": "Soporte completo para neerlandés, inglés, francés, alemán y español — tanto la interfaz como la salida de IA."
+    },
+    "privacy": {
+      "title": "Privacidad primero",
+      "description": "Todo funciona localmente. Encaja con equipos conscientes del RGPD — sin procesamiento en la nube de tu audio o transcripciones."
+    }
+  },
+  "gdpr": {
+    "badge": "Apto para el RGPD",
+    "headline": "Diseñado para organizaciones con información sensible",
+    "description": "MeetingRoom guarda el audio de las reuniones, las transcripciones y la salida de IA en tus dispositivos — no en servidores de terceros. Es una opción sólida para empresas y organismos públicos que deben limitar las transferencias de datos personales y proteger conversaciones confidenciales bajo el RGPD.",
+    "points": {
+      "local": {
+        "title": "Sin procesamiento en la nube",
+        "description": "La grabación, transcripción y resumen ocurren en tu hardware. El contenido de las reuniones no se envía a servicios de IA externos."
+      },
+      "control": {
+        "title": "Tú mantienes el control",
+        "description": "Los datos permanecen en equipos que gestionas. Más fácil alinear con políticas de retención, controles de acceso y requisitos de seguridad internos."
+      },
+      "minimize": {
+        "title": "Minimización de datos",
+        "description": "Menos encargados del tratamiento y transferencias internacionales del contenido de reuniones — un argumento claro para delegados de protección de datos y EIPD."
+      },
+      "teams": {
+        "title": "Para equipos regulados",
+        "description": "Adecuado para legal, sanidad, finanzas, sector público y cualquier organización que trate información sensible o personal en reuniones."
+      }
+    }
+  },
+  "howItWorks": {
+    "label": "Cómo funciona",
+    "headline": "De la reunión a notas accionables en minutos",
+    "step1": {
+      "title": "Grabar",
+      "description": "Comienza a grabar tu reunión con un clic. Funciona con cualquier micrófono."
+    },
+    "step2": {
+      "title": "Transcribir",
+      "description": "La IA transcribe tu reunión en tiempo real e identifica a cada hablante automáticamente."
+    },
+    "step3": {
+      "title": "Resumir",
+      "description": "Obtén resúmenes estructurados, acciones a seguir y chatea con tus notas — todo con IA."
+    }
+  },
+  "pricing": {
+    "label": "Precios",
+    "headline": "Precios simples para todos",
+    "subheadline": "Empieza gratis, actualiza cuando estés listo. Sin costes ocultos.",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "perSeat": "por puesto",
+    "personal": {
+      "name": "Personal",
+      "price": "$9",
+      "period": "/mes",
+      "description": "Para individuos que quieren notas de reunión más inteligentes.",
+      "features": [
+        "Reuniones ilimitadas",
+        "Transcripción y resúmenes locales",
+        "Identificación de hablantes",
+        "Asistente de reunión",
+        "Los 5 idiomas",
+        "Exportar a PDF y Word"
+      ],
+      "cta": "Empezar"
+    },
+    "team": {
+      "name": "Equipo",
+      "price": "$7",
+      "period": "/puesto/mes",
+      "description": "Para equipos que quieren colaborar en notas de reunión.",
+      "badge": "Más popular",
+      "features": [
+        "Todo en Personal",
+        "Gestión de licencias de equipo",
+        "Facturación centralizada",
+        "Soporte prioritario",
+        "Panel de administración",
+        "Descuentos por volumen",
+        "Procesamiento local alineado con el RGPD"
+      ],
+      "cta": "Empezar"
+    },
+    "enterprise": {
+      "name": "Empresa",
+      "price": "Personalizado",
+      "period": "",
+      "description": "Para organizaciones con requisitos avanzados.",
+      "features": [
+        "Todo en Equipo",
+        "Despliegue personalizado",
+        "Soporte dedicado",
+        "Garantía SLA",
+        "Licencias por volumen",
+        "Adquisiciones y facturación",
+        "Procesamiento local alineado con el RGPD"
+      ],
+      "cta": "Contactar ventas"
+    }
+  },
+  "faq": {
+    "label": "Preguntas frecuentes",
+    "headline": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Es MeetingRoom adecuado para el RGPD y datos sensibles?",
+        "answer": "MeetingRoom está diseñado para ayudar a organizaciones que deben proteger información personal y confidencial. Como el audio de las reuniones y el procesamiento de IA permanecen en tus dispositivos, no envías el contenido de las reuniones a proveedores de IA en la nube. Eso apoya objetivos habituales del RGPD: limitar transferencias, reducir encargados del tratamiento para datos de reuniones y mantener el control sobre la conservación. Tu organización sigue siendo responsable de su propio cumplimiento del RGPD — pero el procesamiento local-first elimina una fuente importante de riesgo frente a herramientas solo en la nube."
+      },
+      {
+        "question": "¿Se almacenan mis datos localmente?",
+        "answer": "Sí, al 100 %. MeetingRoom procesa todo en tu dispositivo. Tu audio, transcripciones y resúmenes nunca salen de tu máquina. No hay servidores en la nube involucrados en el procesamiento de tus datos."
+      },
+      {
+        "question": "¿Qué plataformas son compatibles?",
+        "answer": "MeetingRoom está actualmente disponible para Windows. El soporte para macOS y Linux está planeado para futuras versiones."
+      },
+      {
+        "question": "¿Cuáles son los requisitos del sistema?",
+        "answer": "MeetingRoom requiere un ordenador moderno con al menos 8 GB de RAM. Para la mejor experiencia con funciones de IA, se recomiendan 16 GB de RAM y una GPU dedicada."
+      },
+      {
+        "question": "¿Cómo funciona la licencia?",
+        "answer": "Las licencias personales son por usuario. Las licencias de equipo son por puesto con facturación centralizada. Puedes gestionar tu suscripción y puestos a través del portal de clientes de Paddle."
+      },
+      {
+        "question": "¿Necesita internet?",
+        "answer": "Solo para la descarga inicial de los modelos de IA (una configuración única). Después de eso, MeetingRoom funciona completamente sin conexión. No se necesita internet para grabar, transcribir o resumir."
+      },
+      {
+        "question": "¿Qué idiomas admite?",
+        "answer": "MeetingRoom admite neerlandés, inglés, francés, alemán y español — tanto para la interfaz de usuario como para la transcripción y los resúmenes de IA."
+      }
+    ]
+  },
+  "cta": {
+    "headline": "¿Listo para transformar tus reuniones?",
+    "subheadline": "Descarga MeetingRoom gratis y experimenta notas de reunión con IA que respetan tu privacidad.",
+    "download": "Descargar gratis",
+    "forTeams": "Para Equipos →"
+  },
+  "footer": {
+    "description": "Notas de reunión con IA que se quedan en tu dispositivo.",
+    "product": "Producto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "features": "Características",
+    "pricing": "Precios",
+    "download": "Descargar",
+    "faq": "Preguntas frecuentes",
+    "documentation": "Documentación",
+    "changelog": "Registro de cambios",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "contact": "Contacto",
+    "copyright": "© {year} Innovolabs. Todos los derechos reservados."
+  },
+  "auth": {
+    "backHome": "Volver al inicio",
+    "badge": "Privacidad primero",
+    "asideTitle": "Tus reuniones se quedan en tu dispositivo",
+    "asideSubtitle": "Inicia sesión para gestionar equipos e invitaciones en la web. La grabación y la IA son locales en la app de escritorio.",
+    "trustLocal": "IA local — el audio no sale de tu máquina",
+    "trustTeams": "Invita compañeros y gestiona el acceso en línea",
+    "trustGdpr": "Para organizaciones con datos sensibles",
+    "loginTitle": "Bienvenido de nuevo",
+    "loginSubtitle": "Inicia sesión para abrir tu cuenta y equipos.",
+    "signupTitle": "Crea tu cuenta",
+    "signupSubtitle": "Registro gratuito. Descarga la app de escritorio después de iniciar sesión.",
+    "signupSubtitleInvite": "Usa el correo invitado para unirte al equipo.",
+    "inviteBanner": "Te unes a {team}",
+    "email": "Correo",
+    "emailPlaceholder": "tu@empresa.es",
+    "emailAlreadyRegistered": "Ya existe una cuenta con este correo.",
+    "signInInstead": "Iniciar sesión",
+    "password": "Contraseña",
+    "passwordHint": "Al menos 8 caracteres",
+    "confirmPassword": "Confirmar contraseña",
+    "passwordMismatch": "Las contraseñas no coinciden.",
+    "holdToShowPassword": "Mantener pulsado para mostrar la contraseña",
+    "fullName": "Nombre completo",
+    "fullNamePlaceholder": "Alex García",
+    "fullNameRequired": "Introduce tu nombre completo (al menos 2 caracteres).",
+    "company": "Empresa o equipo",
+    "companyPlaceholder": "Acme S.L.",
+    "companyOptional": "Opcional",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión…",
+    "desktopHandoffTitle": "Sesión iniciada — abrir MeetingRoom",
+    "desktopHandoffSubtitle": "La aplicación de escritorio debería abrirse automáticamente.",
+    "desktopHandoffHint": "Si MeetingRoom no se abre, pulsa el botón de abajo. Puedes cerrar esta pestaña después.",
+    "desktopHandoffOpenApp": "Abrir aplicación MeetingRoom",
+    "desktopHandoffCloseTab": "Cierra esta pestaña cuando la app haya iniciado sesión.",
+    "desktopAccountPromptTitle": "Iniciar sesión en MeetingRoom",
+    "desktopAccountPromptSubtitle": "Ya has iniciado sesión en la web. Usa esta cuenta en la aplicación de escritorio u otra distinta.",
+    "desktopAccountPromptEmailLabel": "Sesión iniciada como",
+    "desktopAccountPromptSignedInFallback": "Sesión iniciada",
+    "desktopAccountPromptLogIn": "Iniciar sesión",
+    "desktopAccountPromptOtherAccount": "Iniciar sesión con otra cuenta",
+    "desktopHandoffFailed": "No se pudo conectar la aplicación de escritorio. Inténtalo de nuevo.",
+    "signUp": "Crear cuenta",
+    "signingUp": "Creando cuenta…",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "createAccount": "Crear una",
+    "notConfigured": "El inicio de sesión no está configurado. Añade NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.",
+    "confirmEmailDefault": "Enviamos un enlace y un código de 6 dígitos. Introduce el código abajo.",
+    "confirmEmailInvite": "Enlace y código enviados. Introduce el código para unirte al equipo.",
+    "verificationTitle": "Verifica tu correo",
+    "verificationSubtitle": "Introduce el código del correo para terminar el registro.",
+    "verificationSentTo": "Código enviado a",
+    "verificationCode": "Código de verificación",
+    "verificationCodeInvalid": "Introduce el código de 6 dígitos del correo.",
+    "verifyEmail": "Verificar y continuar",
+    "verifying": "Verificando…",
+    "resendCode": "Reenviar código",
+    "resendCodeSent": "Se ha enviado un nuevo código a tu correo.",
+    "resendCodeWait": "Reenviar en {seconds}s",
+    "backToRegistration": "← Volver al registro",
+    "backToLogin": "← Volver a iniciar sesión",
+    "loginEmailNotConfirmed": "Tu correo aún no está confirmado. Enviamos un nuevo código a tu bandeja de entrada.",
+    "loginEmailNotConfirmedNoResend": "Tu correo aún no está confirmado. Introduce el código o usa Reenviar código.",
+    "loginVerificationSubtitle": "Introduce el código del correo para confirmar tu cuenta. Iniciarás sesión automáticamente."
+  },
+  "standalone": {
+    "backHome": "Volver al inicio",
+    "faq": {
+      "meta": {
+        "title": "Preguntas frecuentes — MeetingRoom",
+        "description": "Respuestas sobre RGPD, procesamiento local, plataformas, licencias, idiomas y uso sin conexión."
+      }
+    },
+    "documentation": {
+      "meta": {
+        "title": "Documentación — MeetingRoom",
+        "description": "Instala MeetingRoom, descarga modelos de IA locales, graba reuniones y exporta notas."
+      },
+      "headline": "Documentación",
+      "intro": "Estas guías te ayudan a instalar MeetingRoom en Windows y sacar provecho de notas locales con IA.",
+      "sections": [
+        {
+          "title": "Instalación (Windows)",
+          "body": "Descarga el instalador desde la sección Precios del sitio. Sigue al asistente y elige una ruta con espacio suficiente para los modelos de IA (varios gigabytes).\n\nSi aparece SmartScreen de Windows, usa «Más información» y «Ejecutar de todos modos» solo si confías en el editor (Innovolabs)."
+        },
+        {
+          "title": "Primer inicio y modelos",
+          "body": "En el primer arranque, MeetingRoom puede descargar modelos de voz e idioma; suele hacer falta Internet. Una vez instalados, la transcripción y los resúmenes funcionan totalmente fuera de línea.\n\nGestiona espacio desde ajustes de la app cuando esté disponible."
+        },
+        {
+          "title": "Grabación y exportación",
+          "body": "Inicia grabación nueva desde la pantalla principal. Coloca bien el micrófono para la diarización.\n\nExporta a PDF o Word si tu licencia lo permite. Todo sigue en el dispositivo salvo que lo copies fuera."
+        },
+        {
+          "title": "Idiomas y solución de problemas",
+          "body": "MeetingRoom admite neerlandés, inglés, francés, alemán y español en interfaz y salidas de IA.\n\n¿Transcripción lenta? Cierra aplicaciones pesadas, conecta alimentación en portátiles y confirma la descarga de modelos. Si persiste el problema, escribe al soporte con tu versión del registro de cambios."
+        }
+      ]
+    },
+    "changelog": {
+      "meta": {
+        "title": "Registro de cambios — MeetingRoom",
+        "description": "Historial de versiones y novedades de MeetingRoom."
+      },
+      "headline": "Registro de cambios",
+      "intro": "Resumen por versión; los números coinciden con los instaladores publicados.",
+      "downloadWindows": "Descargar instalador — Windows",
+      "notesEnglishHint": "Las notas de esta versión aparecen debajo en inglés.",
+      "githubSyncLine": "Sincronizado con las publicaciones de GitHub (se actualiza aproximadamente cada cinco minutos). Las notas suelen estar en inglés.",
+      "releaseNotesUnavailable": "No hay texto descriptivo en esta publicación de GitHub — usa el instalador de arriba.",
+      "releases": [
+        {
+          "version": "1.0.14",
+          "date": "mayo de 2025",
+          "notes": "Estabilidad, pulido de interfaz y mejor manejo de modelos locales."
+        },
+        {
+          "version": "1.0.0",
+          "date": "principios de 2025",
+          "notes": "Primera versión estable con transcripción local, identificación de ponentes, resúmenes y chat sobre la reunión."
+        },
+        {
+          "version": "0.9.0",
+          "date": "beta",
+          "notes": "Beta pública centrada en grabación y transcripción."
+        }
+      ]
+    },
+    "privacy": {
+      "meta": {
+        "title": "Política de privacidad — MeetingRoom",
+        "description": "Cómo MeetingRoom trata tus datos con enfoque local."
+      },
+      "headline": "Política de privacidad",
+      "updated": "Última actualización: 27 de mayo de 2026",
+      "disclaimer": "Información general, no consejo jurídico. Hazla revisar por un especialista conforme a tu normativa.",
+      "sections": [
+        {
+          "title": "Resumen",
+          "body": "MeetingRoom está pensado para que audio, transcripciones y notas generadas por IA se procesen y guarden en tus dispositivos. No prestamos la misma nube para procesamiento de reuniones que muchos asistentes en línea."
+        },
+        {
+          "title": "Datos que podemos recabar",
+          "body": "En la compra, tu proveedor de pago (p. ej. Paddle) tramita datos de facturación según su política. El sitio puede conservar registros técnicos habituales del alojamiento (IP, tipo de navegador).\n\nLa app de escritorio mantiene el material reunión localmente por diseño."
+        },
+        {
+          "title": "Procesamiento local",
+          "body": "Transcripción IA, resúmenes y chat se ejecutan en tu equipo tras los modelos. Protege el acceso con contraseña, cifrado y políticas internas."
+        },
+        {
+          "title": "Conservación y opciones",
+          "body": "Tú decides el tiempo que permanecen las grabaciones. Desinstalar o borrar archivos locales elimina el contenido en el equipo, dentro de límites del SO y copias."
+        },
+        {
+          "title": "Contacto",
+          "body": "Preguntas sobre esta política a las direcciones de la página Contacto."
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Términos de servicio — MeetingRoom",
+        "description": "Condiciones para el uso de MeetingRoom y este sitio web."
+      },
+      "headline": "Términos de servicio",
+      "updated": "Última actualización: 27 de mayo de 2026",
+      "disclaimer": "Plantilla orientativa para revisión legal antes de usarla empresarialmente.",
+      "sections": [
+        {
+          "title": "Aceptación",
+          "body": "Si descargas, instalas o usas MeetingRoom, aceptas estos términos; si no, no uses el software."
+        },
+        {
+          "title": "Licencia",
+          "body": "Concedemos una licencia limitada, no exclusiva e intransferible según tu plan (personal, equipo, enterprise). Prohibiciones entre otras ingeniería inversa, reventa y retirada de marcas si la ley no impone lo contrario."
+        },
+        {
+          "title": "Uso aceptable",
+          "body": "Eres responsable de cumplir leyes de grabaciones y consentimiento de participantes. No uses MeetingRoom para vulnerar intimidad ni confidencialidad."
+        },
+        {
+          "title": "Exención de garantías",
+          "body": "El software se ofrece «tal cual», sin garantías dentro del marco permitido. La salida de la IA puede contener errores; revisa decisiones relevantes."
+        },
+        {
+          "title": "Limitación de responsabilidad",
+          "body": "En la máxima medida legal, Innovolabs y proveedores no responden por daños indirectos, lucro cesante ni pérdida de datos relacionados con MeetingRoom."
+        },
+        {
+          "title": "Ley aplicable",
+          "body": "Se rige por la ley señalada por Innovolabs para tu parte contratante, excluyendo normas sobre conflicto de leyes. Competencia judicial en esa jurisdicción si no existe norma imperativa consumerista distinta."
+        }
+      ]
+    },
+    "contact": {
+      "meta": {
+        "title": "Contacto — MeetingRoom",
+        "description": "Habla con soporte y ventas de MeetingRoom."
+      },
+      "headline": "Contacto",
+      "intro": "Cuéntanos en qué podemos ayudar. Para fallos incluye número de versión y pasos que reproducen el problema.",
+      "supportLabel": "Soporte del producto",
+      "salesLabel": "Ventas y empresa",
+      "supportEmail": "support@innovolabs.com",
+      "salesEmail": "sales@innovolabs.com",
+      "hours": "Respondemos habitualmente en dos días hábiles."
+    }
+  }
+}

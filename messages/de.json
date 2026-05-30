@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "title": "MeetingRoom — KI-Besprechungsnotizen, die auf Ihrem Gerät bleiben",
+    "description": "Nehmen Sie Ihre Besprechungen auf, transkribieren und fassen Sie sie mit lokaler KI zusammen. DSGVO-freundlich für Unternehmen und Organisationen mit sensiblen Informationen. Ihre Daten verlassen nie Ihr Gerät."
+  },
+  "nav": {
+    "features": "Funktionen",
+    "gdpr": "DSGVO",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "download": "Herunterladen",
+    "signIn": "Anmelden",
+    "signUp": "Konto erstellen",
+    "account": "Konto",
+    "teams": "Teams"
+  },
+  "appShell": {
+    "navAccount": "Konto",
+    "navOverview": "Übersicht",
+    "navSetupTeam": "Team einrichten",
+    "navAccountSettings": "Einstellungen",
+    "navHelp": "Hilfe",
+    "navMembers": "Mitglieder",
+    "navInvites": "Einladungen",
+    "navTeamSettings": "Team-Einstellungen",
+    "accountKindPersonal": "Persönlich",
+    "accountKindTeam": "Team",
+    "backToWebsite": "← Zur Website",
+    "backToAccount": "Zurück zum Konto",
+    "noEmail": "Keine E-Mail hinterlegt",
+    "configTitle": "Konfiguration erforderlich",
+    "configMissingEnv": "Setzen Sie NEXT_PUBLIC_SUPABASE_URL und NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY für den Kontobereich.",
+    "notSignedInTitle": "Nicht angemeldet",
+    "notSignedInHint": "Melden Sie sich mit demselben Konto wie in der Desktop-App an.",
+    "goToSignIn": "Zur Anmeldung",
+    "overviewTitle": "Übersicht",
+    "overviewPersonalSubtitle": "Ihre Besprechungen bleiben auf Ihrem Gerät. Nutzen Sie die Desktop-App zum Aufnehmen und Transkribieren.",
+    "overviewTeamSubtitle": "Verwalten Sie Ihr Team und Einladungen in der Seitenleiste.",
+    "overviewMemberSubtitle": "Sie sind in einem Team. Öffnen Sie es in der Seitenleiste, um Mitglieder zu sehen.",
+    "overviewTeamSetupSubtitle": "Team-Konten haben ein Team. Richten Sie es ein, um Mitglieder einzuladen.",
+    "memberOfTeam": "Mitglied · {team}",
+    "memberDesktopHint": "Nutzen Sie die MeetingRoom-Desktop-App für Besprechungen. Ihre Teammitgliedschaft verwalten Sie hier im Web.",
+    "viewTeam": "Team öffnen",
+    "personalCardTitle": "Persönliches Konto",
+    "personalCardHint": "Teams werden separat verwaltet. Ihr Administrator kann den Team-Modus aktivieren.",
+    "downloadDesktop": "Desktop-App herunterladen",
+    "gettingStartedTitle": "Erste Schritte",
+    "gettingStartedStep1": "MeetingRoom für Windows herunterladen und installieren.",
+    "gettingStartedStep2": "In der Desktop-App mit derselben E-Mail anmelden.",
+    "gettingStartedStep3": "Erste Besprechung aufnehmen — Audio und KI bleiben lokal.",
+    "yourTeamLabel": "Ihr Team",
+    "manageMembers": "Mitglieder",
+    "manageInvites": "Einladungen",
+    "setupTeamPageTitle": "Team einrichten",
+    "setupTeamPageSubtitle": "Wählen Sie einen Namen für Ihre Organisation. Danach können Sie Personen einladen.",
+    "settingsTitle": "Konto",
+    "settingsSubtitle": "Anmeldung und Kontotyp.",
+    "settingsEmail": "E-Mail",
+    "settingsAccountKind": "Kontotyp",
+    "settingsAccountKindHint": "Wechsel persönlich/Team: profiles.account_kind in Supabase anpassen.",
+    "profileSectionTitle": "Ihr Profil",
+    "profileSectionHint": "Für Teammitglieder in der Mitgliederliste sichtbar.",
+    "profileFullName": "Vollständiger Name",
+    "profileCompany": "Unternehmen",
+    "profileCompanyPlaceholder": "Optional",
+    "profileFullNameRequired": "Der Name muss mindestens 2 Zeichen haben.",
+    "profileSave": "Profil speichern",
+    "profileSaving": "Speichern…",
+    "profileSaved": "Profil aktualisiert.",
+    "securityEmailTitle": "E-Mail ändern",
+    "securityEmailHint": "Wir senden einen Bestätigungscode an Ihre neue Adresse.",
+    "securityNewEmail": "Neue E-Mail-Adresse",
+    "securityUpdateEmail": "E-Mail aktualisieren",
+    "securityVerifyEmail": "E-Mail bestätigen",
+    "securityEmailInvalid": "Geben Sie eine gültige E-Mail-Adresse ein.",
+    "securityEmailSame": "Das ist bereits Ihre E-Mail-Adresse.",
+    "securityEmailOtpSent": "Wir haben einen Code an {email} gesendet.",
+    "securityEmailOtpLead": "Geben Sie den Code ein, der an {email} gesendet wurde.",
+    "securityEmailUpdated": "E-Mail aktualisiert auf {email}. Melden Sie sich in der Desktop-App erneut an, falls noch die alte Adresse angezeigt wird.",
+    "securityOtpLabel": "Bestätigungscode",
+    "securityOtpInvalid": "Ungültiger oder abgelaufener Code.",
+    "securityPasswordTitle": "Passwort ändern",
+    "securityPasswordHint": "Wählen Sie ein neues Passwort für dieses Konto (Website und Desktop-App).",
+    "securityNewPassword": "Neues Passwort",
+    "securityConfirmPassword": "Neues Passwort bestätigen",
+    "securityUpdatePassword": "Passwort aktualisieren",
+    "securityPasswordTooShort": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+    "securityPasswordMismatch": "Die Passwörter stimmen nicht überein.",
+    "securityPasswordUpdated": "Passwort aktualisiert.",
+    "securitySaving": "Speichern…",
+    "securityCancel": "Abbrechen",
+    "deleteAccountTitle": "Konto löschen",
+    "deleteAccountHint": "Entfernt Ihr Konto, Profil und Teammitgliedschaften dauerhaft. Dies kann nicht rückgängig gemacht werden.",
+    "deleteAccountButton": "Mein Konto löschen",
+    "deleteAccountDeleting": "Wird gelöscht…",
+    "deleteAccountConfirm": "Konto dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.",
+    "deleteAccountModalTitle": "Konto dauerhaft löschen?",
+    "deleteAccountModalHint": "Dies entfernt Ihr Konto, Profil und Teammitgliedschaften. Dies kann nicht rückgängig gemacht werden.",
+    "deleteAccountModalEmailLabel": "E-Mail-Adresse zur Bestätigung eingeben",
+    "deleteAccountModalPasswordLabel": "Ihr Passwort",
+    "deleteAccountModalCancel": "Abbrechen",
+    "deleteAccountModalConfirm": "Konto löschen",
+    "deleteAccountEmailMismatch": "E-Mail stimmt nicht mit Ihrem Konto überein.",
+    "deleteAccountInvalidPassword": "Falsches Passwort. Bitte erneut versuchen.",
+    "deleteAccountBlockedSoleOwner": "Sie sind der einzige Inhaber eines Teams. Ernennen Sie zuerst einen anderen Inhaber oder löschen Sie das Team.",
+    "deleteAccountBlockedTeams": "Sie sind der einzige Inhaber von: {teams}. Übertragen Sie die Inhaberschaft oder entfernen Sie das Team zuerst.",
+    "deleteAccountNotAuthenticated": "Sie müssen sich erneut anmelden.",
+    "deleteAccountErrorGeneric": "Konto konnte nicht gelöscht werden: {message}",
+    "signOut": "Abmelden",
+    "signingOut": "Wird abgemeldet…",
+    "helpTitle": "Hilfe",
+    "helpSubtitle": "Dokumentation und Support.",
+    "helpDocs": "Dokumentation",
+    "helpFaq": "FAQ",
+    "helpChangelog": "Changelog & Downloads",
+    "helpContact": "Kontakt",
+    "teamSettingsTitle": "Team-Einstellungen",
+    "teamSettingsSubtitle": "Grundinformationen zu diesem Team.",
+    "teamSettingsName": "Teamname",
+    "teamSettingsSlug": "Kurzname (Slug)",
+    "teamSettingsYourRole": "Ihre Rolle",
+    "dbErrorTitle": "Kontodaten konnten nicht geladen werden.",
+    "dbErrorHint": "Supabase-Migrationen fehlen? SQL unter supabase/migrations anwenden."
+  },
+  "appHub": {
+    "breadcrumbTeams": "Teams",
+    "title": "Ihr Team",
+    "subtitle": "Laden Sie Kolleg:innen per E-Mail ein und verwalten Sie den Zugang (Abrechnung ist getrennt davon).",
+    "notSignedInTitle": "Nicht angemeldet",
+    "notSignedInHint": "Melden Sie sich mit demselben Konto wie in der Desktop-App an.",
+    "goToSignIn": "Zur Anmeldung",
+    "slugLabel": "Kurzname",
+    "roleLabel": "Rolle",
+    "manageTeam": "Team verwalten",
+    "createFirstTitle": "Team einrichten",
+    "createFirstHint": "Wählen Sie einen Namen für Ihre Organisation. Danach können Sie andere einladen.",
+    "teamNamePlaceholder": "Firma GmbH",
+    "createTeam": "Team erstellen",
+    "creatingTeam": "Wird erstellt…",
+    "errorNameRequired": "Bitte einen Teamnamen eingeben.",
+    "errorSlugConflict": "Dieser Kurzname ist bereits vergeben. Probieren Sie einen anderen Namen.",
+    "errorTeamLimitReached": "Team-Konten können nur ein Team erstellen.",
+    "errorNotAuthenticated": "Sie müssen sich erneut anmelden.",
+    "unknownError": "Etwas ist schiefgelaufen: {message}",
+    "dbErrorTitle": "Teams konnten nicht aus der Datenbank geladen werden.",
+    "dbErrorHint": "Supabase-Migrationen noch nicht ausgeführt? SQL-Dateien unter supabase/migrations in diesem Repo anwenden.",
+    "personalModeTitle": "Dies ist ein persönliches Konto",
+    "personalModeHint": "Teams sind für persönliche Konten deaktiviert. Um Teams zu nutzen, stellen Sie Ihr Konto in Supabase auf den Team-Modus um (profiles.account_kind = team).",
+    "configTitle": "Konfiguration erforderlich",
+    "configMissingEnv": "Setzen Sie NEXT_PUBLIC_SUPABASE_URL und NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY für Teams auf der Website.",
+    "configUnexpected": "Unerwarteter Fehler: ",
+    "configBackHome": "Zurück zur Startseite"
+  },
+  "appTeam": {
+    "back": "← Übersicht",
+    "slug": "Kurzname",
+    "members": "Mitglieder",
+    "membersSubtitle": "Personen in diesem Team.",
+    "invitesSubtitle": "Laden Sie Kolleg:innen per E-Mail ein und teilen Sie den Einladungslink.",
+    "youPrefix": "Sie · ",
+    "inviteByEmail": "Per E-Mail einladen",
+    "email": "E-Mail",
+    "emailPlaceholder": "sie@firma.de",
+    "roleLabel": "Rolle",
+    "roleMember": "Mitglied",
+    "roleAdmin": "Admin",
+    "roleOwner": "Inhaber",
+    "memberCount": "{count, plural, one {# Mitglied} other {# Mitglieder}}",
+    "yourRoleLabel": "Ihre Rolle",
+    "inviteMembers": "Personen einladen",
+    "youBadge": "Sie",
+    "unknownMember": "Teammitglied",
+    "removeMemberConfirm": "Diese Person aus dem Team entfernen?",
+    "removeMemberModalTitle": "Mitglied entfernen?",
+    "leaveTeamModalTitle": "Team verlassen?",
+    "transferOwnershipModalTitle": "Inhaberschaft übertragen?",
+    "modalCancel": "Abbrechen",
+    "sendInvite": "Einladung senden",
+    "inviteSent": "Einladung erstellt. Link unten kopieren und teilen.",
+    "pendingInvites": "Ausstehende Einladungen",
+    "expires": "Läuft ab",
+    "inviteLinkHint": "Diesen Link teilen (gültig bis Ablauf oder Widerruf):",
+    "copyLink": "Link kopieren",
+    "copied": "Kopiert",
+    "revokeInvite": "Widerrufen",
+    "removeMember": "Entfernen",
+    "changeMemberRole": "Rolle ändern",
+    "leaveTeamTitle": "Team verlassen",
+    "leaveTeamHint": "Sie verlieren den Zugang zu diesem Team auf der Website. Sie können wieder beitreten, wenn Sie eingeladen werden.",
+    "leaveTeamButton": "Team verlassen",
+    "leaveTeamLeaving": "Wird verlassen…",
+    "leaveTeamConfirm": "Dieses Team verlassen? Sie können später erneut eingeladen werden.",
+    "leaveTeamBlockedSoleOwner": "Sie sind der einzige Inhaber. Übertragen Sie die Inhaberschaft oder löschen Sie das Team, bevor Sie austreten.",
+    "transferOwnershipTitle": "Inhaberschaft übertragen",
+    "transferOwnershipHint": "Machen Sie ein anderes Mitglied zum Inhaber. Sie werden Administrator und können das Team danach verlassen.",
+    "transferOwnershipSelectLabel": "Neuer Inhaber",
+    "transferOwnershipSelectPlaceholder": "Mitglied wählen…",
+    "transferOwnershipButton": "Inhaberschaft übertragen",
+    "transferOwnershipConfirm": "Inhaberschaft an {name} übertragen? Sie werden Administrator.",
+    "transferOwnershipModalHint": "Sie übertragen die Inhaberschaft an {name}. Sie werden Administrator. Dies kann hier nicht rückgängig gemacht werden.",
+    "transferOwnershipModalEmailLabel": "Geben Sie Ihre E-Mail-Adresse zur Bestätigung ein",
+    "transferOwnershipModalPasswordLabel": "Ihr Passwort",
+    "transferOwnershipEmailMismatch": "E-Mail stimmt nicht mit Ihrem Konto überein.",
+    "transferOwnershipInvalidPassword": "Falsches Passwort. Bitte erneut versuchen.",
+    "transferOwnershipTransferring": "Wird übertragen…",
+    "transferOwnershipNoMembers": "Laden Sie mindestens ein weiteres Mitglied ein, bevor Sie die Inhaberschaft übertragen können.",
+    "transferOwnershipSuccess": "Inhaberschaft übertragen. Sie sind jetzt Administrator mit einem persönlichen Konto.",
+    "deleteTeamTitle": "Team löschen",
+    "deleteTeamHint": "Löscht dieses Team, alle Mitglieder und offene Einladungen dauerhaft. Dies kann nicht rückgängig gemacht werden.",
+    "deleteTeamButton": "Team löschen",
+    "deleteTeamModalTitle": "{team} löschen?",
+    "deleteTeamModalHint": "Alle Mitglieder verlieren den Zugang. Dies kann nicht rückgängig gemacht werden.",
+    "deleteTeamModalSlugLabel": "Geben Sie {slug} zur Bestätigung ein",
+    "deleteTeamModalCancel": "Abbrechen",
+    "deleteTeamModalConfirm": "Team löschen",
+    "deleteTeamSlugMismatch": "Slug stimmt nicht überein.",
+    "deleteTeamDeleting": "Wird gelöscht…",
+    "errors": {
+      "invalidEmail": "Bitte eine gültige E-Mail-Adresse eingeben.",
+      "pendingDuplicate": "Für diese Adresse liegt bereits eine ausstehende Einladung vor.",
+      "notAuthenticated": "Sie müssen sich erneut anmelden.",
+      "notAMember": "Sie sind kein Mitglied dieses Teams.",
+      "soleOwnerCannotLeave": "Der einzige Inhaber kann das Team nicht verlassen. Ernennen Sie zuerst einen anderen Inhaber.",
+      "cannotRemoveOwner": "Inhaber können nicht aus dem Team entfernt werden. Sie müssen selbst austreten oder zuerst die Inhaberschaft übertragen.",
+      "notOwner": "Nur Team-Inhaber können dies tun.",
+      "targetNotMember": "Diese Person ist kein Mitglied dieses Teams.",
+      "alreadyOwner": "Sie sind bereits Inhaber.",
+      "rpcNotApplied": "Datenbank-Update fehlt. Führen Sie in der Supabase SQL Editor die Datei supabase/APPLY_transfer_ownership_and_delete_team.sql aus und versuchen Sie es erneut.",
+      "rpcNotAppliedRole": "Rollenänderungen sind in der Datenbank noch nicht eingerichtet. Führen Sie supabase/migrations/20260528240000_update_organization_member_role.sql im Supabase SQL Editor aus.",
+      "cannotChangeOwner": "Die Rolle des Inhabers kann hier nicht geändert werden. Nutzen Sie die Inhaberschaftsübertragung.",
+      "cannotChangeSelf": "Sie können Ihre eigene Rolle nicht ändern.",
+      "generic": "{message}"
+    }
+  },
+  "appJoin": {
+    "title": "Teameinladung annehmen",
+    "hint": "Sie müssen mit der E-Mail-Adresse angemeldet sein, an die die Einladung gesendet wurde.",
+    "loading": "Laden…",
+    "backToTeams": "Zurück zum Konto",
+    "missingToken": "Diese Seite benötigt ein Einladungstoken. Öffnen Sie den Link aus der E-Mail erneut.",
+    "accept": "Einladung annehmen",
+    "accepting": "Wird beigetreten…",
+    "success": "Sie sind dabei. Als Nächstes das Team öffnen.",
+    "alreadyMember": "Sie sind bereits Mitglied dieses Teams.",
+    "goToTeam": "Team öffnen",
+    "genericError": "Einladung konnte nicht angenommen werden. Erneut versuchen oder neue Einladung anfordern.",
+    "notConfigured": "Anmeldung ist für diese Website nicht konfiguriert.",
+    "error": {
+      "emailRequired": "Ihrer Sitzung fehlt eine E-Mail. Melden Sie sich mit E-Mail/Passwort an (oder einem Anbieter mit E-Mail-Claim).",
+      "invalidOrExpired": "Einladungslink ungültig oder abgelaufen.",
+      "emailMismatch": "Melden Sie sich mit der eingeladenen E-Mail-Adresse an."
+    }
+  },
+  "hero": {
+    "badge": "DSGVO-freundlich für sensible Unternehmensdaten",
+    "headline": "KI-Besprechungsnotizen, die nie Ihr Gerät verlassen",
+    "subheadline": "Nehmen Sie Ihre Besprechungen auf, transkribieren und fassen Sie sie zusammen — vollständig auf Ihrem Gerät. Für Teams und Organisationen, die Besprechungsinhalte nicht in die Cloud senden dürfen.",
+    "cta": "Kostenlos herunterladen",
+    "ctaSecondary": "Preise ansehen",
+    "appScreenshot": "MeetingRoom App-Screenshot"
+  },
+  "features": {
+    "label": "Funktionen",
+    "headline": "Alles, was Sie für intelligentere Besprechungen brauchen",
+    "subheadline": "Leistungsstarke KI, die lokal läuft — kein Internet erforderlich, keine Daten verlassen Ihr Gerät.",
+    "transcription": {
+      "title": "Lokale Transkription",
+      "description": "Läuft vollständig auf Ihrem Gerät. Es werden niemals Audiodaten gesendet — Ihre Gespräche bleiben privat."
+    },
+    "diarization": {
+      "title": "Sprechererkennung",
+      "description": "Erkennt automatisch, wer was gesagt hat, damit Ihre Transkripte sich wie ein echtes Gespräch lesen."
+    },
+    "summaries": {
+      "title": "KI-Zusammenfassungen",
+      "description": "Anpassbare Vorlagen extrahieren Aktionspunkte, wichtige Entscheidungen und Erkenntnisse — auch aus langen Besprechungen."
+    },
+    "chat": {
+      "title": "Besprechungs-Chat-Assistent",
+      "description": "Stellen Sie Fragen zu Ihrer Besprechung, hängen Sie Dokumente und Bilder an und erhalten Sie sofortige Antworten."
+    },
+    "multilingual": {
+      "title": "Mehrsprachig",
+      "description": "Volle Unterstützung für Niederländisch, Englisch, Französisch, Deutsch und Spanisch — Oberfläche und KI-Ausgabe."
+    },
+    "privacy": {
+      "title": "Datenschutz zuerst",
+      "description": "Alles läuft lokal. Praktisch für DSGVO-bewusste Teams — keine Cloud-Verarbeitung Ihrer Besprechungsaudio oder Transkripte."
+    }
+  },
+  "gdpr": {
+    "badge": "DSGVO-freundlich",
+    "headline": "Für Organisationen mit sensiblen Informationen",
+    "description": "MeetingRoom speichert Besprechungsaudio, Transkripte und KI-Ausgaben auf Ihren Geräten — nicht auf Servern Dritter. Das macht es zu einer starken Wahl für Unternehmen und Behörden, die personenbezogene Datenübermittlungen begrenzen und vertrauliche Gespräche nach der DSGVO schützen müssen.",
+    "points": {
+      "local": {
+        "title": "Keine Cloud-Verarbeitung",
+        "description": "Aufnahme, Transkription und Zusammenfassung laufen auf Ihrer Hardware. Besprechungsinhalte werden nicht an externe KI-Dienste gesendet."
+      },
+      "control": {
+        "title": "Sie behalten die Kontrolle",
+        "description": "Daten bleiben auf von Ihnen verwalteten Rechnern. Leichter abzustimmen mit Aufbewahrungsfristen, Zugriffskontrollen und internen Sicherheitsanforderungen."
+      },
+      "minimize": {
+        "title": "Datenminimierung by Design",
+        "description": "Weniger Auftragsverarbeiter und grenzüberschreitende Übermittlungen für Besprechungsinhalte — ein klareres Bild für Datenschutzbeauftragte und DSFA."
+      },
+      "teams": {
+        "title": "Für regulierte Teams",
+        "description": "Geeignet für Recht, Gesundheitswesen, Finanzen, öffentlichen Sektor und jede Organisation, die sensible oder personenbezogene Informationen in Besprechungen verarbeitet."
+      }
+    }
+  },
+  "howItWorks": {
+    "label": "So funktioniert's",
+    "headline": "Von der Besprechung zu verwertbaren Notizen in Minuten",
+    "step1": {
+      "title": "Aufnehmen",
+      "description": "Starten Sie die Aufnahme Ihrer Besprechung mit einem Klick. Funktioniert mit jedem Mikrofon."
+    },
+    "step2": {
+      "title": "Transkribieren",
+      "description": "KI transkribiert Ihre Besprechung in Echtzeit und identifiziert jeden Sprecher automatisch."
+    },
+    "step3": {
+      "title": "Zusammenfassen",
+      "description": "Erhalten Sie strukturierte Zusammenfassungen, Aktionspunkte und chatten Sie mit Ihren Notizen — alles mit KI."
+    }
+  },
+  "pricing": {
+    "label": "Preise",
+    "headline": "Einfache Preise für alle",
+    "subheadline": "Starten Sie kostenlos, upgraden Sie wenn Sie bereit sind. Keine versteckten Gebühren.",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "perSeat": "pro Platz",
+    "personal": {
+      "name": "Persönlich",
+      "price": "9 €",
+      "period": "/Monat",
+      "description": "Für Einzelpersonen, die intelligentere Besprechungsnotizen wollen.",
+      "features": [
+        "Unbegrenzte Besprechungen",
+        "Lokale Transkription & Zusammenfassungen",
+        "Sprechererkennung",
+        "Besprechungs-Chat-Assistent",
+        "Alle 5 Sprachen",
+        "Export als PDF & Word"
+      ],
+      "cta": "Loslegen"
+    },
+    "team": {
+      "name": "Team",
+      "price": "7 €",
+      "period": "/Platz/Monat",
+      "description": "Für Teams, die bei Besprechungsnotizen zusammenarbeiten möchten.",
+      "badge": "Beliebteste",
+      "features": [
+        "Alles in Persönlich",
+        "Team-Lizenzverwaltung",
+        "Zentrale Abrechnung",
+        "Prioritäts-Support",
+        "Admin-Dashboard",
+        "Mengenrabatte",
+        "DSGVO-freundliche lokale Verarbeitung"
+      ],
+      "cta": "Loslegen"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Individuell",
+      "period": "",
+      "description": "Für Organisationen mit erweiterten Anforderungen.",
+      "features": [
+        "Alles in Team",
+        "Individuelle Bereitstellung",
+        "Dedizierter Support",
+        "SLA-Garantie",
+        "Volumenlizenzen",
+        "Beschaffung & Rechnungsstellung",
+        "DSGVO-konforme lokale Verarbeitung"
+      ],
+      "cta": "Vertrieb kontaktieren"
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "headline": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Ist MeetingRoom für die DSGVO und sensible Daten geeignet?",
+        "answer": "MeetingRoom ist für Organisationen gedacht, die personenbezogene und vertrauliche Informationen schützen müssen. Da Besprechungsaudio und KI-Verarbeitung auf Ihren Geräten bleiben, senden Sie keine Besprechungsinhalte an Cloud-KI-Anbieter Dritter. Das unterstützt typische DSGVO-Ziele wie begrenzte Übermittlungen, weniger Auftragsverarbeiter für Besprechungsdaten und Kontrolle über die Aufbewahrung. Ihre Organisation bleibt für die eigene DSGVO-Konformität verantwortlich — aber local-first Verarbeitung beseitigt ein großes Risiko im Vergleich zu reinen Cloud-Tools."
+      },
+      {
+        "question": "Werden meine Daten lokal gespeichert?",
+        "answer": "Ja, zu 100 %. MeetingRoom verarbeitet alles auf Ihrem Gerät. Ihre Audio-, Transkriptions- und Zusammenfassungsdaten verlassen nie Ihren Computer. Es sind keine Cloud-Server an der Verarbeitung Ihrer Daten beteiligt."
+      },
+      {
+        "question": "Welche Plattformen werden unterstützt?",
+        "answer": "MeetingRoom ist derzeit für Windows verfügbar. macOS- und Linux-Unterstützung ist für zukünftige Versionen geplant."
+      },
+      {
+        "question": "Was sind die Systemanforderungen?",
+        "answer": "MeetingRoom benötigt einen modernen Computer mit mindestens 8 GB RAM. Für die beste Erfahrung mit KI-Funktionen werden 16 GB RAM und eine dedizierte GPU empfohlen."
+      },
+      {
+        "question": "Wie funktioniert die Lizenz?",
+        "answer": "Persönliche Lizenzen gelten pro Benutzer. Team-Lizenzen gelten pro Platz mit zentraler Abrechnung. Sie können Ihr Abonnement und Ihre Plätze über das Paddle-Kundenportal verwalten."
+      },
+      {
+        "question": "Wird eine Internetverbindung benötigt?",
+        "answer": "Nur für den erstmaligen Download der KI-Modelle (einmalige Einrichtung). Danach funktioniert MeetingRoom vollständig offline. Für Aufnahme, Transkription oder Zusammenfassung ist keine Internetverbindung erforderlich."
+      },
+      {
+        "question": "Welche Sprachen werden unterstützt?",
+        "answer": "MeetingRoom unterstützt Niederländisch, Englisch, Französisch, Deutsch und Spanisch — sowohl für die Benutzeroberfläche als auch für KI-Transkription und Zusammenfassungen."
+      }
+    ]
+  },
+  "cta": {
+    "headline": "Bereit, Ihre Besprechungen zu transformieren?",
+    "subheadline": "Laden Sie MeetingRoom kostenlos herunter und erleben Sie KI-Besprechungsnotizen, die Ihre Privatsphäre respektieren.",
+    "download": "Kostenlos herunterladen",
+    "forTeams": "Für Teams →"
+  },
+  "footer": {
+    "description": "KI-Besprechungsnotizen, die auf Ihrem Gerät bleiben.",
+    "product": "Produkt",
+    "resources": "Ressourcen",
+    "legal": "Rechtliches",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "download": "Herunterladen",
+    "faq": "FAQ",
+    "documentation": "Dokumentation",
+    "changelog": "Änderungsprotokoll",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt",
+    "copyright": "© {year} Innovolabs. Alle Rechte vorbehalten."
+  },
+  "auth": {
+    "backHome": "Zur Startseite",
+    "badge": "Datenschutz zuerst",
+    "asideTitle": "Ihre Besprechungen bleiben auf Ihrem Gerät",
+    "asideSubtitle": "Melden Sie sich an, um Teams und Einladungen im Web zu verwalten. Aufnahme und KI laufen lokal in der Desktop-App.",
+    "trustLocal": "Lokale KI — Audio verlässt Ihr Gerät nicht",
+    "trustTeams": "Kollegen einladen und Zugriff online verwalten",
+    "trustGdpr": "Für Organisationen mit sensiblen Daten",
+    "loginTitle": "Willkommen zurück",
+    "loginSubtitle": "Melden Sie sich an, um Ihr Konto und Teams zu öffnen.",
+    "signupTitle": "Konto erstellen",
+    "signupSubtitle": "Kostenlos registrieren. Desktop-App nach der Anmeldung herunterladen.",
+    "signupSubtitleInvite": "Verwenden Sie die eingeladene E-Mail-Adresse, um dem Team beizutreten.",
+    "inviteBanner": "Sie treten {team} bei",
+    "email": "E-Mail",
+    "emailPlaceholder": "sie@firma.de",
+    "emailAlreadyRegistered": "Mit dieser E-Mail-Adresse existiert bereits ein Konto.",
+    "signInInstead": "Stattdessen anmelden",
+    "password": "Passwort",
+    "passwordHint": "Mindestens 8 Zeichen",
+    "confirmPassword": "Passwort bestätigen",
+    "passwordMismatch": "Passwörter stimmen nicht überein.",
+    "holdToShowPassword": "Gedrückt halten, um Passwort anzuzeigen",
+    "fullName": "Vollständiger Name",
+    "fullNamePlaceholder": "Alex Müller",
+    "fullNameRequired": "Bitte geben Sie Ihren vollständigen Namen ein (mindestens 2 Zeichen).",
+    "company": "Unternehmen oder Team",
+    "companyPlaceholder": "Acme GmbH",
+    "companyOptional": "Optional",
+    "signIn": "Anmelden",
+    "signingIn": "Anmeldung…",
+    "desktopHandoffTitle": "Angemeldet — MeetingRoom öffnen",
+    "desktopHandoffSubtitle": "Die Desktop-App sollte sich automatisch öffnen.",
+    "desktopHandoffHint": "Wenn sich MeetingRoom nicht öffnet, klicken Sie auf die Schaltfläche unten. Sie können diesen Tab danach schließen.",
+    "desktopHandoffOpenApp": "MeetingRoom-App öffnen",
+    "desktopHandoffCloseTab": "Schließen Sie diesen Tab, sobald die App Sie angemeldet hat.",
+    "desktopAccountPromptTitle": "Bei MeetingRoom anmelden",
+    "desktopAccountPromptSubtitle": "Sie sind bereits im Web angemeldet. Dieses Konto in der Desktop-App verwenden oder ein anderes wählen.",
+    "desktopAccountPromptEmailLabel": "Angemeldet als",
+    "desktopAccountPromptSignedInFallback": "Angemeldet",
+    "desktopAccountPromptLogIn": "Anmelden",
+    "desktopAccountPromptOtherAccount": "Mit anderem Konto anmelden",
+    "desktopHandoffFailed": "Die Desktop-App konnte nicht verbunden werden. Bitte erneut versuchen.",
+    "signUp": "Konto erstellen",
+    "signingUp": "Konto wird erstellt…",
+    "noAccount": "Noch kein Konto?",
+    "haveAccount": "Bereits ein Konto?",
+    "createAccount": "Jetzt registrieren",
+    "notConfigured": "Anmeldung ist nicht konfiguriert. NEXT_PUBLIC_SUPABASE_URL und NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY setzen.",
+    "confirmEmailDefault": "Wir haben einen Bestätigungslink und einen 6-stelligen Code gesendet. Geben Sie den Code unten ein.",
+    "confirmEmailInvite": "Link und Code wurden gesendet. Geben Sie den Code ein, um dem Team beizutreten.",
+    "verificationTitle": "E-Mail bestätigen",
+    "verificationSubtitle": "Geben Sie den Code aus Ihrer E-Mail ein, um die Registrierung abzuschließen.",
+    "verificationSentTo": "Code gesendet an",
+    "verificationCode": "Bestätigungscode",
+    "verificationCodeInvalid": "Geben Sie den 6-stelligen Code aus Ihrer E-Mail ein.",
+    "verifyEmail": "Bestätigen und fortfahren",
+    "verifying": "Wird bestätigt…",
+    "resendCode": "Code erneut senden",
+    "resendCodeSent": "Ein neuer Code wurde an Ihre E-Mail gesendet.",
+    "resendCodeWait": "Erneut in {seconds}s",
+    "backToRegistration": "← Zurück zur Registrierung",
+    "backToLogin": "← Zurück zur Anmeldung",
+    "loginEmailNotConfirmed": "Ihre E-Mail ist noch nicht bestätigt. Wir haben einen neuen Code gesendet.",
+    "loginEmailNotConfirmedNoResend": "Ihre E-Mail ist noch nicht bestätigt. Geben Sie den Code ein oder nutzen Sie „Code erneut senden“.",
+    "loginVerificationSubtitle": "Geben Sie den Code aus Ihrer E-Mail ein. Danach werden Sie automatisch angemeldet."
+  },
+  "standalone": {
+    "backHome": "Zur Startseite",
+    "faq": {
+      "meta": {
+        "title": "FAQ — MeetingRoom",
+        "description": "Antworten zu DSGVO, lokaler Verarbeitung, Plattformen, Lizenzen, Sprachen und Offline-Nutzung."
+      }
+    },
+    "documentation": {
+      "meta": {
+        "title": "Dokumentation — MeetingRoom",
+        "description": "MeetingRoom installieren, lokale KI-Modelle laden, Besprechungen aufzeichnen und Notizen exportieren."
+      },
+      "headline": "Dokumentation",
+      "intro": "Diese Anleitungen helfen Ihnen, MeetingRoom unter Windows zu installieren und lokale KI-Besprechungsnotizen zu nutzen.",
+      "sections": [
+        {
+          "title": "Installation (Windows)",
+          "body": "Laden Sie das Installationsprogramm im Preisbereich unserer Website herunter. Folgen Sie dem Assistenten und wählen Sie einen Ort mit ausreichend Speicher für KI-Modelle (mehrere Gigabyte).\n\nErscheint Windows SmartScreen, nutzen Sie „Weitere Informationen“ und „Trotzdem ausführen“ nur wenn Sie dem Herausgeber (Innovolabs) vertrauen."
+        },
+        {
+          "title": "Erster Start und Modelle",
+          "body": "Beim ersten Start kann MeetingRoom Sprach- und Sprachmodelle herunterladen; dazu ist oft Internet erforderlich. Danach funktionieren Transkription und Zusammenfassungen vollständig offline.\n\nSpeicherplatz können Sie bei Bedarf in den App-Einstellungen verwalten."
+        },
+        {
+          "title": "Aufzeichnung und Export",
+          "body": "Starten Sie eine neue Aufzeichnung auf dem Hauptbildschirm. Setzen Sie das Mikrofon günstig für Sprecherzuordnung.\n\nExportieren Sie nach PDF oder Word, sofern Ihre Lizenz es erlaubt. Inhalt bleibt auf Ihrem Gerät, es sei denn Sie kopieren ihn anderweitig."
+        },
+        {
+          "title": "Sprachen und Fehlerbehebung",
+          "body": "MeetingRoom unterstützt Niederländisch, Englisch, Französisch, Deutsch und Spanisch für Oberfläche und KI-Ausgabe.\n\nLangsame Transkription? Schließen Sie andere ressourcenintensive Apps, nutzen Sie Netzteil bei Laptops und prüfen Sie den Modell-Download. Ansonsten Support mit Versionsnummer aus dem Änderungsprotokoll kontaktieren."
+        }
+      ]
+    },
+    "changelog": {
+      "meta": {
+        "title": "Änderungsprotokoll — MeetingRoom",
+        "description": "Versionshistorie und wichtige Neuerungen von MeetingRoom."
+      },
+      "headline": "Änderungsprotokoll",
+      "intro": "Kernaussagen je Release; Versionsnummern entsprechen veröffentlichten Installern.",
+      "downloadWindows": "Installer herunterladen — Windows",
+      "notesEnglishHint": "Die Hinweise zu diesem Release stehen unten auf Englisch.",
+      "githubSyncLine": "Liste wird von GitHub-Releases geholt und etwa alle fünf Minuten aktualisiert. Hinweise sind oft auf Englisch.",
+      "releaseNotesUnavailable": "Keine beschreibenden Release Notes auf dieser GitHub-Version — nutzen Sie den Installer-Link oben.",
+      "releases": [
+        {
+          "version": "1.0.14",
+          "date": "Mai 2025",
+          "notes": "Stabilitätsfixes, UI-Feinschliff und verbesserte Handhabung lokaler Modelle."
+        },
+        {
+          "version": "1.0.0",
+          "date": "Anfang 2025",
+          "notes": "Erstes stabiles Release mit lokaler Transkription, Sprechererkennung, Zusammenfassungen und Besprechungs-Chat."
+        },
+        {
+          "version": "0.9.0",
+          "date": "Beta",
+          "notes": "Öffentliche Beta mit Fokus auf Aufzeichnung und Transkription."
+        }
+      ]
+    },
+    "privacy": {
+      "meta": {
+        "title": "Datenschutzrichtlinie — MeetingRoom",
+        "description": "Wie MeetingRoom Ihre Daten mit lokalem Schwerpunkt behandelt."
+      },
+      "headline": "Datenschutzrichtlinie",
+      "updated": "Zuletzt aktualisiert: 27. Mai 2026",
+      "disclaimer": "Diese Hinweise sind allgemeiner Natur und ersetzen keine Rechtsberatung. Für Ihre Organisation und Gesetzgebung bitte juristisch prüfen.",
+      "sections": [
+        {
+          "title": "Überblick",
+          "body": "MeetingRoom verarbeitet und speichert Audio, Transkripte und KI-Notizen bevorzugt auf Ihren Geräten. Wir betreiben keinen gleichartigen Cloud-Dienst zur Verarbeitung Ihrer Besprechungsinhalte wie viele Online-Assistenten."
+        },
+        {
+          "title": "Welche Daten wir erfassen können",
+          "body": "Beim Kauf verarbeitet Ihr Zahlungsanbieter (z. B. Paddle) Rechnungsdaten nach eigener Datenschutzerklärung. Die Website kann übliche technische Protokolle des Hostings festhalten (z. B. IP-Adresse und Browsertyp).\n\nDie Desktop-Anwendung ist so konzipiert, dass Besprechungsmaterial lokal auf dem Gerät verbleibt."
+        },
+        {
+          "title": "Lokale Verarbeitung",
+          "body": "KI-Transkription, Zusammenfassungen und Chat laufen nach Modellinstallation auf Ihrer Hardware. Sichern Sie den Gerätezugang mit Passwort, Verschlüsselung und organisatorischen Maßnahmen."
+        },
+        {
+          "title": "Speicherung und Ihre Kontrolle",
+          "body": "Sie entscheiden, wie lange Daten auf der Festplatte bleiben. Deinstallation oder lokales Löschen entfernt Inhalte auf dem Gerät, vorbehältlich Betriebssystem und Backups."
+        },
+        {
+          "title": "Kontakt",
+          "body": "Fragen zu dieser Richtlinie können an die Adressen auf der Kontaktseite geschickt werden."
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Nutzungsbedingungen — MeetingRoom",
+        "description": "Bedingungen für die MeetingRoom-Software und diese Website."
+      },
+      "headline": "Nutzungsbedingungen",
+      "updated": "Zuletzt aktualisiert: 27. Mai 2026",
+      "disclaimer": "Allgemeine Mustervorlage — für Geschäftskunden rechtslich prüfen lassen.",
+      "sections": [
+        {
+          "title": "Zustimmung",
+          "body": "Mit Download, Installation oder Nutzung von MeetingRoom akzeptieren Sie diese Bedingungen; andernfalls nutzen Sie das Programm nicht."
+        },
+        {
+          "title": "Lizenz",
+          "body": "Wir gewähren eine beschränkte, nicht ausschließliche, nicht übertragbare Lizenz je nach gekaufter Stufe (Personal, Team, Enterprise). Untersagt u. a. Reverse Engineering und Weiterverkauf sowie Entfernung von Schutzrechtsvermerken, sofern nicht zwingendes Recht entgegensteht."
+        },
+        {
+          "title": "Zulässige Nutzung",
+          "body": "Sie sind für die Einhaltung der Gesetze zu Aufzeichnungen und Teilnehmereinwilligung verantwortlich. MeetingRoom nicht einsetzen, um Datenschutz oder Vertraulichkeit zu verletzen."
+        },
+        {
+          "title": "Haftungsausschluss",
+          "body": "Die Software wird „wie besehen“ ohne Gewährleistungen im gesetzlich zulässigen Rahmen bereitgestellt. KI-Ausgaben können fehlerhaft sein; wichtige Entscheidungen prüfen Sie selbst."
+        },
+        {
+          "title": "Haftungsbeschränkung",
+          "body": "Soweit gesetzlich möglich, haften Innovolabs und Lieferanten nicht für indirekte Schäden, entgangenen Gewinn oder Datenverlust aus der Nutzung von MeetingRoom."
+        },
+        {
+          "title": "Anwendbares Recht",
+          "body": "Diese Bedingungen unterliegen dem von Innovolabs für Ihre Vertragsparteien benannten Recht unter Ausschluss des IPR. Gerichte dieses Ortes sind zuständig, soweit zwingende Verbraucherschutznormen nichts anderes fordern."
+        }
+      ]
+    },
+    "contact": {
+      "meta": {
+        "title": "Kontakt — MeetingRoom",
+        "description": "Support und Vertrieb für MeetingRoom erreichen."
+      },
+      "headline": "Kontakt",
+      "intro": "Sagen Sie uns, wie wir helfen können. Bei Fehlern bitte Versionsnummer und Schritte zur Reproduktion angeben.",
+      "supportLabel": "Produktsupport",
+      "salesLabel": "Vertrieb & Enterprise",
+      "supportEmail": "support@innovolabs.com",
+      "salesEmail": "sales@innovolabs.com",
+      "hours": "Wir antworten in der Regel innerhalb von zwei Werktagen."
+    }
+  }
+}

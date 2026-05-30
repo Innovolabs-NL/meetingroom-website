@@ -1,0 +1,665 @@
+{
+  "meta": {
+    "title": "MeetingRoom — AI-vergadernotities die op uw apparaat blijven",
+    "description": "Neem op, transcribeer en vat uw vergaderingen samen met lokale AI. AVG-vriendelijk voor bedrijven en organisaties met gevoelige informatie. Uw data verlaat nooit uw apparaat."
+  },
+  "nav": {
+    "features": "Functies",
+    "gdpr": "AVG",
+    "pricing": "Prijzen",
+    "faq": "Veelgestelde vragen",
+    "download": "Downloaden",
+    "signIn": "Inloggen",
+    "signUp": "Registreren",
+    "account": "Account",
+    "teams": "Teams"
+  },
+  "appShell": {
+    "navAccount": "Account",
+    "navOverview": "Overzicht",
+    "navSetupTeam": "Team instellen",
+    "navAccountSettings": "Instellingen",
+    "navHelp": "Help",
+    "navMembers": "Leden",
+    "navInvites": "Uitnodigingen",
+    "navTeamSettings": "Teaminstellingen",
+    "accountKindPersonal": "Persoonlijk",
+    "accountKindTeam": "Team",
+    "backToWebsite": "← Terug naar website",
+    "backToAccount": "Terug naar account",
+    "noEmail": "Geen e-mail bekend",
+    "configTitle": "Configuratie nodig",
+    "configMissingEnv": "Zet NEXT_PUBLIC_SUPABASE_URL en NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY om het accountgebied te gebruiken.",
+    "notSignedInTitle": "Je bent niet ingelogd",
+    "notSignedInHint": "Log in met hetzelfde account als in de desktop-app.",
+    "goToSignIn": "Naar inloggen",
+    "overviewTitle": "Overzicht",
+    "overviewPersonalSubtitle": "Je vergaderingen blijven op je apparaat. Gebruik de desktop-app om op te nemen en te transcriberen.",
+    "overviewTeamSubtitle": "Beheer je team en uitnodigingen via het menu links.",
+    "overviewMemberSubtitle": "Je zit in een team. Open je team via het menu links om leden te bekijken.",
+    "overviewTeamSetupSubtitle": "Teamaccounts hebben één team. Maak het aan om leden uit te nodigen.",
+    "memberOfTeam": "Lid · {team}",
+    "memberDesktopHint": "Gebruik de MeetingRoom desktop-app voor vergaderingen. Je teamlidmaatschap beheer je hier op het web.",
+    "viewTeam": "Team openen",
+    "personalCardTitle": "Persoonlijk account",
+    "personalCardHint": "Teams worden apart beheerd. Je beheerder kan team-modus voor dit account inschakelen.",
+    "downloadDesktop": "Desktop-app downloaden",
+    "gettingStartedTitle": "Aan de slag",
+    "gettingStartedStep1": "Download en installeer MeetingRoom voor Windows.",
+    "gettingStartedStep2": "Log in met hetzelfde e-mailadres in de desktop-app.",
+    "gettingStartedStep3": "Neem je eerste vergadering op — audio en AI blijven lokaal.",
+    "yourTeamLabel": "Jouw team",
+    "manageMembers": "Leden",
+    "manageInvites": "Uitnodigingen",
+    "setupTeamPageTitle": "Team instellen",
+    "setupTeamPageSubtitle": "Kies een naam voor je organisatie. Daarna kun je mensen uitnodigen.",
+    "settingsTitle": "Account",
+    "settingsSubtitle": "Je inloggegevens en accounttype.",
+    "settingsEmail": "E-mail",
+    "settingsAccountKind": "Accounttype",
+    "settingsAccountKindHint": "Om te wisselen tussen persoonlijk en team: pas profiles.account_kind aan in Supabase.",
+    "profileSectionTitle": "Je profiel",
+    "profileSectionHint": "Zichtbaar voor teamgenoten in de ledenlijst.",
+    "profileFullName": "Volledige naam",
+    "profileCompany": "Bedrijf",
+    "profileCompanyPlaceholder": "Optioneel",
+    "profileFullNameRequired": "Volledige naam moet minimaal 2 tekens zijn.",
+    "profileSave": "Profiel opslaan",
+    "profileSaving": "Opslaan…",
+    "profileSaved": "Profiel bijgewerkt.",
+    "securityEmailTitle": "E-mail wijzigen",
+    "securityEmailHint": "We sturen een verificatiecode naar je nieuwe adres.",
+    "securityNewEmail": "Nieuw e-mailadres",
+    "securityUpdateEmail": "E-mail bijwerken",
+    "securityVerifyEmail": "E-mail verifiëren",
+    "securityEmailInvalid": "Voer een geldig e-mailadres in.",
+    "securityEmailSame": "Dit is al je e-mailadres.",
+    "securityEmailOtpSent": "We hebben een code gestuurd naar {email}.",
+    "securityEmailOtpLead": "Voer de code in die naar {email} is gestuurd.",
+    "securityEmailUpdated": "E-mail bijgewerkt naar {email}. Log opnieuw in in de desktopapp als je nog je oude adres ziet.",
+    "securityOtpLabel": "Verificatiecode",
+    "securityOtpInvalid": "Ongeldige of verlopen code.",
+    "securityPasswordTitle": "Wachtwoord wijzigen",
+    "securityPasswordHint": "Kies een nieuw wachtwoord voor dit account (website en desktop).",
+    "securityNewPassword": "Nieuw wachtwoord",
+    "securityConfirmPassword": "Bevestig nieuw wachtwoord",
+    "securityUpdatePassword": "Wachtwoord bijwerken",
+    "securityPasswordTooShort": "Wachtwoord moet minstens 8 tekens zijn.",
+    "securityPasswordMismatch": "Wachtwoorden komen niet overeen.",
+    "securityPasswordUpdated": "Wachtwoord bijgewerkt.",
+    "securitySaving": "Opslaan…",
+    "securityCancel": "Annuleren",
+    "deleteAccountTitle": "Account verwijderen",
+    "deleteAccountHint": "Verwijdert je account, profiel en teamlidmaatschappen permanent. Dit kan niet ongedaan worden gemaakt.",
+    "deleteAccountButton": "Mijn account verwijderen",
+    "deleteAccountDeleting": "Verwijderen…",
+    "deleteAccountConfirm": "Je account permanent verwijderen? Dit kan niet ongedaan worden gemaakt.",
+    "deleteAccountModalTitle": "Account permanent verwijderen?",
+    "deleteAccountModalHint": "Hiermee worden je account, profiel en teamlidmaatschappen verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "deleteAccountModalEmailLabel": "Typ je e-mailadres ter bevestiging",
+    "deleteAccountModalPasswordLabel": "Je wachtwoord",
+    "deleteAccountModalCancel": "Annuleren",
+    "deleteAccountModalConfirm": "Account verwijderen",
+    "deleteAccountEmailMismatch": "E-mailadres komt niet overeen met je account.",
+    "deleteAccountInvalidPassword": "Onjuist wachtwoord. Probeer het opnieuw.",
+    "deleteAccountBlockedSoleOwner": "Je bent de enige eigenaar van een team. Maak eerst iemand anders eigenaar of verwijder het team.",
+    "deleteAccountBlockedTeams": "Je bent de enige eigenaar van: {teams}. Draag eigenaarschap over of verwijder het team eerst.",
+    "deleteAccountNotAuthenticated": "Je moet opnieuw inloggen.",
+    "deleteAccountErrorGeneric": "Account verwijderen mislukt: {message}",
+    "signOut": "Uitloggen",
+    "signingOut": "Bezig met uitloggen…",
+    "helpTitle": "Help",
+    "helpSubtitle": "Documentatie en ondersteuning.",
+    "helpDocs": "Documentatie",
+    "helpFaq": "Veelgestelde vragen",
+    "helpChangelog": "Changelog & downloads",
+    "helpContact": "Contact",
+    "teamSettingsTitle": "Teaminstellingen",
+    "teamSettingsSubtitle": "Basisgegevens van dit team.",
+    "teamSettingsName": "Teamnaam",
+    "teamSettingsSlug": "Korte naam (slug)",
+    "teamSettingsYourRole": "Jouw rol",
+    "dbErrorTitle": "Kon accountgegevens niet laden.",
+    "dbErrorHint": "Supabase-migraties nog niet uitgevoerd? Pas de SQL-bestanden in supabase/migrations toe."
+  },
+  "appHub": {
+    "breadcrumbTeams": "Team",
+    "title": "Jouw team",
+    "subtitle": "Nodig collega's per e-mail uit en beheer toegang (betaling zit los van dit scherm).",
+    "notSignedInTitle": "Je bent niet ingelogd",
+    "notSignedInHint": "Log in met hetzelfde account als in de desktop-app.",
+    "goToSignIn": "Naar inloggen",
+    "slugLabel": "Slug",
+    "roleLabel": "Rol",
+    "manageTeam": "Team beheren",
+    "createFirstTitle": "Stel je team in",
+    "createFirstHint": "Kies een naam voor je organisatie. Daarna kun je anderen uitnodigen.",
+    "teamNamePlaceholder": "Bedrijf bv.",
+    "createTeam": "Team aanmaken",
+    "creatingTeam": "Bezig…",
+    "errorNameRequired": "Voer een teamnaam in.",
+    "errorSlugConflict": "Die korte naam is bezet. Probeer een andere teamnaam.",
+    "errorTeamLimitReached": "Teamaccounts kunnen maar één team aanmaken.",
+    "errorNotAuthenticated": "Je moet opnieuw inloggen.",
+    "unknownError": "Er ging iets mis: {message}",
+    "dbErrorTitle": "Kon teams niet uit de database laden.",
+    "dbErrorHint": "Heb je de Supabase-migraties nog niet uitgevoerd? Pas dan de SQL-bestanden in supabase/migrations in deze repo toe.",
+    "personalModeTitle": "Dit is een persoonlijk account",
+    "personalModeHint": "Teams zijn uitgeschakeld voor persoonlijke accounts. Zet je account in Supabase op team-modus (profiles.account_kind = team) om teams te gebruiken.",
+    "configTitle": "Configuratie nodig",
+    "configMissingEnv": "Zet NEXT_PUBLIC_SUPABASE_URL en NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY in je omgeving om teams op de website te gebruiken.",
+    "configUnexpected": "Onverwachte fout: ",
+    "configBackHome": "Terug naar home"
+  },
+  "appTeam": {
+    "back": "← Overzicht",
+    "slug": "Slug",
+    "members": "Leden",
+    "membersSubtitle": "Mensen in dit team.",
+    "invitesSubtitle": "Nodig collega's per e-mail uit en deel de uitnodigingslink.",
+    "youPrefix": "Jij · ",
+    "inviteByEmail": "Uitnodigen per e-mail",
+    "email": "E-mail",
+    "emailPlaceholder": "jij@bedrijf.nl",
+    "roleLabel": "Rol",
+    "roleMember": "Lid",
+    "roleAdmin": "Beheerder",
+    "roleOwner": "Eigenaar",
+    "memberCount": "{count, plural, one {# lid} other {# leden}}",
+    "yourRoleLabel": "Jouw rol",
+    "inviteMembers": "Mensen uitnodigen",
+    "youBadge": "Jij",
+    "unknownMember": "Teamlid",
+    "removeMemberConfirm": "Deze persoon uit het team verwijderen?",
+    "removeMemberModalTitle": "Lid verwijderen?",
+    "leaveTeamModalTitle": "Team verlaten?",
+    "transferOwnershipModalTitle": "Eigenaarschap overdragen?",
+    "modalCancel": "Annuleren",
+    "sendInvite": "Uitnodiging sturen",
+    "inviteSent": "Uitnodiging aangemaakt. Kopieer de onderstaande link om te delen.",
+    "inviteEmailSent": "Uitnodigingsmail verstuurd. De ontvanger kan zich registreren via de link in de e-mail.",
+    "inviteEmailFailed": "Uitnodiging opgeslagen, maar de e-mail kon niet worden verstuurd. Controleer SMTP-instellingen en EMAIL_FROM, of kopieer de reserve-link.",
+    "inviteLinkBackup": "Reservelink (als de e-mail niet aankomt):",
+    "pendingInvites": "Openstaande uitnodigingen",
+    "expires": "Verloopt",
+    "inviteLinkHint": "Deel deze link (geldig tot verlopen of intrekken):",
+    "copyLink": "Link kopiëren",
+    "copied": "Gekopieerd",
+    "revokeInvite": "Intrekken",
+    "removeMember": "Verwijderen",
+    "changeMemberRole": "Rol wijzigen",
+    "leaveTeamTitle": "Team verlaten",
+    "leaveTeamHint": "Je verliest toegang tot dit team op de website. Je kunt opnieuw meedoen als iemand je uitnodigt.",
+    "leaveTeamButton": "Team verlaten",
+    "leaveTeamLeaving": "Verlaten…",
+    "leaveTeamConfirm": "Dit team verlaten? Je kunt later opnieuw worden uitgenodigd.",
+    "leaveTeamBlockedSoleOwner": "Je bent de enige eigenaar. Draag het eigenaarschap over aan een ander lid of verwijder het team voordat je vertrekt.",
+    "transferOwnershipTitle": "Eigenaarschap overdragen",
+    "transferOwnershipHint": "Maak een ander lid eigenaar. Je wordt beheerder en kunt daarna het team verlaten.",
+    "transferOwnershipSelectLabel": "Nieuwe eigenaar",
+    "transferOwnershipSelectPlaceholder": "Kies een lid…",
+    "transferOwnershipButton": "Eigenaarschap overdragen",
+    "transferOwnershipConfirm": "Eigenaarschap overdragen aan {name}? Je wordt beheerder.",
+    "transferOwnershipModalHint": "Je draagt het eigenaarschap over aan {name}. Je wordt beheerder. Dit kun je hier niet ongedaan maken.",
+    "transferOwnershipModalEmailLabel": "Voer je e-mailadres in ter bevestiging",
+    "transferOwnershipModalPasswordLabel": "Je wachtwoord",
+    "transferOwnershipEmailMismatch": "E-mail komt niet overeen met je account.",
+    "transferOwnershipInvalidPassword": "Onjuist wachtwoord. Probeer het opnieuw.",
+    "transferOwnershipTransferring": "Overdragen…",
+    "transferOwnershipNoMembers": "Nodig minstens één ander lid uit voordat je eigenaarschap kunt overdragen.",
+    "transferOwnershipSuccess": "Eigenaarschap overgedragen. Je bent nu beheerder met een persoonlijk account.",
+    "deleteTeamTitle": "Team verwijderen",
+    "deleteTeamHint": "Verwijdert dit team, alle leden en openstaande uitnodigingen permanent. Dit kan niet ongedaan worden gemaakt.",
+    "deleteTeamButton": "Team verwijderen",
+    "deleteTeamModalTitle": "{team} verwijderen?",
+    "deleteTeamModalHint": "Alle leden verliezen toegang. Dit kan niet ongedaan worden gemaakt.",
+    "deleteTeamModalSlugLabel": "Typ {slug} om te bevestigen",
+    "deleteTeamModalCancel": "Annuleren",
+    "deleteTeamModalConfirm": "Team verwijderen",
+    "deleteTeamSlugMismatch": "Slug komt niet overeen.",
+    "deleteTeamDeleting": "Verwijderen…",
+    "errors": {
+      "invalidEmail": "Voer een geldig e-mailadres in.",
+      "pendingDuplicate": "Er is al een openstaande uitnodiging voor dat adres.",
+      "notAuthenticated": "Je moet opnieuw inloggen.",
+      "notAMember": "Je bent geen lid van dit team.",
+      "soleOwnerCannotLeave": "De enige eigenaar kan het team niet verlaten. Maak eerst iemand anders eigenaar.",
+      "cannotRemoveOwner": "Eigenaars kunnen niet uit het team worden verwijderd. Ze moeten zelf vertrekken of eerst eigenaarschap overdragen.",
+      "notOwner": "Alleen team-eigenaren kunnen dit doen.",
+      "targetNotMember": "Die persoon is geen lid van dit team.",
+      "alreadyOwner": "Je bent al de eigenaar.",
+      "rpcNotApplied": "Database-update ontbreekt. Voer in de Supabase SQL Editor supabase/APPLY_transfer_ownership_and_delete_team.sql uit, en probeer opnieuw.",
+      "rpcNotAppliedRole": "Rolwijzigingen zijn nog niet ingesteld in de database. Voer supabase/migrations/20260528240000_update_organization_member_role.sql uit in de Supabase SQL Editor.",
+      "cannotChangeOwner": "De rol van de eigenaar kan hier niet worden gewijzigd. Gebruik eigenaarschap overdragen.",
+      "cannotChangeSelf": "Je kunt je eigen rol niet wijzigen.",
+      "generic": "{message}"
+    }
+  },
+  "appJoin": {
+    "title": "Teamuitnodiging accepteren",
+    "hint": "Open de link uit je uitnodigingsmail, of log in met het uitgenodigde adres.",
+    "invitePreviewLead": "Je bent uitgenodigd voor",
+    "invitePreviewEmail": "Gebruik dit e-mailadres bij registratie",
+    "createAccount": "Account aanmaken",
+    "signInExisting": "Ik heb al een account",
+    "signedInAcceptHint": "Je bent ingelogd. Accepteer om {team} te joinen.",
+    "loading": "Laden…",
+    "backToTeams": "Terug naar account",
+    "missingToken": "Deze pagina heeft een uitnodigingstoken. Open de uitnodigingslink uit je e-mail opnieuw.",
+    "accept": "Uitnodiging accepteren",
+    "accepting": "Bezig met toetreden…",
+    "success": "Je zit erbij. Open je team om verder te gaan.",
+    "alreadyMember": "Je bent al lid van dit team.",
+    "goToTeam": "Team openen",
+    "genericError": "Kon de uitnodiging niet accepteren. Probeer opnieuw of vraag een nieuwe uitnodiging.",
+    "notConfigured": "Inloggen is voor deze site niet geconfigureerd.",
+    "error": {
+      "notAuthenticated": "Je moet opnieuw inloggen voordat je de uitnodiging kunt accepteren.",
+      "emailRequired": "Je sessie heeft geen e-mail. Log in met e-mail/wachtwoord (of een aanbieder die e-mail doorgeeft).",
+      "invalidOrExpired": "De uitnodigingslink is ongeldig of verlopen. Vraag je beheerder om een nieuwe uitnodiging.",
+      "emailMismatch": "Log in met het uitgenodigde e-mailadres om te accepteren.",
+      "emailMismatchDetail": "Deze uitnodiging is gestuurd naar {invited}, maar je bent ingelogd als {signedIn}. Log uit en log in met het uitgenodigde adres.",
+      "badToken": "Deze uitnodigingslink is ongeldig opgemaakt. Gebruik de volledige link uit je e-mail.",
+      "rpcMissing": "Uitnodigingen zijn nog niet ingesteld in de database. Voer supabase/migrations/20260528130000_invite_preview_and_email.sql uit in de Supabase SQL Editor en probeer opnieuw.",
+      "previewFailed": "Kon deze uitnodiging niet verifiëren. Details:"
+    }
+  },
+  "hero": {
+    "badge": "AVG-vriendelijk voor organisaties met gevoelige data",
+    "headline": "AI-vergadernotities die nooit uw apparaat verlaten",
+    "subheadline": "Neem uw vergaderingen op, transcribeer en vat ze samen — volledig op uw eigen apparaat. Gemaakt voor teams en organisaties die vergaderinhoud niet naar de cloud mogen sturen.",
+    "cta": "Gratis downloaden",
+    "ctaSecondary": "Bekijk prijzen",
+    "appScreenshot": "MeetingRoom app schermafbeelding"
+  },
+  "features": {
+    "label": "Functies",
+    "headline": "Alles wat u nodig heeft voor slimmere vergaderingen",
+    "subheadline": "Krachtige AI die lokaal draait — geen internet nodig, geen data verlaat uw apparaat.",
+    "transcription": {
+      "title": "Lokale transcriptie",
+      "description": "Draait volledig op uw apparaat. Er wordt nooit audio verzonden — uw gesprekken blijven privé."
+    },
+    "diarization": {
+      "title": "Sprekerherkenning",
+      "description": "Herkent automatisch wie wat zei, zodat uw transcripties lezen als een echt gesprek."
+    },
+    "summaries": {
+      "title": "AI-samenvattingen",
+      "description": "Aanpasbare sjablonen extraheren actiepunten, belangrijke besluiten en conclusies — zelfs uit lange vergaderingen."
+    },
+    "chat": {
+      "title": "Vergader-chatassistent",
+      "description": "Stel vragen over uw vergadering, voeg documenten en afbeeldingen toe en krijg direct antwoord."
+    },
+    "multilingual": {
+      "title": "Meertalig",
+      "description": "Volledige ondersteuning voor Nederlands, Engels, Frans, Duits en Spaans — zowel de interface als de AI-uitvoer."
+    },
+    "privacy": {
+      "title": "Privacy voorop",
+      "description": "Alles draait lokaal. Een praktische keuze voor AVG-bewuste teams — geen cloudverwerking van uw vergaderaudio of transcripties."
+    }
+  },
+  "gdpr": {
+    "badge": "AVG-vriendelijk",
+    "headline": "Ontworpen voor organisaties met gevoelige informatie",
+    "description": "MeetingRoom bewaart vergaderaudio, transcripties en AI-uitvoer op uw apparaten — niet op servers van derden. Dat maakt het een sterke keuze voor bedrijven en overheidsinstanties die persoonsgegevensoverdrachten moeten beperken en vertrouwelijke gesprekken onder de AVG moeten beschermen.",
+    "points": {
+      "local": {
+        "title": "Geen cloudverwerking",
+        "description": "Opname, transcriptie en samenvatting gebeuren op uw hardware. Vergaderinhoud wordt niet naar externe AI-diensten gestuurd."
+      },
+      "control": {
+        "title": "U houdt de controle",
+        "description": "Data blijft op machines die u beheert. Makkelijker af te stemmen op bewaartermijnen, toegangscontrole en interne beveiligingseisen."
+      },
+      "minimize": {
+        "title": "Dataminimalisatie by design",
+        "description": "Minder verwerkers en grensoverschrijdende overdrachten voor vergaderinhoud — een eenvoudiger verhaal voor privacy officers en DPIA's."
+      },
+      "teams": {
+        "title": "Gemaakt voor gereguleerde teams",
+        "description": "Geschikt voor juridische diensten, zorg, financiën, overheid en elke organisatie die gevoelige of persoonsgebonden informatie in vergaderingen verwerkt."
+      }
+    }
+  },
+  "howItWorks": {
+    "label": "Hoe het werkt",
+    "headline": "Van vergadering naar bruikbare notities in minuten",
+    "step1": {
+      "title": "Opnemen",
+      "description": "Begin uw vergadering op te nemen met één klik. Werkt met elke microfoon."
+    },
+    "step2": {
+      "title": "Transcriberen",
+      "description": "AI transcribeert uw vergadering in realtime en identificeert elke spreker automatisch."
+    },
+    "step3": {
+      "title": "Samenvatten",
+      "description": "Krijg gestructureerde samenvattingen, actiepunten en chat met uw notities — allemaal aangedreven door AI."
+    }
+  },
+  "pricing": {
+    "label": "Prijzen",
+    "headline": "Eenvoudige prijzen voor iedereen",
+    "subheadline": "Begin gratis, upgrade wanneer u klaar bent. Geen verborgen kosten.",
+    "monthly": "Maandelijks",
+    "yearly": "Jaarlijks",
+    "perSeat": "per gebruiker",
+    "personal": {
+      "name": "Persoonlijk",
+      "price": "€9",
+      "period": "/maand",
+      "description": "Voor individuen die slimmere vergadernotities willen.",
+      "features": [
+        "Onbeperkte vergaderingen",
+        "Lokale transcriptie & samenvattingen",
+        "Sprekerherkenning",
+        "Vergader-chatassistent",
+        "Alle 5 talen",
+        "Export naar PDF & Word"
+      ],
+      "cta": "Aan de slag"
+    },
+    "team": {
+      "name": "Team",
+      "price": "€7",
+      "period": "/gebruiker/maand",
+      "description": "Voor teams die willen samenwerken aan vergadernotities.",
+      "badge": "Populairst",
+      "features": [
+        "Alles in Persoonlijk",
+        "Teamlicentiebeheer",
+        "Gecentraliseerde facturering",
+        "Prioriteitsondersteuning",
+        "Beheerderspaneel",
+        "Volumekortingen",
+        "AVG-vriendelijke lokale verwerking"
+      ],
+      "cta": "Aan de slag"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Op maat",
+      "period": "",
+      "description": "Voor organisaties met geavanceerde vereisten.",
+      "features": [
+        "Alles in Team",
+        "Aangepaste implementatie",
+        "Toegewijde ondersteuning",
+        "SLA-garantie",
+        "Volumelicenties",
+        "Inkoop & facturering",
+        "AVG-conforme lokale verwerking"
+      ],
+      "cta": "Neem contact op"
+    }
+  },
+  "faq": {
+    "label": "Veelgestelde vragen",
+    "headline": "Veelgestelde vragen",
+    "items": [
+      {
+        "question": "Is MeetingRoom geschikt voor de AVG en gevoelige data?",
+        "answer": "MeetingRoom is ontworpen om organisaties te helpen die persoons- en vertrouwelijke informatie moeten beschermen. Omdat vergaderaudio en AI-verwerking op uw apparaten blijven, stuurt u geen vergaderinhoud naar cloud-AI-aanbieders van derden. Dat ondersteunt gangbare AVG-doelen zoals het beperken van overdrachten, minder verwerkers voor vergaderdata en controle over bewaartermijnen. Uw organisatie blijft zelf verantwoordelijk voor AVG-naleving — maar local-first verwerking neemt een grote bron van risico weg vergeleken met alleen-cloud vergadertools."
+      },
+      {
+        "question": "Worden mijn gegevens lokaal opgeslagen?",
+        "answer": "Ja, 100%. MeetingRoom verwerkt alles op uw apparaat. Uw audio, transcripties en samenvattingen verlaten nooit uw machine. Er zijn geen cloudservers betrokken bij de verwerking van uw gegevens."
+      },
+      {
+        "question": "Welke platformen worden ondersteund?",
+        "answer": "MeetingRoom is momenteel beschikbaar voor Windows. macOS- en Linux-ondersteuning is gepland voor toekomstige versies."
+      },
+      {
+        "question": "Wat zijn de systeemvereisten?",
+        "answer": "MeetingRoom vereist een moderne computer met minimaal 8GB RAM. Voor de beste ervaring met AI-functies worden 16GB RAM en een dedicated GPU aanbevolen."
+      },
+      {
+        "question": "Hoe werkt de licentie?",
+        "answer": "Persoonlijke licenties zijn per gebruiker. Teamlicenties zijn per werkplek met gecentraliseerde facturering. U kunt uw abonnement en werkplekken beheren via het Paddle-klantenportaal."
+      },
+      {
+        "question": "Is er internet nodig?",
+        "answer": "Alleen voor het eerste downloaden van AI-modellen (eenmalige installatie). Daarna werkt MeetingRoom volledig offline. Er is geen internetverbinding nodig voor opname, transcriptie of samenvatting."
+      },
+      {
+        "question": "Welke talen worden ondersteund?",
+        "answer": "MeetingRoom ondersteunt Nederlands, Engels, Frans, Duits en Spaans — zowel voor de gebruikersinterface als voor AI-transcriptie en samenvattingen."
+      }
+    ]
+  },
+  "cta": {
+    "headline": "Klaar om uw vergaderingen te transformeren?",
+    "subheadline": "Download MeetingRoom gratis en ervaar AI-vergadernotities die uw privacy respecteren.",
+    "download": "Gratis downloaden",
+    "forTeams": "Voor Teams →"
+  },
+  "footer": {
+    "description": "AI-vergadernotities die op uw apparaat blijven.",
+    "product": "Product",
+    "resources": "Bronnen",
+    "legal": "Juridisch",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "download": "Downloaden",
+    "faq": "Veelgestelde vragen",
+    "documentation": "Documentatie",
+    "changelog": "Wijzigingslogboek",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "contact": "Contact",
+    "copyright": "© {year} Innovolabs. Alle rechten voorbehouden."
+  },
+  "auth": {
+    "backHome": "Terug naar home",
+    "badge": "Privacy eerst",
+    "asideTitle": "Je vergaderingen blijven op je apparaat",
+    "asideSubtitle": "Log in om teams en uitnodigingen op het web te beheren. Opnemen en AI gebeuren lokaal in de desktop-app.",
+    "trustLocal": "Lokale AI — audio verlaat je apparaat niet",
+    "trustTeams": "Nodig collega's uit en beheer toegang online",
+    "trustGdpr": "Gemaakt voor organisaties met gevoelige data",
+    "loginTitle": "Welkom terug",
+    "loginSubtitle": "Log in om je account en teams te openen.",
+    "signupTitle": "Account aanmaken",
+    "signupSubtitle": "Gratis registreren. Download daarna de desktop-app.",
+    "signupSubtitleInvite": "Gebruik het uitgenodigde e-mailadres om je team te joinen.",
+    "inviteBanner": "Je joint {team}",
+    "email": "E-mail",
+    "emailPlaceholder": "jij@bedrijf.nl",
+    "emailAlreadyRegistered": "Er bestaat al een account met dit e-mailadres.",
+    "signInInstead": "Inloggen",
+    "password": "Wachtwoord",
+    "passwordHint": "Minimaal 8 tekens",
+    "confirmPassword": "Bevestig wachtwoord",
+    "passwordMismatch": "Wachtwoorden komen niet overeen.",
+    "holdToShowPassword": "Ingedrukt houden om wachtwoord te tonen",
+    "fullName": "Volledige naam",
+    "fullNamePlaceholder": "Alex Jansen",
+    "fullNameRequired": "Vul je volledige naam in (minimaal 2 tekens).",
+    "company": "Bedrijf of team",
+    "companyPlaceholder": "Acme B.V.",
+    "companyOptional": "Optioneel",
+    "signIn": "Inloggen",
+    "signingIn": "Bezig met inloggen…",
+    "desktopHandoffTitle": "Ingelogd — open MeetingRoom",
+    "desktopHandoffSubtitle": "De desktopapp zou automatisch moeten openen.",
+    "desktopHandoffHint": "Als MeetingRoom niet opent, klik op de knop hieronder. Je kunt dit browsertabblad daarna sluiten.",
+    "desktopHandoffOpenApp": "MeetingRoom-app openen",
+    "desktopHandoffCloseTab": "Sluit dit tabblad zodra de app je heeft ingelogd.",
+    "desktopAccountPromptTitle": "Inloggen bij MeetingRoom",
+    "desktopAccountPromptSubtitle": "Je bent al ingelogd op het web. Gebruik dit account in de desktop-app, of kies een ander account.",
+    "desktopAccountPromptEmailLabel": "Ingelogd als",
+    "desktopAccountPromptSignedInFallback": "Ingelogd",
+    "desktopAccountPromptLogIn": "Inloggen",
+    "desktopAccountPromptOtherAccount": "Inloggen met ander account",
+    "desktopHandoffFailed": "De desktop-app kon niet worden gekoppeld. Probeer het opnieuw of neem contact op met support.",
+    "signUp": "Account aanmaken",
+    "signingUp": "Account wordt aangemaakt…",
+    "noAccount": "Nog geen account?",
+    "haveAccount": "Heb je al een account?",
+    "createAccount": "Registreer",
+    "notConfigured": "Inloggen is niet geconfigureerd. Voeg NEXT_PUBLIC_SUPABASE_URL en NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY toe.",
+    "confirmEmailDefault": "We hebben een bevestigingslink en een 6-cijferige code gestuurd. Vul de code hieronder in.",
+    "confirmEmailInvite": "We hebben een link en code gestuurd. Vul de code in om je team te joinen.",
+    "verificationTitle": "E-mail bevestigen",
+    "verificationSubtitle": "Vul de code uit je e-mail in om je account af te ronden.",
+    "verificationSentTo": "Code verstuurd naar",
+    "verificationCode": "Verificatiecode",
+    "verificationCodeInvalid": "Vul de 6-cijferige code uit je e-mail in.",
+    "verifyEmail": "Bevestigen en doorgaan",
+    "verifying": "Bezig met bevestigen…",
+    "resendCode": "Code opnieuw sturen",
+    "resendCodeSent": "Er is een nieuwe code naar je e-mail gestuurd.",
+    "resendCodeWait": "Opnieuw over {seconds}s",
+    "backToRegistration": "← Terug naar registratie",
+    "backToLogin": "← Terug naar inloggen",
+    "loginEmailNotConfirmed": "Je e-mail is nog niet bevestigd. We hebben een nieuwe code naar je inbox gestuurd.",
+    "loginEmailNotConfirmedNoResend": "Je e-mail is nog niet bevestigd. Vul de code uit je e-mail in, of gebruik Code opnieuw sturen.",
+    "loginVerificationSubtitle": "Vul de code uit je e-mail in om je account te bevestigen. Daarna log je automatisch in."
+  },
+  "standalone": {
+    "backHome": "Terug naar home",
+    "faq": {
+      "meta": {
+        "title": "Veelgestelde vragen — MeetingRoom",
+        "description": "Antwoorden over AVG, lokale verwerking, platforms, licenties, talen en offline gebruik."
+      }
+    },
+    "documentation": {
+      "meta": {
+        "title": "Documentatie — MeetingRoom",
+        "description": "Installeer MeetingRoom, download lokale AI-modellen, neem vergaderingen op en exporteer notities."
+      },
+      "headline": "Documentatie",
+      "intro": "Deze gidsen helpen u MeetingRoom op Windows te installeren en aan de slag te gaan met lokale AI-vergadernotities.",
+      "sections": [
+        {
+          "title": "Installatie (Windows)",
+          "body": "Download het installatieprogramma via het prijzengedeelte op onze website. Volg de installatiewizard en kies een locatie met voldoende ruimte voor AI-modellen (meerdere gigabytes).\n\nAls Windows SmartScreen verschijnt, kiest u alleen 'Meer informatie' en 'Toch uitvoeren' als u de uitgever (Innovolabs) vertrouwt."
+        },
+        {
+          "title": "Eerste start en modellen",
+          "body": "Bij de eerste start kan MeetingRoom spraak- en taalmodellen naar uw pc downloaden. Dat vereist meestal internet. Zodra de modellen staan, werken transcriptie en samenvatting volledig offline.\n\nOpslagbeheer kan via app-instellingen (indien beschikbaar)."
+        },
+        {
+          "title": "Opname en exporteren",
+          "body": "Start een nieuwe vergaderopname vanaf het hoofdscherm. Plaats de microfoon helder voor de beste sprekerscheiding.\n\nExporteer transcripties en samenvattingen naar PDF of Word wanneer uw licentie dat toestaat. Inhoud blijft op uw apparaat tenzij u die elders kopieert."
+        },
+        {
+          "title": "Talen en probleemoplossing",
+          "body": "MeetingRoom ondersteunt Nederlands, Engels, Frans, Duits en Spaans voor de interface en AI-uitvoer.\n\nIs transcriptie traag? Sluit andere zware apps, gebruik waar mogelijk netstroom op laptops en controleer of modellen zijn gedownload. Blijven problemen, neem contact op met support vermeld uw appversie uit het wijzigingslogboek."
+        }
+      ]
+    },
+    "changelog": {
+      "meta": {
+        "title": "Wijzigingslogboek — MeetingRoom",
+        "description": "Releasegeschiedenis en hoofdlijnen van MeetingRoom."
+      },
+      "headline": "Wijzigingslogboek",
+      "intro": "Hoofdlijnen per release. Versienummers sluiten aan bij gepubliceerde installers.",
+      "downloadWindows": "Installer downloaden — Windows",
+      "notesEnglishHint": "De releasetekst voor deze versie staat hieronder in het Engels.",
+      "githubSyncLine": "Synchronisatie met GitHub releases (± elke vijf minuten vernieuwd). Teksten zijn meestal in het Engels.",
+      "releaseNotesUnavailable": "Geen toelichting op deze GitHub-release — gebruik de installer hierboven.",
+      "releases": [
+        {
+          "version": "1.0.14",
+          "date": "mei 2025",
+          "notes": "Stabiliteitsverbeteringen, UI-verfijning en betere afhandeling van lokale modellen."
+        },
+        {
+          "version": "1.0.0",
+          "date": "begin 2025",
+          "notes": "Eerste stabiele versie met lokale transcriptie, sprekersherkenning, samenvattingen en vergaderchat."
+        },
+        {
+          "version": "0.9.0",
+          "date": "bèta",
+          "notes": "Publieke bèta rond kernworkflow voor opname en transcriptie."
+        }
+      ]
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacybeleid — MeetingRoom",
+        "description": "Hoe MeetingRoom omgaat met uw gegevens met lokale verwerking."
+      },
+      "headline": "Privacybeleid",
+      "updated": "Laatst bijgewerkt: 27 mei 2026",
+      "disclaimer": "Dit beleid is algemene informatie en geen juridisch advies. Laat teksten beoordelen door een specialist voor uw sector en land.",
+      "sections": [
+        {
+          "title": "Overzicht",
+          "body": "MeetingRoom is gebouwd zodat audio, transcripties en door AI gegenereerde notities op uw eigen apparaten worden verwerkt en bewaard. Wij leveren niet dezelfde cloudverwerking van vergaderinhoud als veel online assistenten."
+        },
+        {
+          "title": "Welke gegevens wij kunnen verzamelen",
+          "body": "Bij een licentie verwerkt uw betaaldienstverlener (bijvoorbeeld Paddle) factuurgegevens volgens hun privacybeleid. Deze site kan standaard technische logbestanden bewaren zoals gebruikelijk bij hosting (bijv. IP-adres en browsertype).\n\nDe desktopapp is zo ontworpen dat vergadermateriaal lokaal blijft."
+        },
+        {
+          "title": "Lokale verwerking",
+          "body": "AI-transcriptie, samenvattingen en chat draaien op uw hardware na installatie van modellen. Bescherm toegang tot het apparaat met wachtwoorden, schijfencryptie en het beleid van uw organisatie."
+        },
+        {
+          "title": "Bewaring en uw keuzes",
+          "body": "U bepaalt hoe lang opnames en notities op schijf blijven. De-installatie of lokaal wissen verwijdert inhoud voor zover uw besturingssysteem en backups dat toestaan."
+        },
+        {
+          "title": "Contact",
+          "body": "Vragen over dit beleid kunt u sturen naar de adressen op de contactpagina."
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Servicevoorwaarden — MeetingRoom",
+        "description": "Voorwaarden voor gebruik van MeetingRoom-software en deze website."
+      },
+      "headline": "Servicevoorwaarden",
+      "updated": "Laatst bijgewerkt: 27 mei 2026",
+      "disclaimer": "Algemene sjabloonvoorwaarden. Laat deze beoordelen door uw juridisch adviseur voor zakelijk gebruik.",
+      "sections": [
+        {
+          "title": "Toestemming",
+          "body": "Door MeetingRoom te downloaden, installeren of te gebruiken, gaat u akkoord met deze voorwaarden. Zo niet, gebruik de software niet."
+        },
+        {
+          "title": "Licentie",
+          "body": "U krijgt een beperkte, niet-exclusieve, niet overdraagbare licentie volgens gekocht plan (personal, team of enterprise). Reverse engineering, doorverkoop en het verwijderen van eigendomsvermeldingen zijn niet toegestaan tenzij dwingend recht anders voorschrijft."
+        },
+        {
+          "title": "Aanvaardbaar gebruik",
+          "body": "U bent zelf verantwoordelijk voor wetten rond opnames en toestemming van deelnemers. Gebruik MeetingRoom niet om privacy of vertrouwelijkheid te schenden."
+        },
+        {
+          "title": "Disclaimer",
+          "body": "De software wordt geleverd 'zoals ze is', voor zover wettelijk toegestaan zonder garanties. AI-uitvoer kan fouten bevatten; u blijft eindverantwoordelijk voor belangrijke beslissingen."
+        },
+        {
+          "title": "Beperking aansprakelijkheid",
+          "body": "Voor zover de wet het toestaat zijn Innovolabs en leveranciers niet aansprakelijk voor indirecte schade of gederfde winst of gegevensverlies door gebruik van MeetingRoom."
+        },
+        {
+          "title": "Toepasselijk recht",
+          "body": "Deze voorwaarden vallen onder het door Innovolabs aangeduide recht voor uw contractpartner, uitgezonderd botsende collisieregels. Rechtbanken in die jurisdictie zijn bevoegd tenzij dwingende consumentenbescherming anders voorschrijft."
+        }
+      ]
+    },
+    "contact": {
+      "meta": {
+        "title": "Contact — MeetingRoom",
+        "description": "Neem contact op met support en sales voor MeetingRoom."
+      },
+      "headline": "Contact",
+      "intro": "Vertel ons waar we mee kunnen helpen. Bij bugs graag uw versienummer en stappen om het probleem na te bootsen.",
+      "supportLabel": "Productsupport",
+      "salesLabel": "Sales & enterprise",
+      "supportEmail": "support@innovolabs.com",
+      "salesEmail": "sales@innovolabs.com",
+      "hours": "We reageren meestal binnen twee werkdagen."
+    }
+  }
+}
