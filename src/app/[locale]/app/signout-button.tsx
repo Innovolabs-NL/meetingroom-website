@@ -19,7 +19,7 @@ export function SignOutButton() {
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          await client.auth.signOut();
+          await client.auth.signOut({ scope: "local" });
           router.push("/login");
           router.refresh();
         });

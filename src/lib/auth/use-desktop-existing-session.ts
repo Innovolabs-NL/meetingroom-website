@@ -50,7 +50,7 @@ export function useDesktopExistingSession({
     if (!supabase) return;
     setIsOtherAccountPending(true);
     try {
-      await supabase.auth.signOut();
+      await supabase.auth.signOut({ scope: "local" });
       setDesktopExistingSession(null);
     } finally {
       setIsOtherAccountPending(false);

@@ -76,6 +76,6 @@ export async function deleteAccount(
     return { error: message };
   }
 
-  await supabase.auth.signOut();
+  await supabase.auth.signOut({ scope: "local" });
   redirect({ href: "/", locale });
 }

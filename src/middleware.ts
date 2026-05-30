@@ -3,6 +3,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { routing } from "../i18n/routing";
 import { isDesktopAuthSource } from "@/lib/auth/desktop-callback";
+import { forwardAuthCookies } from "@/lib/supabase/forward-auth-cookies";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -40,10 +41,8 @@ export default async function middleware(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const publishableKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
-  // Always apply i18n routing.
   const response = intlMiddleware(request);
 
-  // If Supabase isn't configured, just keep the site working.
   if (!url || !publishableKey) return response;
 
   const supabase = createServerClient(url, publishableKey, {
@@ -81,19 +80,15 @@ export default async function middleware(request: NextRequest) {
   if (!user && isProtected) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = `/${locale}/login`;
-    // Do not carry through arbitrary query params to the login page.
     redirectUrl.search = "";
     const internalReturn = `${pathnameWithoutLocale}${request.nextUrl.search}`;
     if (internalReturn && internalReturn !== "/") {
-      // URLSearchParams handles encoding; do not double-encode.
       redirectUrl.searchParams.set("next", internalReturn);
     }
-    return NextResponse.redirect(redirectUrl);
+    return forwardAuthCookies(response, NextResponse.redirect(redirectUrl));
   }
 
   if (user && isAuthPage) {
-    // Desktop sign-in: stay on login/signup so the client can show a handoff screen
-    // and open meetingroom:// (a server redirect would leave the browser on the form).
     if (isDesktopAuthSource(request.nextUrl.searchParams)) {
       return response;
     }
@@ -106,7 +101,7 @@ export default async function middleware(request: NextRequest) {
       redirectUrl.pathname = `/${locale}/app`;
       redirectUrl.search = "";
     }
-    return NextResponse.redirect(redirectUrl);
+    return forwardAuthCookies(response, NextResponse.redirect(redirectUrl));
   }
 
   return response;
