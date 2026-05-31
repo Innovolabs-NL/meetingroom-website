@@ -5,6 +5,9 @@ import { AccountDeleteSection } from "../../account-delete-section";
 import { ProfileSettingsForm } from "../../profile-settings-form";
 import { SignOutButton } from "../../signout-button";
 import { AccountSecuritySection } from "../../account-security-section";
+import { AppPageHeader } from "../../_components/app-page-header";
+import { AppPageMotion, AppStaggerItem, AppStaggerList } from "../../_components/app-page-motion";
+import { AppSection } from "../../_components/app-section";
 
 export const dynamic = "force-dynamic";
 
@@ -18,38 +21,51 @@ export default async function SettingsPage({ params }: { params: Promise<{ local
     ctx.accountKind === "team" ? t("accountKindTeam") : t("accountKindPersonal");
 
   return (
-    <div>
-      <h1 className="text-2xl font-semibold tracking-tight">{t("settingsTitle")}</h1>
-      <p className="mt-2 text-sm text-muted">{t("settingsSubtitle")}</p>
+    <AppPageMotion>
+      <AppPageHeader title={t("settingsTitle")} subtitle={t("settingsSubtitle")} />
 
-      <div className="mt-8 space-y-6 rounded-2xl border border-border bg-surface p-6">
-        <div>
-          <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsEmail")}</div>
-          <div className="mt-1 text-sm">{ctx.user?.email ?? t("noEmail")}</div>
-        </div>
-        <div>
-          <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsAccountKind")}</div>
-          <div className="mt-1 text-sm">{accountLabel}</div>
-          <p className="mt-2 text-xs text-muted">{t("settingsAccountKindHint")}</p>
-        </div>
-        <ProfileSettingsForm
-          initialFullName={ctx.user?.fullName ?? ""}
-          initialCompany={ctx.user?.company ?? ""}
-        />
+      <AppStaggerList>
+        <AppStaggerItem>
+          <AppSection title={t("profileSectionTitle")} description={t("profileSectionHint")} className="mt-8">
+            <div className="space-y-4">
+              <div>
+                <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsEmail")}</div>
+                <div className="mt-1 text-sm">{ctx.user?.email ?? t("noEmail")}</div>
+              </div>
+              <div>
+                <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsAccountKind")}</div>
+                <div className="mt-1 text-sm">{accountLabel}</div>
+                <p className="mt-2 text-xs text-muted">{t("settingsAccountKindHint")}</p>
+              </div>
+              <ProfileSettingsForm
+                initialFullName={ctx.user?.fullName ?? ""}
+                initialCompany={ctx.user?.company ?? ""}
+              />
+            </div>
+          </AppSection>
+        </AppStaggerItem>
 
-        <AccountSecuritySection currentEmail={ctx.user?.email ?? ""} />
+        <AppStaggerItem>
+          <AppSection title={t("settingsSecuritySectionTitle")} description={t("settingsSecuritySectionHint")}>
+            <AccountSecuritySection currentEmail={ctx.user?.email ?? ""} />
+          </AppSection>
+        </AppStaggerItem>
 
-        <div className="border-t border-border pt-6">
-          <SignOutButton />
-        </div>
-      </div>
+        <AppStaggerItem>
+          <AppSection title={t("settingsSessionSectionTitle")} description={t("settingsSessionSectionHint")}>
+            <SignOutButton />
+          </AppSection>
+        </AppStaggerItem>
 
-      <AccountDeleteSection
-        locale={locale}
-        userEmail={ctx.user?.email ?? ""}
-        canDelete={ctx.canDeleteAccount}
-        soleOwnerTeamNames={ctx.soleOwnerTeamNames}
-      />
-    </div>
+        <AppStaggerItem>
+          <AccountDeleteSection
+            locale={locale}
+            userEmail={ctx.user?.email ?? ""}
+            canDelete={ctx.canDeleteAccount}
+            soleOwnerTeamNames={ctx.soleOwnerTeamNames}
+          />
+        </AppStaggerItem>
+      </AppStaggerList>
+    </AppPageMotion>
   );
 }

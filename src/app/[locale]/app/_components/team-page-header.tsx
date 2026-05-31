@@ -2,6 +2,7 @@ import { Link } from "@i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { MemberAvatar } from "./member-avatar";
 import { RoleBadge, roleLabelKey } from "./role-badge";
+import { TeamPageHeaderMotion } from "./team-page-header-motion";
 
 export async function TeamPageHeader({
   name,
@@ -22,7 +23,8 @@ export async function TeamPageHeader({
   const teamInitial = name.trim().charAt(0).toUpperCase() || "?";
 
   return (
-    <header className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface via-surface to-background">
+    <TeamPageHeaderMotion>
+    <header className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface via-surface to-background shadow-elevated">
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
         aria-hidden
@@ -46,7 +48,7 @@ export async function TeamPageHeader({
           </div>
         </div>
 
-        <div className="flex shrink-0 flex-wrap items-center gap-3">
+        <div className="flex w-full shrink-0 flex-col flex-wrap items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
           {yourEmail ? (
             <div className="flex items-center gap-2 rounded-xl border border-border bg-background/60 px-3 py-2">
               <MemberAvatar email={yourEmail} size="sm" />
@@ -56,7 +58,7 @@ export async function TeamPageHeader({
           {canManage ? (
             <Link
               href={`/app/t/${slug}/invites`}
-              className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-colors hover:bg-accent-hover"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-colors hover:bg-accent-hover sm:w-auto"
             >
               {t("inviteMembers")}
             </Link>
@@ -64,5 +66,6 @@ export async function TeamPageHeader({
         </div>
       </div>
     </header>
+    </TeamPageHeaderMotion>
   );
 }

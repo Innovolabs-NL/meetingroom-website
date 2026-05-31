@@ -119,7 +119,7 @@ export function TeamMembersSection({
           return (
             <li
               key={m.user_id}
-              className="flex flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
+              className="flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5"
             >
               <div className="flex min-w-0 items-center gap-4">
                 <MemberAvatar email={email} fullName={m.full_name} />
@@ -136,7 +136,7 @@ export function TeamMembersSection({
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 sm:shrink-0">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
                 {canEditRole ? (
                   <label className="flex flex-col gap-1">
                     <span className="sr-only">{t("changeMemberRole")}</span>
@@ -146,7 +146,7 @@ export function TeamMembersSection({
                       onChange={(e) =>
                         changeRole(m, e.target.value === "admin" ? "admin" : "member")
                       }
-                      className="rounded-lg border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground outline-none ring-accent/40 focus:ring-2 disabled:opacity-50"
+                      className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2 text-xs font-medium text-foreground outline-none ring-accent/40 focus:ring-2 disabled:opacity-50 sm:w-auto sm:min-h-0 sm:py-1.5"
                     >
                       <option value="member">{t("roleMember")}</option>
                       <option value="admin">{t("roleAdmin")}</option>
@@ -160,7 +160,7 @@ export function TeamMembersSection({
                     type="button"
                     onClick={() => openRemoveModal(m)}
                     disabled={removePending || rolePending}
-                    className="rounded-lg border border-danger-border px-3 py-1.5 text-xs font-medium text-danger-foreground transition-colors hover:bg-danger-muted disabled:opacity-50"
+                    className="min-h-11 w-full rounded-lg border border-danger-border px-3 py-2 text-xs font-medium text-danger-foreground transition-colors hover:bg-danger-muted disabled:opacity-50 sm:w-auto sm:min-h-0 sm:py-1.5"
                   >
                     {t("removeMember")}
                   </button>

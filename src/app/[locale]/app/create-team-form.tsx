@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@i18n/navigation";
 import { createTeamAction, type CreateTeamState } from "./actions";
@@ -44,13 +45,14 @@ export function CreateTeamForm() {
         disabled={pending}
         className="h-11 flex-1 rounded-xl border border-border bg-background px-4 text-sm text-foreground outline-none placeholder:text-muted/70 focus:border-border-light disabled:opacity-60"
       />
-      <button
+      <motion.button
         type="submit"
         disabled={pending}
-        className="inline-flex h-11 items-center justify-center rounded-xl bg-accent px-5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-colors hover:bg-accent-hover disabled:opacity-60"
+        whileTap={{ scale: 0.98 }}
+        className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-accent px-5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto"
       >
         {pending ? t("creatingTeam") : t("createTeam")}
-      </button>
+      </motion.button>
       {errorText ? (
         <p className="sm:w-full sm:basis-[100%] text-sm text-red-300">{errorText}</p>
       ) : null}

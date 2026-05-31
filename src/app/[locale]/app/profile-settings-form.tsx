@@ -39,10 +39,7 @@ export function ProfileSettingsForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 border-t border-border pt-6">
-      <h3 className="text-sm font-semibold tracking-tight">{t("profileSectionTitle")}</h3>
-      <p className="text-xs text-muted">{t("profileSectionHint")}</p>
-
+    <form onSubmit={onSubmit} className="space-y-4">
       <label className="block">
         <span className="text-xs font-medium uppercase tracking-wide text-muted">{t("profileFullName")}</span>
         <input

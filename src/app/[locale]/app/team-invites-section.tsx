@@ -84,7 +84,7 @@ export function TeamInvitesSection({
           <button
             type="submit"
             disabled={invitePending}
-            className="rounded-lg bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent-hover disabled:opacity-60"
+            className="min-h-11 w-full rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-hover disabled:opacity-60 sm:w-auto"
           >
             {invitePending ? "…" : t("sendInvite")}
           </button>
@@ -119,10 +119,11 @@ export function TeamInvitesSection({
                   action={async () => {
                     await revokeOrganizationInvite(inv.id, organizationSlug);
                   }}
+                  className="w-full md:w-auto"
                 >
                   <button
                     type="submit"
-                    className="rounded-lg border border-border px-3 py-2 text-xs text-muted hover:bg-background hover:text-foreground"
+                    className="min-h-11 w-full rounded-lg border border-border px-3 py-2 text-xs text-muted hover:bg-background hover:text-foreground md:w-auto md:min-h-0"
                   >
                     {t("revokeInvite")}
                   </button>
