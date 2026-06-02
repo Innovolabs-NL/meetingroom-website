@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -34,7 +35,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Keep SSR and the first client render identical; sync from the boot script after mount.
   const [theme, setThemeState] = useState<ColorTheme>("dark");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setThemeState(readThemeFromDocument());
   }, []);
 

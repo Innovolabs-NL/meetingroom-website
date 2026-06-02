@@ -2,8 +2,10 @@ export type ColorTheme = "light" | "dark";
 
 export const THEME_STORAGE_KEY = "meetingroom.website.theme";
 
-/** Runs before paint to avoid a flash of the wrong theme. */
-export const THEME_INIT_SCRIPT = `(function(){var t="dark";try{var s=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});if(s==="light"||s==="dark")t=s;else if(window.matchMedia("(prefers-color-scheme: light)").matches)t="light";}catch(e){}document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;})();`;
+const SITE_LOCALES = ["en", "nl", "fr", "de", "es"] as const;
+
+/** Runs before paint in the root layout to avoid theme flash and set html lang from the URL. */
+export const THEME_BOOT_SCRIPT = `(function(){var t="dark";try{var s=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});if(s==="light"||s==="dark")t=s;else if(window.matchMedia("(prefers-color-scheme: light)").matches)t="light";}catch(e){}var r=document.documentElement;r.dataset.theme=t;r.style.colorScheme=t;var l=location.pathname.split("/")[1];if(${JSON.stringify(SITE_LOCALES)}.indexOf(l)>=0)r.lang=l;})();`;
 
 export function applyColorTheme(theme: ColorTheme): void {
   const root = document.documentElement;

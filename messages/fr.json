@@ -283,7 +283,232 @@
     "subheadline": "Enregistrez, transcrivez et résumez vos réunions entièrement sur votre machine. Conçu pour les équipes et organisations qui ne peuvent pas envoyer le contenu des réunions vers le cloud.",
     "cta": "Télécharger gratuitement",
     "ctaSecondary": "Voir les tarifs",
-    "appScreenshot": "Capture d'écran de l'application MeetingRoom"
+    "appScreenshot": "Capture d'écran de l'application MeetingRoom",
+    "demo": {
+      "badge": "Aperçu interactif",
+      "searchPlaceholder": "Rechercher dossiers et réunions…",
+      "folders": "Dossiers",
+      "recentMeetings": "Réunions récentes",
+      "createFolder": "Créer un dossier",
+      "calendar": "Calendrier",
+      "newMeeting": "Nouvelle réunion",
+      "tabMemo": "Mémos",
+      "tabTranscript": "Transcription",
+      "tabSummary": "Résumé",
+      "toggleSidebar": "Afficher/masquer la barre latérale",
+      "settings": "Paramètres",
+      "share": "Partager",
+      "toggleChat": "Panneau de chat",
+      "record": "Enregistrer",
+      "startListening": "Commencer l'écoute",
+      "recordHint": "L'enregistrement est désactivé dans cet aperçu.",
+      "mapsButton": "Dossiers",
+      "more": "Plus d'actions",
+      "memoPlaceholder": "Commencer à prendre des notes…",
+      "memoStyleNormal": "Normal",
+      "aiModelsReady": "Modèles IA prêts",
+      "saved": "Enregistré",
+      "chatTitle": "Chat de réunion",
+      "chatHint": "Le chat est désactivé dans cet aperçu.",
+      "folder": {
+        "name": "Comptes actifs",
+        "count": 4,
+        "sectionCount": 2
+      },
+      "meetings": [
+        {
+          "id": "municipality",
+          "title": "Conseil municipal — revue d'achat à huis clos",
+          "dateLabel": "Aujourd'hui · 14:22",
+          "duration": "54 min",
+          "memo": "Séance à huis clos. Leur DPO est resté silencieux jusqu'à la minute quarante.\n\nMoment fort : j'ai débranché le Wi‑Fi — la transcription a continué — Tom a applaudi. Marieke veut chaque affirmation par écrit pour l'AIPD. Le point sensible de Tom : renommer les locuteurs ; les greffiers confondent conseiller et point d'ordre du jour.\n\nAvant vendredi : fiche sécurité, SHA-256 de l'installateur, export Word avec étiquettes locuteurs sur le débat en annexe.",
+          "transcript": [
+            {
+              "speaker": "Marieke",
+              "time": "02:14",
+              "text": "Notre DPO demandera où sont les modèles, qui les met à jour, et si un seul octet d'audio quitte ce portable lors du résumé."
+            },
+            {
+              "speaker": "Vous",
+              "time": "02:48",
+              "text": "Modèles stockés localement après téléchargement. Résumés et chat tournent sur l'appareil. Seul appel réseau optionnel — connexion pour invitations d'équipe."
+            },
+            {
+              "speaker": "Tom",
+              "time": "04:05",
+              "text": "Un autre fournisseur l'an dernier. Dès qu'on a vu « envoi de l'audio », fin du pilote. Les greffiers peuvent-ils corriger les locuteurs après ?"
+            },
+            {
+              "speaker": "Vous",
+              "time": "04:31",
+              "text": "Un renommage se propage au transcript et à tous les exports. Je génère un DOCX avec vos titres d'annexe avant de partir."
+            },
+            {
+              "speaker": "Tom",
+              "time": "05:02",
+              "text": "Si je coupe le réseau en pleine séance — ça suit De Vries quand il part en monologue vingt minutes ?"
+            },
+            {
+              "speaker": "Vous",
+              "time": "05:18",
+              "text": "On regarde ? Je coupe le Wi‑Fi maintenant."
+            },
+            {
+              "speaker": "Marieke",
+              "time": "06:02",
+              "text": "…Ça a continué. Bien. Envoyez les garanties écrites et on planifie un pilote avec les enregistrements du comité planning."
+            },
+            {
+              "speaker": "Tom",
+              "time": "06:44",
+              "text": "Et ajoutez dans la doc la fusion de locuteurs — ça nous fera gagner des heures."
+            }
+          ]
+        },
+        {
+          "id": "user-research",
+          "title": "Admins hospitaliers — synthèse terrain",
+          "dateLabel": "Hier · 11:08",
+          "duration": "38 min",
+          "memo": "Trois entretiens fusionnés avec administrateurs de soins intensifs et un DPO. Même histoire : ils veulent des notes IA, la conformité dit non au cloud.\n\nDr Weiss a dit mot pour mot : « les noms de patients n'ont rien à faire sur le GPU de quelqu'un d'autre ». Elena a montré que le chat répond à « sur quoi tout le monde n'était pas d'accord ? » sur quatre-vingt-dix minutes sans rien envoyer.\n\nEnseignement produit : les étiquettes locuteurs dans Word comptent plus que l'UI — cinq sur six envoient ça au juridique.",
+          "transcript": [
+            {
+              "speaker": "Dr. Weiss",
+              "time": "03:22",
+              "text": "Les internes enregistrent les passations sur leur téléphone parce que l'outil officiel envoie en Virginie. Pas dans mon service."
+            },
+            {
+              "speaker": "Elena",
+              "time": "04:01",
+              "text": "Hier la diarisation a pris le participant pour deux personnes jusqu'à la minute douze. Trente secondes pour fusionner — acceptable ?"
+            },
+            {
+              "speaker": "Vous",
+              "time": "04:28",
+              "text": "Cliquez le nom du locuteur, assignez tous les segments, terminé. Pas de re-upload, pas d'attente serveur."
+            },
+            {
+              "speaker": "James",
+              "time": "06:15",
+              "text": "Ma question : les exports. Le juridique veut Word avec noms de locuteurs, pas une capture d'écran."
+            },
+            {
+              "speaker": "Vous",
+              "time": "06:40",
+              "text": "Export DOCX local aussi — mêmes étiquettes que dans l'onglet transcription."
+            },
+            {
+              "speaker": "Elena",
+              "time": "08:40",
+              "text": "J'ai demandé au chat qui s'est opposé au budget — trois citations en néerlandais et anglais sans nettoyage manuel."
+            },
+            {
+              "speaker": "Dr. Weiss",
+              "time": "09:55",
+              "text": "Prouvez que l'audio ne quitte jamais la machine — je porterai un pilote avec trois chefs de service."
+            },
+            {
+              "speaker": "James",
+              "time": "11:03",
+              "text": "Envoyez le diagramme de flux de données. S'il est exact, la revue privacy passe de mois à semaines."
+            }
+          ]
+        },
+        {
+          "id": "board",
+          "title": "Répétition investisseurs — confidentiel",
+          "dateLabel": "Lun · 09:30",
+          "duration": "72 min",
+          "memo": "Confidentiel. Deck répété à voix haute ; l'enregistrement a capté quatre minutes de digression sur les tarifs enterprise.\n\nSarah de Horizon a insisté : « qu'est-ce qui arrête Microsoft ? » Réponse : acheteurs régulés qui veulent la preuve que l'audio n'est jamais parti. Marcus veut privacy by design en slide dédiée.\n\nDécision : ouvrir avec la victoire municipale, démo live uniquement, pas d'histoire de backup cloud.",
+          "transcript": [
+            {
+              "speaker": "Sarah",
+              "time": "12:08",
+              "text": "Pire cas : un greffier enregistre une séance à huis clos — où va le fichier ?"
+            },
+            {
+              "speaker": "Vous",
+              "time": "12:34",
+              "text": "SQLite sur leur portable. Nous ne recevons jamais l'audio. Fonctions équipe = métadonnées seulement — sièges, invitations, nom d'org."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "13:02",
+              "text": "Votre fossé c'est la conformité, pas la qualité du modèle. Qu'est-ce qui arrête Microsoft ?"
+            },
+            {
+              "speaker": "Vous",
+              "time": "13:28",
+              "text": "Leur modèle suppose le cloud. Nos acheteurs veulent des workflows air-gapped — communes, hôpitaux, cabinets."
+            },
+            {
+              "speaker": "Marcus",
+              "time": "18:22",
+              "text": "Mettez privacy by design sur sa propre slide. Les investisseurs questionnent la résidence des données dans les cinq premières minutes."
+            },
+            {
+              "speaker": "Président",
+              "time": "22:14",
+              "text": "Quatre-vingt-dix secondes de produit. Transcription live bat un autre diagramme d'architecture."
+            },
+            {
+              "speaker": "Vous",
+              "time": "23:40",
+              "text": "J'enregistre ce soir, resserre le résumé et colle les actions dans le mémo du conseil — tout en local."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "24:15",
+              "text": "Si le pilote municipal convertit, on parle de mener le tour. Ne m'envoyez pas de lien cloud."
+            }
+          ]
+        },
+        {
+          "id": "retro",
+          "title": "Démo salon — post-mortem",
+          "dateLabel": "Ven · 16:45",
+          "duration": "26 min",
+          "memo": "La démo Hannover a planté devant quarante personnes : téléchargement du modèle incomplet sur le Wi‑Fi d'hôtel.\n\nLes ventes ont improvisé — ouvert une réunion existante, montré résumé + chat. Le public a ri, le client a quand même réservé un suivi.\n\nLeçon : ne jamais faire confiance au Wi‑Fi de salon. Bundle « mode démo » préchargé ; taille installateur dans le mirror changelog.",
+          "transcript": [
+            {
+              "speaker": "Sales",
+              "time": "01:05",
+              "text": "Quarante personnes fixaient une barre de progression à douze pour cent pendant six minutes. J'ai vieilli de cinq ans."
+            },
+            {
+              "speaker": "Dev",
+              "time": "02:10",
+              "text": "Diarisation post-enregistrement solide sur fichiers d'une heure — dommage que personne ne l'ait vu live."
+            },
+            {
+              "speaker": "Vous",
+              "time": "02:45",
+              "text": "J'ai ouvert l'enregistrement du conseil d'hier, lancé le résumé, demandé au chat les objections — le public s'est penché."
+            },
+            {
+              "speaker": "Design",
+              "time": "04:02",
+              "text": "Les gens ne trouvaient pas régénérer le résumé. Sur le dock, la reprise aurait paru intentionnelle."
+            },
+            {
+              "speaker": "Sales",
+              "time": "04:50",
+              "text": "Le responsable achats a quand même réservé mardi. A dit : « si ça marche offline, on en a besoin »."
+            },
+            {
+              "speaker": "Dev",
+              "time": "05:18",
+              "text": "J'ajoute un bundle démo et un gate vert « modèles prêts » qui bloque l'enregistrement tant que le téléchargement n'est pas fini."
+            },
+            {
+              "speaker": "Vous",
+              "time": "05:44",
+              "text": "Le marketing reçoit l'aperçu hero avec les vrais onglets — fini le faux bouton play."
+            }
+          ]
+        }
+      ]
+    }
   },
   "features": {
     "label": "Fonctionnalités",
@@ -340,13 +565,14 @@
   "howItWorks": {
     "label": "Comment ça marche",
     "headline": "De la réunion aux notes exploitables en quelques minutes",
+    "headlineNote": "*Le délai dépend de votre appareil.",
     "step1": {
       "title": "Enregistrer",
       "description": "Commencez à enregistrer votre réunion en un clic. Fonctionne avec n'importe quel microphone."
     },
     "step2": {
       "title": "Transcrire",
-      "description": "L'IA transcrit votre réunion en temps réel et identifie chaque intervenant automatiquement."
+      "description": "L'IA transcrit votre réunion et identifie chaque intervenant automatiquement."
     },
     "step3": {
       "title": "Résumer",

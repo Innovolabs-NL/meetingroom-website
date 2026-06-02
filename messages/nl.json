@@ -296,7 +296,232 @@
     "subheadline": "Neem uw vergaderingen op, transcribeer en vat ze samen — volledig op uw eigen apparaat. Gemaakt voor teams en organisaties die vergaderinhoud niet naar de cloud mogen sturen.",
     "cta": "Gratis downloaden",
     "ctaSecondary": "Bekijk prijzen",
-    "appScreenshot": "MeetingRoom app schermafbeelding"
+    "appScreenshot": "MeetingRoom app schermafbeelding",
+    "demo": {
+      "badge": "Interactieve preview",
+      "searchPlaceholder": "Zoek mappen en vergaderingen…",
+      "folders": "Mappen",
+      "recentMeetings": "Recente vergaderingen",
+      "createFolder": "Map maken",
+      "calendar": "Kalender",
+      "newMeeting": "Nieuwe vergadering",
+      "tabMemo": "Memo's",
+      "tabTranscript": "Transcript",
+      "tabSummary": "Samenvatting",
+      "toggleSidebar": "Zijbalk in-/uitklappen",
+      "settings": "Instellingen",
+      "share": "Delen",
+      "toggleChat": "Chatpaneel",
+      "record": "Opnemen",
+      "startListening": "Begin met opnemen",
+      "recordHint": "Opnemen is uitgeschakeld in deze preview.",
+      "mapsButton": "Mappen",
+      "more": "Meer acties",
+      "memoPlaceholder": "Begin met notities…",
+      "memoStyleNormal": "Normaal",
+      "aiModelsReady": "AI-modellen gereed",
+      "saved": "Opgeslagen",
+      "chatTitle": "Vergaderchat",
+      "chatHint": "Chat is uitgeschakeld in deze preview.",
+      "folder": {
+        "name": "Actieve accounts",
+        "count": 4,
+        "sectionCount": 2
+      },
+      "meetings": [
+        {
+          "id": "municipality",
+          "title": "Gemeenteraad — besloten inkoopreview",
+          "dateLabel": "Vandaag · 14:22",
+          "duration": "54 min",
+          "memo": "Besloten sessie. Hun FG zat achterin en zweeg tot minuut veertig.\n\nHoogtepunt: ik trok de Wi‑Fi eruit en transcriptie bleef doorlopen — Tom applaudisseerde. Marieke wil elke claim schriftelijk voor de DPIA. Tom's pijnpunt: sprekers hernoemen; griffiers koppelen constant de verkeerde raadslid aan het verkeerde agendapunt.\n\nVóór vrijdag: security-one-pager, SHA-256 van de installer, en een Word-export met sprekerlabels op het annexdebat.",
+          "transcript": [
+            {
+              "speaker": "Marieke",
+              "time": "02:14",
+              "text": "Onze FG vraagt waar de modellen staan, wie ze bijwerkt, en of één byte audio deze laptop verlaat tijdens samenvatten."
+            },
+            {
+              "speaker": "Jij",
+              "time": "02:48",
+              "text": "Modellen staan lokaal na download. Samenvattingen en chat draaien op het apparaat. Het enige netwerkverzoek is optioneel — inloggen op de website voor teamuitnodigingen."
+            },
+            {
+              "speaker": "Tom",
+              "time": "04:05",
+              "text": "Vorig jaar een andere leverancier geprobeerd. Zodra we “audio uploaden” zagen, stopten we de pilot. Kunnen griffiers sprekers achteraf fixen?"
+            },
+            {
+              "speaker": "Jij",
+              "time": "04:31",
+              "text": "Eenmaal hernoemen en het werkt door in transcript en elke export. Ik maak een DOCX met jullie annexkoppen voordat we weggaan."
+            },
+            {
+              "speaker": "Tom",
+              "time": "05:02",
+              "text": "Wat als ik halverwege het netwerk eruit trek — houdt het De Vries bij als hij twintig minuten afdwaalt?"
+            },
+            {
+              "speaker": "Jij",
+              "time": "05:18",
+              "text": "Zullen we kijken? Ik schakel Wi‑Fi nu uit."
+            },
+            {
+              "speaker": "Marieke",
+              "time": "06:02",
+              "text": "…Het ging door. Goed. Stuur de schriftelijke garanties en we plannen een pilot met opnames van de commissie planning."
+            },
+            {
+              "speaker": "Tom",
+              "time": "06:44",
+              "text": "En zet in de docs iets over sprekers samenvoegen — dat scheelt mijn team uren."
+            }
+          ]
+        },
+        {
+          "id": "user-research",
+          "title": "Ziekenhuisadmins — veldinterviews synthese",
+          "dateLabel": "Gisteren · 11:08",
+          "duration": "38 min",
+          "memo": "Drie interviews samengevoegd met ICU-beheerders en een privacy officer. Steeds hetzelfde verhaal: ze willen AI-notities, compliance zegt nee tegen de cloud.\n\nDr. Weiss zei letterlijk: “patiëntnamen horen niet op iemand anders GPU.” Elena liet zien dat vergaderchat kon beantwoorden “waar was iedereen het oneens over?” over negentig minuten zonder iets upstream te sturen.\n\nProduct-inzicht: sprekerlabels in Word-exports tellen meer dan fancy UI — vijf van zes deelnemers mailt dat naar legal.",
+          "transcript": [
+            {
+              "speaker": "Dr. Weiss",
+              "time": "03:22",
+              "text": "Aios nemen overdrachten op met hun telefoon omdat het officiële tool naar Virginia uploadt. Dat gebeurt niet op mijn afdeling."
+            },
+            {
+              "speaker": "Elena",
+              "time": "04:01",
+              "text": "Bij gisteren's interview dacht diarisatie tot minuut twaalf dat de deelnemer twee personen was. Dertig seconden om te mergen — acceptabel?"
+            },
+            {
+              "speaker": "Jij",
+              "time": "04:28",
+              "text": "Klik op de sprekernaam, wijs alle segmenten toe, klaar. Geen re-upload, geen wachten op een server."
+            },
+            {
+              "speaker": "James",
+              "time": "06:15",
+              "text": "Mijn vraag gaat over exports. Legal wil Word met sprekernamen, geen screenshot van jullie app."
+            },
+            {
+              "speaker": "Jij",
+              "time": "06:40",
+              "text": "DOCX-export is ook lokaal — dezelfde labels als in het transcript-tabblad."
+            },
+            {
+              "speaker": "Elena",
+              "time": "08:40",
+              "text": "Ik vroeg de chat wie tegen het budget was — drie momenten geciteerd over Nederlands en Engels zonder handmatig schrubben."
+            },
+            {
+              "speaker": "Dr. Weiss",
+              "time": "09:55",
+              "text": "Als je bewijst dat audio nooit de machine verlaat, zet ik een pilot op met drie afdelingshoofden."
+            },
+            {
+              "speaker": "James",
+              "time": "11:03",
+              "text": "Stuur het dataflow-diagram. Klopt dat, dan gaat privacyreview van maanden naar weken."
+            }
+          ]
+        },
+        {
+          "id": "board",
+          "title": "Investeerders dry run — vertrouwelijk",
+          "dateLabel": "Ma · 09:30",
+          "duration": "72 min",
+          "memo": "Vertrouwelijk. Deck hardop geoefend; opname ving vier minuten afdwalen over enterprise-pricing.\n\nSarah van Horizon duwde hard: “Wat stop Microsoft?” Antwoord: gereguleerde kopers die bewijs willen dat audio nooit vertrok. Marcus wil privacy by design als volledige slide, geen voetnoot.\n\nBesluit: begin met de gemeentewinst, alleen live demo, geen cloud-backupverhaal.",
+          "transcript": [
+            {
+              "speaker": "Sarah",
+              "time": "12:08",
+              "text": "Loop het ergste scenario door. Een griffier neemt een besloten sessie op — waar gaat dat bestand?"
+            },
+            {
+              "speaker": "Jij",
+              "time": "12:34",
+              "text": "SQLite op hun laptop. Wij ontvangen nooit de audio. Teamfuncties zijn alleen metadata — seats, uitnodigingen, orgnaam."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "13:02",
+              "text": "Jullie moat is compliance, niet modelkwaliteit. Wat stop Microsoft om hetzelfde te shippen?"
+            },
+            {
+              "speaker": "Jij",
+              "time": "13:28",
+              "text": "Hun model gaat uit van de cloud. Onze kopers vragen om air-gapped workflows — gemeenten, ziekenhuizen, advocaten."
+            },
+            {
+              "speaker": "Marcus",
+              "time": "18:22",
+              "text": "Zet privacy by design op een eigen slide. Investeerders vragen dataresidentie in de eerste vijf minuten."
+            },
+            {
+              "speaker": "Voorzitter",
+              "time": "22:14",
+              "text": "Negentig seconden product. Live transcriptie wint van nog een architectuurdiagram."
+            },
+            {
+              "speaker": "Jij",
+              "time": "23:40",
+              "text": "Ik neem vanavond op, strak de samenvatting aan en plak actiepunten in het bestuursmemo — alles lokaal."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "24:15",
+              "text": "Converteert de gemeentepilot, dan praten we over de ronde leiden. Stuur me geen cloudlink."
+            }
+          ]
+        },
+        {
+          "id": "retro",
+          "title": "Beursdemo — post-mortem",
+          "dateLabel": "Vr · 16:45",
+          "duration": "26 min",
+          "memo": "De Hannover-demo crashte voor veertig man omdat modeldownload op hotel-wifi niet klaar was.\n\nSales improviseerde — opende een bestaande vergadering en toonde samenvatting + chat. Publiek lachte, klant boekte toch een follow-up.\n\nLes: vertrouw nooit congres-wifi. Ship een “demo mode”-bundel vooraf; installergrootte in changelog mirror zodat support stopt met gissen.",
+          "transcript": [
+            {
+              "speaker": "Sales",
+              "time": "01:05",
+              "text": "Veertig mensen staarden naar een voortgangsbalk op twaalf procent, zes minuten lang. Ik werd vijf jaar ouder."
+            },
+            {
+              "speaker": "Dev",
+              "time": "02:10",
+              "text": "Diarisatie na opname is solide op bestanden van een uur — jammer dat niemand het live zag."
+            },
+            {
+              "speaker": "Jij",
+              "time": "02:45",
+              "text": "Ik opende gisteren's raadsopname, draaide samenvatting, vroeg chat welke bezwaren kwamen — publiek leunde echt naar voren."
+            },
+            {
+              "speaker": "Design",
+              "time": "04:02",
+              "text": "Mensen vonden samenvatting opnieuw genereren niet. Op de dock had herstel er bewust uitgezien."
+            },
+            {
+              "speaker": "Sales",
+              "time": "04:50",
+              "text": "De inkoopleider boekte toch dinsdag. Zei: “werkt het offline, dan hebben we het nodig.”"
+            },
+            {
+              "speaker": "Dev",
+              "time": "05:18",
+              "text": "Ik voeg een demo-bundel toe en een groen “modellen gereed”-slot dat opnemen blokkeert tot download klaar is."
+            },
+            {
+              "speaker": "Jij",
+              "time": "05:44",
+              "text": "Marketing krijgt de hero-preview bijgewerkt met echte tabs — geen nep play-knop meer."
+            }
+          ]
+        }
+      ]
+    }
   },
   "features": {
     "label": "Functies",
@@ -353,13 +578,14 @@
   "howItWorks": {
     "label": "Hoe het werkt",
     "headline": "Van vergadering naar bruikbare notities in minuten",
+    "headlineNote": "*Verwerkingstijd hangt af van uw apparaat.",
     "step1": {
       "title": "Opnemen",
       "description": "Begin uw vergadering op te nemen met één klik. Werkt met elke microfoon."
     },
     "step2": {
       "title": "Transcriberen",
-      "description": "AI transcribeert uw vergadering in realtime en identificeert elke spreker automatisch."
+      "description": "AI transcribeert uw vergadering en identificeert elke spreker automatisch."
     },
     "step3": {
       "title": "Samenvatten",

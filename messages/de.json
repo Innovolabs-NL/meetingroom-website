@@ -283,7 +283,232 @@
     "subheadline": "Nehmen Sie Ihre Besprechungen auf, transkribieren und fassen Sie sie zusammen — vollständig auf Ihrem Gerät. Für Teams und Organisationen, die Besprechungsinhalte nicht in die Cloud senden dürfen.",
     "cta": "Kostenlos herunterladen",
     "ctaSecondary": "Preise ansehen",
-    "appScreenshot": "MeetingRoom App-Screenshot"
+    "appScreenshot": "MeetingRoom App-Screenshot",
+    "demo": {
+      "badge": "Interaktive Vorschau",
+      "searchPlaceholder": "Ordner und Besprechungen suchen…",
+      "folders": "Ordner",
+      "recentMeetings": "Letzte Besprechungen",
+      "createFolder": "Ordner erstellen",
+      "calendar": "Kalender",
+      "newMeeting": "Neue Besprechung",
+      "tabMemo": "Notizen",
+      "tabTranscript": "Transkript",
+      "tabSummary": "Zusammenfassung",
+      "toggleSidebar": "Seitenleiste ein/aus",
+      "settings": "Einstellungen",
+      "share": "Teilen",
+      "toggleChat": "Chat-Panel",
+      "record": "Aufnehmen",
+      "startListening": "Aufnahme starten",
+      "recordHint": "Aufnahme ist in dieser Vorschau deaktiviert.",
+      "mapsButton": "Ordner",
+      "more": "Weitere Aktionen",
+      "memoPlaceholder": "Notizen beginnen…",
+      "memoStyleNormal": "Normal",
+      "aiModelsReady": "KI-Modelle bereit",
+      "saved": "Gespeichert",
+      "chatTitle": "Besprechungs-Chat",
+      "chatHint": "Chat ist in dieser Vorschau deaktiviert.",
+      "folder": {
+        "name": "Aktive Accounts",
+        "count": 4,
+        "sectionCount": 2
+      },
+      "meetings": [
+        {
+          "id": "municipality",
+          "title": "Stadtrat — geschlossene Beschaffungsprüfung",
+          "dateLabel": "Heute · 14:22",
+          "duration": "54 Min.",
+          "memo": "Geschlossene Sitzung. Ihr DSB saß hinten und schwieg bis Minute vierzig.\n\nHighlight: Ich zog das WLAN — Transkription lief weiter — Tom applaudierte. Marieke braucht jede Aussage schriftlich für die DSFA. Toms Pain Point: Sprecher umbenennen; Sachbearbeiter verwechseln ständig Ratsmitglied und Tagesordnungspunkt.\n\nBis Freitag: Security-One-Pager, Installer-SHA-256, Word-Export mit Sprecherlabels zum Anhangsdebatte.",
+          "transcript": [
+            {
+              "speaker": "Marieke",
+              "time": "02:14",
+              "text": "Unser DSB fragt, wo Modelle liegen, wer sie aktualisiert und ob ein einziges Audio-Byte diesen Laptop beim Zusammenfassen verlässt."
+            },
+            {
+              "speaker": "Sie",
+              "time": "02:48",
+              "text": "Modelle liegen lokal nach Download. Zusammenfassungen und Chat laufen auf dem Gerät. Einziger Netzwerkaufruf optional — Login für Teameinladungen."
+            },
+            {
+              "speaker": "Tom",
+              "time": "04:05",
+              "text": "Letztes Jahr ein anderer Anbieter. Sobald „Audio wird hochgeladen“ kam, war die Pilotphase tot. Können Sachbearbeiter Sprecher nachträglich korrigieren?"
+            },
+            {
+              "speaker": "Sie",
+              "time": "04:31",
+              "text": "Einmal umbenennen, gilt für Transkript und alle Exporte. Ich erstelle ein DOCX mit Ihren Anhangsüberschriften vor Abreise."
+            },
+            {
+              "speaker": "Tom",
+              "time": "05:02",
+              "text": "Was, wenn ich mitten in der Sitzung das Netzwerkkabel ziehe — hält das mit De Vries mit, wenn er zwanzig Minuten abschweift?"
+            },
+            {
+              "speaker": "Sie",
+              "time": "05:18",
+              "text": "Sollen wir schauen? Ich schalte jetzt WLAN aus."
+            },
+            {
+              "speaker": "Marieke",
+              "time": "06:02",
+              "text": "…Es lief weiter. Gut. Schicken Sie die schriftlichen Garantien, dann planen wir einen Pilot mit Planungsausschuss-Aufnahmen."
+            },
+            {
+              "speaker": "Tom",
+              "time": "06:44",
+              "text": "Und ergänzen Sie die Doku zum Sprecher-Zusammenführen — das spart meinem Team Stunden."
+            }
+          ]
+        },
+        {
+          "id": "user-research",
+          "title": "Krankenhaus-Admins — Feldforschung-Synthese",
+          "dateLabel": "Gestern · 11:08",
+          "duration": "38 Min.",
+          "memo": "Drei Interviews mit ICU-Administratoren und Datenschutzbeauftragtem zusammengeführt. Immer dieselbe Story: KI-Notizen ja, Cloud nein.\n\nDr. Weiss wörtlich: „Patientennamen gehören nicht auf fremde GPUs.“ Elena zeigte, dass Besprechungs-Chat „Worüber stritt man?“ über neunzig Minuten beantwortet, ohne etwas hochzuladen.\n\nProdukt-Erkenntnis: Sprecherlabels in Word-Exporten zählen mehr als UI — fünf von sechs mailen das an die Rechtsabteilung.",
+          "transcript": [
+            {
+              "speaker": "Dr. Weiss",
+              "time": "03:22",
+              "text": "Assistenzärzte nehmen Übergaben mit dem Handy auf, weil das offizielle Tool nach Virginia uploadet. Nicht auf meiner Station."
+            },
+            {
+              "speaker": "Elena",
+              "time": "04:01",
+              "text": "Beim gestrigen Interview hielt Diarisierung den Teilnehmer bis Minute zwölf für zwei Personen. Dreißig Sekunden zum Mergen — akzeptabel?"
+            },
+            {
+              "speaker": "Sie",
+              "time": "04:28",
+              "text": "Sprechername klicken, alle Segmente zuweisen, fertig. Kein Re-Upload, kein Warten auf Server."
+            },
+            {
+              "speaker": "James",
+              "time": "06:15",
+              "text": "Meine Frage: Exporte. Legal will Word mit Sprechernamen, keinen Screenshot Ihrer App."
+            },
+            {
+              "speaker": "Sie",
+              "time": "06:40",
+              "text": "DOCX-Export ist ebenfalls lokal — dieselben Labels wie im Transkript-Tab."
+            },
+            {
+              "speaker": "Elena",
+              "time": "08:40",
+              "text": "Ich fragte den Chat, wer beim Budget Widerstand leistete — drei Stellen über Niederländisch und Englisch, ohne manuelles Schwärzen."
+            },
+            {
+              "speaker": "Dr. Weiss",
+              "time": "09:55",
+              "text": "Beweisen Sie, dass Audio die Maschine nie verlässt — ich treibe einen Pilot mit drei Abteilungsleitern an."
+            },
+            {
+              "speaker": "James",
+              "time": "11:03",
+              "text": "Schicken Sie das Datenfluss-Diagramm. Stimmt es, geht Datenschutzprüfung von Monaten auf Wochen."
+            }
+          ]
+        },
+        {
+          "id": "board",
+          "title": "Investoren-Probedurchlauf — vertraulich",
+          "dateLabel": "Mo · 09:30",
+          "duration": "72 Min.",
+          "memo": "Vertraulich. Deck laut geübt; Aufnahme fing vier Minuten Abschweifen zur Enterprise-Preisgestaltung ein.\n\nSarah von Horizon drängte: „Was stoppt Microsoft?“ Antwort: regulierte Käufer, die Beweis wollen, dass Audio nie ging. Marcus will Privacy by Design als eigene Folie.\n\nBeschluss: mit Gemeindesieg starten, nur Live-Demo, kein Cloud-Backup-Narrativ.",
+          "transcript": [
+            {
+              "speaker": "Sarah",
+              "time": "12:08",
+              "text": "Schlimmster Fall: Ein Sachbearbeiter nimmt eine geschlossene Sitzung auf — wohin geht die Datei?"
+            },
+            {
+              "speaker": "Sie",
+              "time": "12:34",
+              "text": "SQLite auf dem Laptop. Wir erhalten nie das Audio. Teamfunktionen sind nur Metadaten — Seats, Einladungen, Org-Name."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "13:02",
+              "text": "Ihr Burggraben ist Compliance, nicht Modellqualität. Was stoppt Microsoft?"
+            },
+            {
+              "speaker": "Sie",
+              "time": "13:28",
+              "text": "Deren Modell setzt Cloud voraus. Unsere Käufer wollen air-gapped Workflows — Kommunen, Kliniken, Kanzleien."
+            },
+            {
+              "speaker": "Marcus",
+              "time": "18:22",
+              "text": "Privacy by Design auf eigene Folie. Investoren fragen Datenresidenz in den ersten fünf Minuten."
+            },
+            {
+              "speaker": "Vorsitz",
+              "time": "22:14",
+              "text": "Neunzig Sekunden Produkt. Live-Transkription schlägt ein weiteres Architekturdiagramm."
+            },
+            {
+              "speaker": "Sie",
+              "time": "23:40",
+              "text": "Ich nehme heute Abend auf, straffe die Zusammenfassung und trage Aktionspunkte lokal ins Vorstandsmemo ein."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "24:15",
+              "text": "Konvertiert der Gemeindepilot, sprechen wir über die Runde. Schicken Sie mir keinen Cloud-Link."
+            }
+          ]
+        },
+        {
+          "id": "retro",
+          "title": "Messe-Demo — Post-Mortem",
+          "dateLabel": "Fr · 16:45",
+          "duration": "26 Min.",
+          "memo": "Die Hannover-Demo crashte vor vierzig Leuten, weil der Modell-Download im Hotel-WLAN nicht fertig war.\n\nSales improvisierte — öffnete eine bestehende Besprechung, zeigte Zusammenfassung + Chat. Publikum lachte, Kunde buchte trotzdem Follow-up.\n\nLehre: Messe-WLAN nie vertrauen. Demo-Bundle vorinstallieren; Installer-Größe ins Changelog-Mirror-JSON.",
+          "transcript": [
+            {
+              "speaker": "Sales",
+              "time": "01:05",
+              "text": "Vierzig Leute starrten sechs Minuten auf einen Fortschrittsbalken bei zwölf Prozent. Ich alterte fünf Jahre."
+            },
+            {
+              "speaker": "Dev",
+              "time": "02:10",
+              "text": "Diarisierung nach Aufnahme ist solide bei einstündigen Dateien — schade, dass es niemand live sah."
+            },
+            {
+              "speaker": "Sie",
+              "time": "02:45",
+              "text": "Ich öffnete gestern's Ratsprotokoll, lief Zusammenfassung, fragte Chat nach Einwänden — das Publikum lehnte sich vor."
+            },
+            {
+              "speaker": "Design",
+              "time": "04:02",
+              "text": "Nutzer fanden Zusammenfassung neu generieren nicht. Auf dem Dock hätte Recovery bewusst gewirkt."
+            },
+            {
+              "speaker": "Sales",
+              "time": "04:50",
+              "text": "Der Einkaufsleiter buchte trotzdem Dienstag. Sagte: „Funktioniert es offline, brauchen wir es.“"
+            },
+            {
+              "speaker": "Dev",
+              "time": "05:18",
+              "text": "Ich füge ein Demo-Bundle und ein grünes „Modelle bereit“-Gate hinzu, das Aufnahme blockiert bis Download fertig ist."
+            },
+            {
+              "speaker": "Sie",
+              "time": "05:44",
+              "text": "Marketing bekommt die Hero-Vorschau mit echten Tabs — keine Fake-Play-Button-Momente mehr."
+            }
+          ]
+        }
+      ]
+    }
   },
   "features": {
     "label": "Funktionen",
@@ -340,13 +565,14 @@
   "howItWorks": {
     "label": "So funktioniert's",
     "headline": "Von der Besprechung zu verwertbaren Notizen in Minuten",
+    "headlineNote": "*Die Verarbeitungszeit hängt von Ihrem Gerät ab.",
     "step1": {
       "title": "Aufnehmen",
       "description": "Starten Sie die Aufnahme Ihrer Besprechung mit einem Klick. Funktioniert mit jedem Mikrofon."
     },
     "step2": {
       "title": "Transkribieren",
-      "description": "KI transkribiert Ihre Besprechung in Echtzeit und identifiziert jeden Sprecher automatisch."
+      "description": "KI transkribiert Ihre Besprechung und identifiziert jeden Sprecher automatisch."
     },
     "step3": {
       "title": "Zusammenfassen",

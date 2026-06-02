@@ -54,7 +54,12 @@ export function HowItWorks() {
           className="mx-auto max-w-2xl text-center"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">{t("label")}</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{t("headline")}</h2>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            {t("headline")}
+            <sup className="ml-0.5 text-[0.55em] font-semibold text-muted" aria-hidden>
+              *
+            </sup>
+          </h2>
         </motion.div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -88,6 +93,10 @@ export function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted/90 sm:mt-12">
+          {t("headlineNote")}
+        </p>
       </div>
     </section>
   );

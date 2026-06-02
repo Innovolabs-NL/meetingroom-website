@@ -298,7 +298,232 @@
     "subheadline": "Record, transcribe, and summarize your meetings entirely on your machine. Built for teams and organizations that cannot send meeting content to the cloud.",
     "cta": "Download Free",
     "ctaSecondary": "See Pricing",
-    "appScreenshot": "MeetingRoom app screenshot"
+    "appScreenshot": "MeetingRoom app screenshot",
+    "demo": {
+      "badge": "Interactive preview",
+      "searchPlaceholder": "Search folders and meetings…",
+      "folders": "Folders",
+      "recentMeetings": "Recent meetings",
+      "createFolder": "Create folder",
+      "calendar": "Calendar",
+      "newMeeting": "New meeting",
+      "tabMemo": "Memos",
+      "tabTranscript": "Transcript",
+      "tabSummary": "Summary",
+      "toggleSidebar": "Toggle sidebar",
+      "settings": "Settings",
+      "share": "Share",
+      "toggleChat": "Toggle chat panel",
+      "record": "Record",
+      "startListening": "Start listening",
+      "recordHint": "Recording is disabled in this preview.",
+      "mapsButton": "Folders",
+      "more": "More actions",
+      "memoPlaceholder": "Start taking notes…",
+      "memoStyleNormal": "Normal",
+      "aiModelsReady": "AI models ready",
+      "saved": "Saved",
+      "chatTitle": "Meeting chat",
+      "chatHint": "Chat is disabled in this preview.",
+      "folder": {
+        "name": "Active accounts",
+        "count": 4,
+        "sectionCount": 2
+      },
+      "meetings": [
+        {
+          "id": "municipality",
+          "title": "City council — closed procurement review",
+          "dateLabel": "Today · 14:22",
+          "duration": "54 min",
+          "memo": "Closed session. Their DPO sat in the back and stayed silent until minute forty.\n\nHighlight of the demo: I unplugged the Wi‑Fi and transcription kept running — Tom actually clapped. Marieke needs every claim in writing for the DPIA. Tom's pain point is renaming speakers after the fact; clerks constantly merge the wrong councillor with the wrong agenda item.\n\nBefore Friday: security one-pager, installer SHA-256, and a Word export with speaker labels on the annex debate.",
+          "transcript": [
+            {
+              "speaker": "Marieke",
+              "time": "02:14",
+              "text": "Our DPO will ask where the models live, who updates them, and whether a single byte of audio leaves this laptop during summarization."
+            },
+            {
+              "speaker": "You",
+              "time": "02:48",
+              "text": "Models sit in app storage after download. Summaries and chat run locally. The only network call is optional — signing in on the website if you want team invites."
+            },
+            {
+              "speaker": "Tom",
+              "time": "04:05",
+              "text": "We tried another vendor last year. The moment we saw “uploading audio” we killed the pilot. Can clerks fix speaker names after the meeting?"
+            },
+            {
+              "speaker": "You",
+              "time": "04:31",
+              "text": "Rename once and it propagates through the transcript and every export. I'll generate a DOCX with your annex headings before we leave."
+            },
+            {
+              "speaker": "Tom",
+              "time": "05:02",
+              "text": "What if I pull the network cable mid-meeting — does it keep up with De Vries when he goes off-script for twenty minutes?"
+            },
+            {
+              "speaker": "You",
+              "time": "05:18",
+              "text": "Want to see? I'll kill Wi‑Fi right now."
+            },
+            {
+              "speaker": "Marieke",
+              "time": "06:02",
+              "text": "…It actually continued. Fine. Send the written guarantees and we'll schedule a pilot with planning committee recordings."
+            },
+            {
+              "speaker": "Tom",
+              "time": "06:44",
+              "text": "And add a line in the docs about merging speakers — that's the feature that'll save my team hours."
+            }
+          ]
+        },
+        {
+          "id": "user-research",
+          "title": "Hospital admins — field interview synthesis",
+          "dateLabel": "Yesterday · 11:08",
+          "duration": "38 min",
+          "memo": "Merged three interviews with ICU administrators and a privacy officer. Same story every time: they want AI notes, compliance says no cloud.\n\nDr. Weiss literally said “we cannot have patient names on someone else's GPU.” Elena proved the meeting chat could answer “what did everyone disagree on?” across a ninety-minute file without sending anything upstream.\n\nProduct takeaway: speaker labels in Word exports matter more than fancy UI — five of six participants said that's what they email to legal.",
+          "transcript": [
+            {
+              "speaker": "Dr. Weiss",
+              "time": "03:22",
+              "text": "We have residents recording handoffs on their phones because the official tool uploads to Virginia. That is not happening on my ward."
+            },
+            {
+              "speaker": "Elena",
+              "time": "04:01",
+              "text": "When I diarized yesterday's interview, it thought the participant was two people until minute twelve. Took me thirty seconds to merge — acceptable?"
+            },
+            {
+              "speaker": "You",
+              "time": "04:28",
+              "text": "Click the speaker name, assign all segments, done. No re-upload, no waiting on a server."
+            },
+            {
+              "speaker": "James",
+              "time": "06:15",
+              "text": "My question is exports. Legal wants Word with speaker names, not a screenshot of your app."
+            },
+            {
+              "speaker": "You",
+              "time": "06:40",
+              "text": "DOCX export is local too — same labels you see in the transcript tab."
+            },
+            {
+              "speaker": "Elena",
+              "time": "08:40",
+              "text": "I asked the chat who pushed back on the budget — it quoted three moments across Dutch and English without me scrubbing the file manually."
+            },
+            {
+              "speaker": "Dr. Weiss",
+              "time": "09:55",
+              "text": "If you can prove the audio never leaves the machine, I'll champion a pilot with three department heads."
+            },
+            {
+              "speaker": "James",
+              "time": "11:03",
+              "text": "Send me the data-flow diagram. If it's accurate, privacy review moves from months to weeks."
+            }
+          ]
+        },
+        {
+          "id": "board",
+          "title": "Investor dry run — confidential",
+          "dateLabel": "Mon · 09:30",
+          "duration": "72 min",
+          "memo": "Confidential. Practised the deck out loud; recording caught me rambling on enterprise pricing for four minutes straight.\n\nSarah from Horizon pushed hard: “What stops Microsoft from adding this?” Answer: regulated buyers who need proof audio never left the device. Marcus wants GDPR-by-design as a full slide, not a footnote.\n\nBoard decision: lead with the municipality win, live demo only, no cloud backup story.",
+          "transcript": [
+            {
+              "speaker": "Sarah",
+              "time": "12:08",
+              "text": "Walk me through the worst case. A clerk records a closed session — where does that file go?"
+            },
+            {
+              "speaker": "You",
+              "time": "12:34",
+              "text": "SQLite on their laptop. We never receive the audio. Team features are metadata only — seats, invites, org name."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "13:02",
+              "text": "So your moat is compliance, not model quality. What stops Microsoft from shipping the same thing?"
+            },
+            {
+              "speaker": "You",
+              "time": "13:28",
+              "text": "Their business model assumes cloud. Our buyers ask for air-gapped workflows — councils, hospitals, law firms."
+            },
+            {
+              "speaker": "Marcus",
+              "time": "18:22",
+              "text": "Put GDPR-by-design on its own slide. Investors will probe data residency in the first five minutes."
+            },
+            {
+              "speaker": "Chair",
+              "time": "22:14",
+              "text": "Ninety-second product moment. Live transcription beats another architecture diagram."
+            },
+            {
+              "speaker": "You",
+              "time": "23:40",
+              "text": "I'll record tonight's run-through, tighten the summary, and paste action items into the board memo — all local."
+            },
+            {
+              "speaker": "Sarah",
+              "time": "24:15",
+              "text": "If the municipality pilot converts, we'll talk about leading the round. Don't send me a cloud link."
+            }
+          ]
+        },
+        {
+          "id": "retro",
+          "title": "Trade show demo — post-mortem",
+          "dateLabel": "Fri · 16:45",
+          "duration": "26 min",
+          "memo": "The Hannover demo crashed in front of forty people because the model download hadn't finished on hotel Wi‑Fi.\n\nSales improvised — opened an existing meeting and showed summary + chat instead. Audience laughed, client booked a follow-up anyway.\n\nLesson: never trust conference Wi‑Fi. Ship a “demo mode” bundle pre-loaded; add installer size to the changelog mirror so support stops guessing.",
+          "transcript": [
+            {
+              "speaker": "Sales",
+              "time": "01:05",
+              "text": "Forty people staring at a progress bar that said twelve percent for six minutes. I aged five years."
+            },
+            {
+              "speaker": "Dev",
+              "time": "02:10",
+              "text": "Post-recording diarization is solid on hour-long files now — shame nobody saw it live."
+            },
+            {
+              "speaker": "You",
+              "time": "02:45",
+              "text": "I opened yesterday's council recording, ran summary, asked chat what objections came up — crowd actually leaned in."
+            },
+            {
+              "speaker": "Design",
+              "time": "04:02",
+              "text": "People couldn't find regenerate summary. If we'd had that on the dock, recovery would've looked intentional."
+            },
+            {
+              "speaker": "Sales",
+              "time": "04:50",
+              "text": "The procurement lead still booked Tuesday. Said “if it works offline, we need it.”"
+            },
+            {
+              "speaker": "Dev",
+              "time": "05:18",
+              "text": "I'll add a demo bundle and a green “models ready” gate that blocks record until download completes."
+            },
+            {
+              "speaker": "You",
+              "time": "05:44",
+              "text": "Marketing gets the hero preview updated to show the real tabs — no more fake play button moments."
+            }
+          ]
+        }
+      ]
+    }
   },
   "features": {
     "label": "Features",
@@ -355,13 +580,14 @@
   "howItWorks": {
     "label": "How It Works",
     "headline": "From meeting to actionable notes in minutes",
+    "headlineNote": "*Processing time depends on your device.",
     "step1": {
       "title": "Record",
       "description": "Start recording your meeting with one click. Works with any microphone."
     },
     "step2": {
       "title": "Transcribe",
-      "description": "AI transcribes your meeting in real-time and identifies each speaker automatically."
+      "description": "AI transcribes your meeting and identifies each speaker automatically."
     },
     "step3": {
       "title": "Summarize",

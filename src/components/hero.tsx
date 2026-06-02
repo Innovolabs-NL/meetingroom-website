@@ -1,9 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { FloatingOrbs } from "./floating-orbs";
-import { AuroraWash, RippleField } from "./motion-decorations";
+import { HeroAppDemo } from "./hero-app-demo";
 
 const stagger = {
   animate: {
@@ -24,6 +24,7 @@ const fadeUp = {
 };
 
 export function Hero() {
+  const locale = useLocale();
   const t = useTranslations("hero");
 
   return (
@@ -115,36 +116,8 @@ export function Hero() {
               <div className="h-3 w-3 rounded-full bg-[#28c840]" />
               <span className="ml-3 text-xs font-medium text-muted">MeetingRoom</span>
             </div>
-            <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-gradient-to-b from-section to-background p-8 md:p-12">
-              <div className="absolute inset-0 hero-decorations">
-                <AuroraWash intensity="subtle" />
-              </div>
-              <motion.div
-                initial={{ scale: 0.88, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 mx-auto flex max-w-sm flex-col items-center text-center"
-              >
-                <div className="relative mb-4 flex h-24 w-24 items-center justify-center rounded-2xl border border-accent/20 bg-accent-muted shadow-md md:h-28 md:w-28">
-                  <div className="absolute inset-0">
-                    <RippleField rings={4} />
-                  </div>
-                  <svg
-                    width="36"
-                    height="36"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="relative text-accent"
-                  >
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium text-foreground/80">
-                  {t("appScreenshot")}
-                </p>
-              </motion.div>
+            <div className="relative aspect-video overflow-hidden bg-gradient-to-b from-section to-background">
+              <HeroAppDemo key={locale} />
             </div>
           </motion.div>
         </motion.div>

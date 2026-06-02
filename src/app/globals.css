@@ -115,6 +115,10 @@ html[data-theme="light"] .shadow-elevated {
     0 0 0 1px var(--color-border);
 }
 
+.hero-app-demo-dock {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-foreground) 6%, transparent);
+}
+
 .card-surface {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
