@@ -50,6 +50,7 @@
     "personalCardTitle": "Personal account",
     "personalCardHint": "Teams are managed separately. Your administrator can enable team mode for this account.",
     "downloadDesktop": "Download desktop app",
+    "downloadDesktopMobileHint": "MeetingRoom for Windows installs on a computer. Open this page on a desktop or laptop to download the app.",
     "gettingStartedTitle": "Getting started",
     "gettingStartedStep1": "Download and install MeetingRoom for Windows.",
     "gettingStartedStep2": "Sign in with your email on this website.",
@@ -588,6 +589,7 @@
       "headline": "Changelog",
       "intro": "High-level release notes. Version numbers align with published installers.",
       "downloadWindows": "Download installer — Windows",
+      "downloadMobileHint": "Open this page on a Windows computer to download the installer.",
       "githubSyncLine": "Synced from GitHub releases (refreshes about every five minutes). Release notes may be concise or in English.",
       "releaseNotesUnavailable": "There is no prose description on this GitHub release — use the installer link above.",
       "releases": [

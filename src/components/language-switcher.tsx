@@ -21,7 +21,13 @@ const fullLabels: Record<string, string> = {
   es: "Español",
 };
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({
+  dropUp = false,
+  onAfterSwitch,
+}: {
+  dropUp?: boolean;
+  onAfterSwitch?: () => void;
+} = {}) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -29,13 +35,13 @@ export function LanguageSwitcher() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
+    function handlePointerDown(e: PointerEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, []);
 
   function switchLocale(newLocale: string) {
@@ -43,13 +49,17 @@ export function LanguageSwitcher() {
     segments[1] = newLocale;
     router.push(segments.join("/"));
     setOpen(false);
+    onAfterSwitch?.();
   }
 
   return (
     <div ref={ref} className="relative">
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:border-border-light hover:bg-surface-hover hover:text-foreground"
+        aria-expanded={open}
+        aria-haspopup="listbox"
       >
         <svg
           width="16"
@@ -79,9 +89,15 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-xl border border-border bg-surface shadow-2xl">
+        <div
+          role="listbox"
+          className={`absolute z-50 w-40 overflow-hidden rounded-xl border border-border bg-surface shadow-2xl ${
+            dropUp ? "bottom-full left-0 mb-2" : "right-0 top-full mt-2"
+          }`}
+        >
           {routing.locales.map((l) => (
             <button
+              type="button"
               key={l}
               onClick={() => switchLocale(l)}
               className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-surface-hover ${

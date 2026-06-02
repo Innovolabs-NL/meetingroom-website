@@ -227,18 +227,24 @@ export function AppNavContent({
           ) : null}
         </div>
 
-        <div className="flex items-center justify-between gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted">
-            {t("appearance")}
-          </span>
-          <ThemeToggle />
-        </div>
-
         {showLanguageSwitcher ? (
-          <div className="px-1">
-            <LanguageSwitcher />
+          <div className="flex items-center justify-between gap-3 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
+            <LanguageSwitcher dropUp onAfterSwitch={onNavigate} />
+            <div className="flex shrink-0 items-center gap-2 border-l border-border/60 pl-3">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted">
+                {t("appearance")}
+              </span>
+              <ThemeToggle />
+            </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="flex items-center justify-between gap-2 rounded-xl border border-border/60 bg-background/40 px-3 py-2">
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted">
+              {t("appearance")}
+            </span>
+            <ThemeToggle />
+          </div>
+        )}
       </div>
     </div>
   );

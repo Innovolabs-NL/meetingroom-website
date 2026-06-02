@@ -134,6 +134,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
       <ChangelogReleases
         releases={items}
         emptyParagraphsFallback={usesGitHubLive ? emptyParagraphsFallback : undefined}
+        downloadMobileHint={t("changelog.downloadMobileHint")}
       />
     </StaticPageShell>
   );

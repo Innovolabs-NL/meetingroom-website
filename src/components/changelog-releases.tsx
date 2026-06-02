@@ -1,3 +1,5 @@
+import { MobileWarningCallout } from "@/components/mobile-warning-callout";
+
 export type ChangelogReleaseItem = {
   version: string;
   date: string;
@@ -12,9 +14,11 @@ type Props = {
   releases: ChangelogReleaseItem[];
   /** When a GitHub release has no body text */
   emptyParagraphsFallback?: string;
+  /** Shown on viewports below `md` instead of the download link */
+  downloadMobileHint?: string;
 };
 
-export function ChangelogReleases({ releases, emptyParagraphsFallback }: Props) {
+export function ChangelogReleases({ releases, emptyParagraphsFallback, downloadMobileHint }: Props) {
   return (
     <div className="mt-12 space-y-8">
       {releases.map((r, i) => (
@@ -34,14 +38,30 @@ export function ChangelogReleases({ releases, emptyParagraphsFallback }: Props) 
               )}
             </div>
             {r.downloadUrl && r.downloadLabel ? (
-              <a
-                href={r.downloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-accent/35 bg-accent/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-accent transition-colors hover:bg-accent/20"
-              >
-                {r.downloadLabel}
-              </a>
+              downloadMobileHint ? (
+                <>
+                  <div className="hidden md:block">
+                    <a
+                      href={r.downloadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded-lg border border-accent/35 bg-accent/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-accent transition-colors hover:bg-accent/20"
+                    >
+                      {r.downloadLabel}
+                    </a>
+                  </div>
+                  <MobileWarningCallout className="w-full">{downloadMobileHint}</MobileWarningCallout>
+                </>
+              ) : (
+                <a
+                  href={r.downloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg border border-accent/35 bg-accent/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-accent transition-colors hover:bg-accent/20"
+                >
+                  {r.downloadLabel}
+                </a>
+              )
             ) : null}
           </header>
           {r.notesLanguageHint ? (
