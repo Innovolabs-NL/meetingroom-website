@@ -262,7 +262,7 @@ export function HeroAppDemo() {
         </aside>
 
         {/* Center editor */}
-        <main className="relative flex min-w-0 flex-1 flex-col bg-background">
+        <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-background">
           <div className="flex shrink-0 gap-1.5 overflow-x-auto border-b border-border/60 px-2 py-2 md:hidden">
             {meetings.map((m) => {
               const active = m.id === activeId;
@@ -342,52 +342,35 @@ export function HeroAppDemo() {
             </div>
           ) : null}
 
-          <div className="min-h-0 flex-1 overflow-y-auto px-3 pb-2 pt-3 text-[1em] leading-relaxed sm:px-4">
-            {tab === "memo" &&
-              (meeting.memo ? (
-                <p className="whitespace-pre-line text-foreground/90">{meeting.memo}</p>
-              ) : (
-                <p className="text-muted/70">{t("memoPlaceholder")}</p>
-              ))}
-            {tab === "transcript" && (
-              <ul className="space-y-3">
-                {meeting.transcript.map((row, i) => (
-                  <li key={i}>
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-semibold" style={{ color: row.color }}>
-                        {row.speaker}
-                      </span>
-                      <span className="text-[0.82em] tabular-nums text-muted">{row.time}</span>
-                    </div>
-                    <p className="mt-0.5 text-foreground/85">{row.text}</p>
-                  </li>
+          <div className="relative min-h-0 flex-1">
+            <div className="h-full overflow-y-auto px-3 pb-[4.75rem] pt-3 text-[1em] leading-relaxed sm:px-4 sm:pb-[5rem]">
+              {tab === "memo" &&
+                (meeting.memo ? (
+                  <p className="whitespace-pre-line text-foreground/90">{meeting.memo}</p>
+                ) : (
+                  <p className="text-muted/70">{t("memoPlaceholder")}</p>
                 ))}
-              </ul>
-            )}
-            {tab === "summary" && <HeroDemoSummary summary={meeting.summary} />}
-          </div>
+              {tab === "transcript" && (
+                <ul className="space-y-3">
+                  {meeting.transcript.map((row, i) => (
+                    <li key={i}>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-semibold" style={{ color: row.color }}>
+                          {row.speaker}
+                        </span>
+                        <span className="text-[0.82em] tabular-nums text-muted">{row.time}</span>
+                      </div>
+                      <p className="mt-0.5 text-foreground/85">{row.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {tab === "summary" && <HeroDemoSummary summary={meeting.summary} />}
+            </div>
 
-          {/* Bottom chrome — pinned like desktop note-editor-bottom-chrome */}
-          <div className="relative mt-auto shrink-0 px-3 pb-2.5 pt-8">
-            <div
-              className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-t from-background to-transparent"
-              aria-hidden
-            />
-            <div className="relative flex flex-col items-center gap-2">
-              <button
-                type="button"
-                onClick={() => showDemoToast(t("recordHint"))}
-                aria-label={t("record")}
-                className="inline-flex h-9 items-center gap-2.5 rounded-full border border-border bg-surface px-3.5 text-[1em] font-medium text-foreground/90 shadow-elevated transition-transform hover:scale-[1.02] active:scale-[0.98] sm:h-10 sm:px-4"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
-                  <rect x="9" y="2" width="6" height="11" rx="3" />
-                  <path d="M5 10a7 7 0 0 0 14 0" />
-                  <path d="M12 17v4M9 21h6" />
-                </svg>
-                <span>{t("startListening")}</span>
-              </button>
-              <div className="hero-app-demo-dock inline-flex max-w-full items-center justify-center gap-3 overflow-x-auto rounded-xl border border-border bg-surface px-4 py-1 sm:gap-[18px] sm:px-6">
+            {/* Floating dock over scrollable content */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-3 pb-2.5">
+              <div className="hero-app-demo-dock pointer-events-auto relative inline-flex max-w-full items-center justify-center gap-3 overflow-x-auto rounded-xl border border-border bg-surface px-4 py-1.5 sm:gap-[18px] sm:px-6 sm:py-2">
                 {TABS.map((key) => {
                   const active = tab === key;
                   return (
