@@ -104,19 +104,19 @@ export function Hero() {
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
           style={{ perspective: 1200 }}
-          className="mt-16 md:mt-20"
+          className="mt-12 w-full md:mt-20"
         >
           <motion.div
             whileHover={{ y: -6, transition: { duration: 0.35 } }}
-            className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-border bg-surface shadow-elevated"
+            className="mx-auto w-full overflow-hidden rounded-xl border border-border bg-surface shadow-elevated sm:rounded-2xl"
           >
-            <div className="flex items-center gap-2 border-b border-border bg-section px-4 py-3">
-              <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-              <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
-              <div className="h-3 w-3 rounded-full bg-[#28c840]" />
-              <span className="ml-3 text-xs font-medium text-muted">MeetingRoom</span>
+            <div className="flex items-center gap-2 border-b border-border bg-section px-3 py-2.5 sm:px-4 sm:py-3">
+              <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57] sm:h-3 sm:w-3" />
+              <div className="h-2.5 w-2.5 rounded-full bg-[#febc2e] sm:h-3 sm:w-3" />
+              <div className="h-2.5 w-2.5 rounded-full bg-[#28c840] sm:h-3 sm:w-3" />
+              <span className="ml-2 text-[11px] font-medium text-muted sm:ml-3 sm:text-xs">MeetingRoom</span>
             </div>
-            <div className="relative aspect-video overflow-hidden bg-gradient-to-b from-section to-background">
+            <div className="hero-app-demo-frame relative overflow-hidden bg-gradient-to-b from-section to-background">
               <HeroAppDemo key={locale} />
             </div>
           </motion.div>

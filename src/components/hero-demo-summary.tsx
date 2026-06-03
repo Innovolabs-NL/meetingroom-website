@@ -3,7 +3,7 @@ import type { DemoSummary } from "./hero-app-demo-data";
 function SummaryTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
   return (
     <div className="mt-1.5 overflow-x-auto rounded-md border border-border/50">
-      <table className="w-full min-w-[280px] border-collapse text-[10px] leading-snug">
+      <table className="w-full min-w-[240px] border-collapse text-[0.92em] leading-snug sm:min-w-[280px]">
         <thead>
           <tr className="border-b border-border/50 bg-surface/80">
             {headers.map((header) => (
@@ -35,10 +35,10 @@ function SummaryTable({ headers, rows }: { headers: string[]; rows: string[][] }
 export function HeroDemoSummary({ summary }: { summary: DemoSummary }) {
   return (
     <article className="space-y-3.5 pb-1">
-      <h3 className="text-[12px] font-bold leading-snug text-foreground">{summary.title}</h3>
+      <h3 className="text-[1.12em] font-bold leading-snug text-foreground">{summary.title}</h3>
       {summary.sections.map((section, index) => (
         <section key={index}>
-          <h4 className="text-[11px] font-semibold text-foreground/95">{section.heading}</h4>
+          <h4 className="text-[1em] font-semibold text-foreground/95">{section.heading}</h4>
           {section.body ? (
             <p className="mt-1 leading-relaxed text-foreground/85">{section.body}</p>
           ) : null}
