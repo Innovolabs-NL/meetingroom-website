@@ -286,6 +286,11 @@
     "appScreenshot": "Capture d'écran de l'application MeetingRoom",
     "demo": {
       "badge": "Aperçu interactif",
+      "exploreCaption": "Aperçu en direct — cliquez pour explorer ; rien n’est envoyé ni enregistré.",
+      "exploreHint": "Interactif",
+      "exploreAria": "Aperçu interactif de l’application MeetingRoom",
+      "exploreCoach": "Essayez dossiers, réunions, onglets, maps ou chat",
+      "exploreDismiss": "OK",
       "searchPlaceholder": "Rechercher dossiers et réunions…",
       "folders": "Dossiers",
       "recentMeetings": "Réunions récentes",

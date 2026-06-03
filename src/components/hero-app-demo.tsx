@@ -53,7 +53,7 @@ function RoundIconBtn({ label, children }: { label: string; children: React.Reac
   );
 }
 
-export function HeroAppDemo() {
+export function HeroAppDemo({ onInteract }: { onInteract?: () => void }) {
   const t = useTranslations("hero.demo");
   const { meetings, maps: localeMaps } = useHeroDemoData();
   const [activeId, setActiveId] = useState(meetings[0]?.id ?? "municipality");
@@ -213,8 +213,12 @@ export function HeroAppDemo() {
 
   return (
     <div
-      className="hero-app-demo relative flex h-full min-h-0 w-full flex-col bg-background text-left text-foreground select-none"
-      onClick={(e) => e.stopPropagation()}
+      className="hero-app-demo relative flex h-full min-h-0 w-full flex-col bg-background text-left text-foreground [&_button]:cursor-pointer"
+      onClick={(e) => {
+        e.stopPropagation();
+        onInteract?.();
+      }}
+      onKeyDown={() => onInteract?.()}
     >
       {/* Top bar — matches desktop center-header */}
       <header className="flex h-8 shrink-0 items-center border-b border-border bg-section px-1.5">

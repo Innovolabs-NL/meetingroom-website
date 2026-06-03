@@ -115,6 +115,38 @@ html[data-theme="light"] .shadow-elevated {
     0 0 0 1px var(--color-border);
 }
 
+@keyframes hero-demo-frame-ring {
+  0%,
+  100% {
+    box-shadow:
+      0 20px 40px -16px var(--color-elevated-shadow),
+      0 0 0 1px var(--color-border);
+  }
+  50% {
+    box-shadow:
+      0 24px 48px -16px var(--color-elevated-shadow),
+      0 0 0 1px color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
+  }
+}
+
+.hero-demo-interactive-frame {
+  animation: hero-demo-frame-ring 2.8s ease-in-out 2;
+}
+
+@keyframes hero-demo-coach-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.hero-demo-explore-coach {
+  animation: hero-demo-coach-bob 2.2s ease-in-out infinite;
+}
+
 .hero-app-demo-frame {
   min-height: min(72vh, 420px);
   height: min(72vh, 420px);

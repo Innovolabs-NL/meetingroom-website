@@ -4,6 +4,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { FloatingOrbs } from "./floating-orbs";
 import { HeroAppDemo } from "./hero-app-demo";
+import {
+  HeroDemoExploreCoach,
+  useHeroDemoExploreCoach,
+} from "./hero-demo-explore-hint";
 
 const stagger = {
   animate: {
@@ -26,6 +30,8 @@ const fadeUp = {
 export function Hero() {
   const locale = useLocale();
   const t = useTranslations("hero");
+  const tDemo = useTranslations("hero.demo");
+  const { visible: coachVisible, dismiss: dismissCoach } = useHeroDemoExploreCoach();
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32">
@@ -106,18 +112,38 @@ export function Hero() {
           style={{ perspective: 1200 }}
           className="mt-12 w-full md:mt-20"
         >
+          <p className="mb-3 text-center text-sm text-muted">{tDemo("exploreCaption")}</p>
           <motion.div
             whileHover={{ y: -6, transition: { duration: 0.35 } }}
-            className="mx-auto w-full overflow-hidden rounded-xl border border-border bg-surface shadow-elevated sm:rounded-2xl"
+            className="hero-demo-interactive-frame mx-auto w-full cursor-default overflow-hidden rounded-xl border border-border bg-surface shadow-elevated sm:rounded-2xl"
+            role="group"
+            aria-label={tDemo("exploreAria")}
           >
             <div className="flex items-center gap-2 border-b border-border bg-section px-3 py-2.5 sm:px-4 sm:py-3">
               <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57] sm:h-3 sm:w-3" />
               <div className="h-2.5 w-2.5 rounded-full bg-[#febc2e] sm:h-3 sm:w-3" />
               <div className="h-2.5 w-2.5 rounded-full bg-[#28c840] sm:h-3 sm:w-3" />
               <span className="ml-2 text-[11px] font-medium text-muted sm:ml-3 sm:text-xs">MeetingRoom</span>
+              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent-muted px-2 py-0.5 text-[10px] font-semibold text-accent sm:text-[11px]">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="shrink-0 opacity-90"
+                  aria-hidden
+                >
+                  <path d="M15 15l6 6M5 5l3.5-3.5M19 9l-6-6-4 4M9 19l-6 6" />
+                  <circle cx="5.5" cy="5.5" r="2.5" />
+                </svg>
+                {tDemo("exploreHint")}
+              </span>
             </div>
             <div className="hero-app-demo-frame relative overflow-hidden bg-gradient-to-b from-section to-background">
-              <HeroAppDemo key={locale} />
+              <HeroAppDemo key={locale} onInteract={dismissCoach} />
+              <HeroDemoExploreCoach visible={coachVisible} onDismiss={dismissCoach} />
             </div>
           </motion.div>
         </motion.div>

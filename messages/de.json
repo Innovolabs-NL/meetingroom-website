@@ -286,6 +286,11 @@
     "appScreenshot": "MeetingRoom App-Screenshot",
     "demo": {
       "badge": "Interaktive Vorschau",
+      "exploreCaption": "Live-Vorschau — klicken Sie sich durch; nichts wird hochgeladen oder aufgenommen.",
+      "exploreHint": "Interaktiv",
+      "exploreAria": "Interaktive MeetingRoom-App-Vorschau",
+      "exploreCoach": "Ordner, Besprechungen, Tabs, Maps oder Chat ausprobieren",
+      "exploreDismiss": "OK",
       "searchPlaceholder": "Ordner und Besprechungen suchen…",
       "folders": "Ordner",
       "recentMeetings": "Letzte Besprechungen",

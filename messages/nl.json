@@ -299,6 +299,11 @@
     "appScreenshot": "MeetingRoom app schermafbeelding",
     "demo": {
       "badge": "Interactieve preview",
+      "exploreCaption": "Live preview — klik rond; er wordt niets geüpload of opgenomen.",
+      "exploreHint": "Interactief",
+      "exploreAria": "Interactieve MeetingRoom-app preview",
+      "exploreCoach": "Probeer mappen, vergaderingen, tabbladen, Mappen of chat",
+      "exploreDismiss": "OK",
       "searchPlaceholder": "Zoek mappen en vergaderingen…",
       "folders": "Mappen",
       "recentMeetings": "Recente vergaderingen",

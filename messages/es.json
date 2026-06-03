@@ -286,6 +286,11 @@
     "appScreenshot": "Captura de pantalla de la aplicación MeetingRoom",
     "demo": {
       "badge": "Vista previa interactiva",
+      "exploreCaption": "Vista previa en vivo — haz clic para explorar; no se sube ni graba nada.",
+      "exploreHint": "Interactivo",
+      "exploreAria": "Vista previa interactiva de la app MeetingRoom",
+      "exploreCoach": "Prueba carpetas, reuniones, pestañas, mapas o chat",
+      "exploreDismiss": "OK",
       "searchPlaceholder": "Buscar carpetas y reuniones…",
       "folders": "Carpetas",
       "recentMeetings": "Reuniones recientes",

@@ -301,6 +301,11 @@
     "appScreenshot": "MeetingRoom app screenshot",
     "demo": {
       "badge": "Interactive preview",
+      "exploreCaption": "Live preview — click around; nothing is uploaded or recorded.",
+      "exploreHint": "Interactive",
+      "exploreAria": "Interactive MeetingRoom app preview",
+      "exploreCoach": "Try folders, meetings, tabs, maps, or chat",
+      "exploreDismiss": "OK",
       "searchPlaceholder": "Search folders and meetings…",
       "folders": "Folders",
       "recentMeetings": "Recent meetings",
