@@ -32,6 +32,39 @@ export type DemoFolder = {
   sectionCount: number;
 };
 
+export type DemoMap = {
+  id: string;
+  name: string;
+  color: string;
+  meetingIds: string[];
+};
+
+type DemoMapRaw = {
+  id: string;
+  name: string;
+  color: string;
+  meetingIds: string[];
+};
+
+export function meetingHasMap(
+  meetingId: string,
+  mapId: string,
+  assignments: Record<string, string[]>,
+): boolean {
+  return (assignments[meetingId] ?? []).includes(mapId);
+}
+
+export function buildInitialMapAssignments(maps: DemoMap[]): Record<string, string[]> {
+  const byMeeting: Record<string, string[]> = {};
+  for (const map of maps) {
+    for (const meetingId of map.meetingIds) {
+      if (!byMeeting[meetingId]) byMeeting[meetingId] = [];
+      byMeeting[meetingId].push(map.id);
+    }
+  }
+  return byMeeting;
+}
+
 const SPEAKER_COLORS = ["#3b82f6", "#06b6d4", "#8b5cf6", "#f59e0b"] as const;
 
 type DemoMeetingId = keyof (typeof HERO_DEMO_SUMMARIES)["en"];
@@ -72,5 +105,7 @@ export function useHeroDemoData() {
 
   const folder = useMemo(() => t.raw("folder") as DemoFolder, [t]);
 
-  return { meetings, folder };
+  const maps = useMemo(() => t.raw("maps") as DemoMapRaw[], [t]);
+
+  return { meetings, folder, maps };
 }
