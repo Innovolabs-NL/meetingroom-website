@@ -43,6 +43,7 @@ export function SignupForm({ initialDesktopSessionEmail }: SignupFormProps) {
   const inviteToken = searchParams.get("invite_token");
   const desktopAuth = isDesktopAuthSource(searchParams);
   const desktopState = searchParams.get("state");
+  const loopbackPort = searchParams.get("loopback_port");
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
 
@@ -99,7 +100,7 @@ export function SignupForm({ initialDesktopSessionEmail }: SignupFormProps) {
   }, [resendCooldown]);
 
   const desktopQuery = desktopAuth
-    ? `source=desktop${desktopState ? `&state=${encodeURIComponent(desktopState)}` : ""}`
+    ? `source=desktop${desktopState ? `&state=${encodeURIComponent(desktopState)}` : ""}${loopbackPort ? `&loopback_port=${encodeURIComponent(loopbackPort)}` : ""}`
     : "";
 
   const loginHref = inviteToken
@@ -115,7 +116,7 @@ export function SignupForm({ initialDesktopSessionEmail }: SignupFormProps) {
       const session = await resolveSessionAfterAuth(supabase, sessionFromAuth);
       if (!session) return;
       try {
-        const desktopSession = await completeDesktopAuthHandoff(desktopState);
+        const desktopSession = await completeDesktopAuthHandoff(desktopState, loopbackPort);
         setDesktopHandoffSession(desktopSession);
       } catch (handoffError) {
         setError(handoffError instanceof Error ? handoffError.message : t("desktopHandoffFailed"));
@@ -132,7 +133,7 @@ export function SignupForm({ initialDesktopSessionEmail }: SignupFormProps) {
     setIsDesktopLogInPending(true);
     void (async () => {
       try {
-        const session = await completeDesktopAuthHandoff(desktopState);
+        const session = await completeDesktopAuthHandoff(desktopState, loopbackPort);
         setDesktopHandoffSession(session);
       } catch (handoffError) {
         setError(handoffError instanceof Error ? handoffError.message : t("desktopHandoffFailed"));
@@ -301,7 +302,13 @@ export function SignupForm({ initialDesktopSessionEmail }: SignupFormProps) {
   }
 
   if (desktopHandoffSession) {
-    return <DesktopAuthHandoff session={desktopHandoffSession} state={desktopState} />;
+    return (
+      <DesktopAuthHandoff
+        session={desktopHandoffSession}
+        state={desktopState}
+        loopbackPort={loopbackPort}
+      />
+    );
   }
 
   if (desktopAuth && desktopSessionLoading) {

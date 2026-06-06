@@ -8,11 +8,7 @@ export function isDesktopAuthSource(
   return searchParams.get("source") === "desktop";
 }
 
-/** Deep link hash consumed by the MeetingRoom desktop app (`setSessionFromUrlHash`). */
-export function buildDesktopAuthCallbackUrl(
-  session: Session,
-  state?: string | null,
-): string {
+function buildSessionParams(session: Session, state?: string | null): URLSearchParams {
   const hash = new URLSearchParams({
     access_token: session.access_token,
     refresh_token: session.refresh_token,
@@ -22,5 +18,19 @@ export function buildDesktopAuthCallbackUrl(
   if (state) {
     hash.set("state", state);
   }
-  return `${DESKTOP_AUTH_CALLBACK_SCHEME}#${hash.toString()}`;
+  return hash;
+}
+
+/** Deep link or dev loopback URL consumed by the MeetingRoom desktop app. */
+export function buildDesktopAuthCallbackUrl(
+  session: Session,
+  state?: string | null,
+  loopbackPort?: string | null,
+): string {
+  const params = buildSessionParams(session, state);
+  const port = loopbackPort?.trim();
+  if (port && /^\d+$/.test(port)) {
+    return `http://127.0.0.1:${port}/auth/callback?${params.toString()}`;
+  }
+  return `${DESKTOP_AUTH_CALLBACK_SCHEME}#${params.toString()}`;
 }

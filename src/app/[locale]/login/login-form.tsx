@@ -48,6 +48,7 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
   const next = searchParams.get("next");
   const desktopAuth = isDesktopAuthSource(searchParams);
   const desktopState = searchParams.get("state");
+  const loopbackPort = searchParams.get("loopback_port");
 
   const supabase = useMemo(() => createBrowserSupabaseClient(), []);
 
@@ -70,7 +71,7 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
   } = useDesktopExistingSession({ desktopAuth, supabase, initialDesktopSessionEmail });
 
   const desktopQuery = desktopAuth
-    ? `source=desktop${desktopState ? `&state=${encodeURIComponent(desktopState)}` : ""}`
+    ? `source=desktop${desktopState ? `&state=${encodeURIComponent(desktopState)}` : ""}${loopbackPort ? `&loopback_port=${encodeURIComponent(loopbackPort)}` : ""}`
     : "";
   const signupHref = next
     ? `/signup?next=${encodeURIComponent(next)}${desktopQuery ? `&${desktopQuery}` : ""}`
@@ -95,7 +96,7 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
       const session = await resolveSessionAfterAuth(supabase, sessionFromAuth);
       if (!session) return;
       try {
-        const desktopSession = await completeDesktopAuthHandoff(desktopState);
+        const desktopSession = await completeDesktopAuthHandoff(desktopState, loopbackPort);
         setDesktopHandoffSession(desktopSession);
       } catch (handoffError) {
         setError(handoffError instanceof Error ? handoffError.message : t("desktopHandoffFailed"));
@@ -112,7 +113,7 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
     setIsDesktopLogInPending(true);
     void (async () => {
       try {
-        const session = await completeDesktopAuthHandoff(desktopState);
+        const session = await completeDesktopAuthHandoff(desktopState, loopbackPort);
         setDesktopHandoffSession(session);
       } catch (handoffError) {
         setError(handoffError instanceof Error ? handoffError.message : t("desktopHandoffFailed"));
@@ -216,7 +217,13 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
   }
 
   if (desktopHandoffSession) {
-    return <DesktopAuthHandoff session={desktopHandoffSession} state={desktopState} />;
+    return (
+      <DesktopAuthHandoff
+        session={desktopHandoffSession}
+        state={desktopState}
+        loopbackPort={loopbackPort}
+      />
+    );
   }
 
   if (desktopAuth && desktopSessionLoading) {

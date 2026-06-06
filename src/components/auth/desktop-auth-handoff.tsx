@@ -9,14 +9,15 @@ import { AuthCard, AuthCardHeader } from "@/components/auth/auth-card";
 type Props = {
   session: Session;
   state?: string | null;
+  loopbackPort?: string | null;
 };
 
-export function DesktopAuthHandoff({ session, state }: Props) {
+export function DesktopAuthHandoff({ session, state, loopbackPort }: Props) {
   const t = useTranslations("auth");
 
   const openDesktop = useCallback(() => {
-    openDesktopAuthDeepLink(session, state);
-  }, [session, state]);
+    openDesktopAuthDeepLink(session, state, loopbackPort);
+  }, [session, state, loopbackPort]);
 
   return (
     <AuthCard>
