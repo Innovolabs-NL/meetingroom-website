@@ -5,10 +5,8 @@ export type AppTeam = { id: string; name: string; slug: string; role: string };
 export type AppContext = {
   configured: boolean;
   user: { id: string; email?: string; fullName?: string | null; company?: string | null } | null;
-  accountKind: "personal" | "team";
-  isTeamAccount: boolean;
   teams: AppTeam[];
-  /** Team accounts are limited to one team; this is that team when it exists. */
+  /** Each user may belong to at most one team. */
   team: AppTeam | null;
   hasTeam: boolean;
   canCreateTeam: boolean;
@@ -18,7 +16,6 @@ export type AppContext = {
 };
 
 type ProfileRow = {
-  account_kind: "personal" | "team";
   full_name: string | null;
   company: string | null;
 } | null;
@@ -32,8 +29,6 @@ export async function getAppContext(): Promise<AppContext> {
     return {
       configured: false,
       user: null,
-      accountKind: "personal",
-      isTeamAccount: false,
       teams: [],
       team: null,
       hasTeam: false,
@@ -53,8 +48,6 @@ export async function getAppContext(): Promise<AppContext> {
     return {
       configured: true,
       user: null,
-      accountKind: "personal",
-      isTeamAccount: false,
       teams: [],
       team: null,
       hasTeam: false,
@@ -67,7 +60,7 @@ export async function getAppContext(): Promise<AppContext> {
 
   let { data: profile, error: profileErr } = await supabase
     .from("profiles")
-    .select("account_kind, full_name, company")
+    .select("full_name, company")
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -76,7 +69,7 @@ export async function getAppContext(): Promise<AppContext> {
     if (!insertErr) {
       const refetch = await supabase
         .from("profiles")
-        .select("account_kind, full_name, company")
+        .select("full_name, company")
         .eq("user_id", user.id)
         .maybeSingle();
       profile = refetch.data;
@@ -91,8 +84,6 @@ export async function getAppContext(): Promise<AppContext> {
     .select("role, organizations(id, name, slug)")
     .eq("user_id", user.id);
 
-  const accountKind = (profile as ProfileRow)?.account_kind ?? "personal";
-  const isTeamAccount = accountKind === "team";
   const teams = ((memberships as MembershipRow[] | null) ?? [])
     .map((m) =>
       m.organizations
@@ -130,12 +121,10 @@ export async function getAppContext(): Promise<AppContext> {
       fullName: (profile as ProfileRow)?.full_name ?? null,
       company: (profile as ProfileRow)?.company ?? null,
     },
-    accountKind,
-    isTeamAccount,
     teams,
     team,
     hasTeam: team !== null,
-    canCreateTeam: isTeamAccount && team === null,
+    canCreateTeam: team === null,
     canDeleteAccount: soleOwnerTeamNames.length === 0,
     soleOwnerTeamNames,
     dbError: memErr?.message ?? profileErr?.message ?? null,

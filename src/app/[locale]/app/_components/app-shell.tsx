@@ -80,8 +80,6 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
 
     email: ctx.user.email,
 
-    accountKind: ctx.accountKind,
-
     team: ctx.team,
 
     canCreateTeam: ctx.canCreateTeam,

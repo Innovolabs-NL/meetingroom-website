@@ -12,12 +12,10 @@ import { getMobilePageTitleKey } from "./app-nav-utils";
 
 export function AppMobileHeader({
   email,
-  accountKind,
   team,
   canCreateTeam,
 }: {
   email?: string;
-  accountKind: "personal" | "team";
   team: AppTeam | null;
   canCreateTeam: boolean;
 }) {
@@ -103,7 +101,6 @@ export function AppMobileHeader({
               <div className="flex min-h-0 flex-1 flex-col">
                 <AppNavContent
                   email={email}
-                  accountKind={accountKind}
                   team={team}
                   canCreateTeam={canCreateTeam}
                   onNavigate={() => setDrawerOpen(false)}

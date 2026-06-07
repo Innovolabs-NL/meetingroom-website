@@ -94,6 +94,8 @@ export async function leaveOrganization(
   orgSlug: string,
   locale: string,
 ): Promise<{ error: string } | void> {
+  let leaveError: string | undefined;
+
   try {
     const supabase = await createServerSupabaseClient();
     const {
@@ -130,10 +132,12 @@ export async function leaveOrganization(
     if (error) return { error: error.message };
 
     revalidateAppPaths(orgSlug);
-    redirect({ href: "/app", locale });
   } catch (e) {
-    return { error: msg(e) };
+    leaveError = msg(e);
   }
+
+  if (leaveError) return { error: leaveError };
+  redirect({ href: "/app", locale });
 }
 
 function rpcErrorCode(message: string): string {
@@ -226,6 +230,8 @@ export async function deleteOrganization(
   locale: string,
   confirmSlug: string,
 ): Promise<{ error: string } | void> {
+  let deleteError: string | undefined;
+
   try {
     const supabase = await createServerSupabaseClient();
     const {
@@ -242,10 +248,12 @@ export async function deleteOrganization(
     if (error) return { error: rpcErrorCode(error.message) };
 
     revalidateAppPaths(orgSlug);
-    redirect({ href: "/app", locale });
   } catch (e) {
-    return { error: msg(e) };
+    deleteError = msg(e);
   }
+
+  if (deleteError) return { error: deleteError };
+  redirect({ href: "/app", locale });
 }
 
 export async function removeOrganizationMember(organizationId: string, orgSlug: string, memberUserId: string) {

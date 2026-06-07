@@ -1,7 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { getAppContext } from "@/lib/app/get-app-context";
-import { CreateTeamForm } from "../create-team-form";
 import { AppButtonLink } from "../_components/app-button-link";
 import { DesktopDownloadCta } from "../_components/desktop-download-cta";
 import { AppCard } from "../_components/app-card";
@@ -20,7 +19,6 @@ export default async function OverviewPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("appShell");
-  const tHub = await getTranslations("appHub");
   const ctx = await getAppContext();
 
   if (ctx.dbError) {
@@ -36,19 +34,17 @@ export default async function OverviewPage({ params }: { params: Promise<{ local
   if (ctx.hasTeam && ctx.team) {
     const team = ctx.team;
     const canManage = team.role === "owner" || team.role === "admin";
+    const tHub = await getTranslations("appHub");
 
     return (
       <AppPageMotion>
-        <AppPageHeader
-          title={t("overviewTitle")}
-          subtitle={ctx.isTeamAccount ? t("overviewTeamSubtitle") : t("overviewMemberSubtitle")}
-        />
+        <AppPageHeader title={t("overviewTitle")} subtitle={t("overviewMemberSubtitle")} />
 
         <AppStaggerList>
           <AppStaggerItem>
             <AppCard className="mt-8">
               <div className="inline-flex rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted">
-                {ctx.isTeamAccount ? t("accountKindTeam") : t("memberOfTeam", { team: team.name })}
+                {t("memberOfTeam", { team: team.name })}
               </div>
               <h2 className="mt-4 text-xl font-semibold tracking-tight">{team.name}</h2>
               <p className="mt-1 text-xs text-muted">
@@ -75,40 +71,17 @@ export default async function OverviewPage({ params }: { params: Promise<{ local
             </AppCard>
           </AppStaggerItem>
 
-          {!ctx.isTeamAccount ? (
-            <AppStaggerItem>
-              <AppCard className="bg-surface/80">
-                <h2 className="text-lg font-semibold tracking-tight">{t("gettingStartedTitle")}</h2>
-                <p className="mt-2 text-sm text-muted">{t("memberDesktopHint")}</p>
-                <DesktopDownloadCta
-                  href="/changelog"
-                  variant="secondary"
-                  className="mt-5"
-                  label={t("downloadDesktop")}
-                  mobileHint={t("downloadDesktopMobileHint")}
-                />
-              </AppCard>
-            </AppStaggerItem>
-          ) : null}
-        </AppStaggerList>
-      </AppPageMotion>
-    );
-  }
-
-  if (ctx.canCreateTeam) {
-    return (
-      <AppPageMotion>
-        <AppPageHeader title={t("overviewTitle")} subtitle={t("overviewTeamSetupSubtitle")} />
-
-        <AppStaggerList>
           <AppStaggerItem>
-            <AppCard className="mt-8">
-              <div className="inline-flex rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted">
-                {t("accountKindTeam")}
-              </div>
-              <h2 className="mt-4 text-lg font-semibold tracking-tight">{tHub("createFirstTitle")}</h2>
-              <p className="mt-2 text-sm text-muted">{tHub("createFirstHint")}</p>
-              <CreateTeamForm />
+            <AppCard className="bg-surface/80">
+              <h2 className="text-lg font-semibold tracking-tight">{t("gettingStartedTitle")}</h2>
+              <p className="mt-2 text-sm text-muted">{t("memberDesktopHint")}</p>
+              <DesktopDownloadCta
+                href="/changelog"
+                variant="secondary"
+                className="mt-5"
+                label={t("downloadDesktop")}
+                mobileHint={t("downloadDesktopMobileHint")}
+              />
             </AppCard>
           </AppStaggerItem>
         </AppStaggerList>
@@ -118,27 +91,11 @@ export default async function OverviewPage({ params }: { params: Promise<{ local
 
   return (
     <AppPageMotion>
-      <AppPageHeader title={t("overviewTitle")} subtitle={t("overviewPersonalSubtitle")} />
+      <AppPageHeader title={t("overviewTitle")} subtitle={t("overviewWelcomeSubtitle")} />
 
       <AppStaggerList>
         <AppStaggerItem>
           <AppCard className="mt-8">
-            <div className="inline-flex rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted">
-              {t("accountKindPersonal")}
-            </div>
-            <h2 className="mt-4 text-lg font-semibold tracking-tight">{t("personalCardTitle")}</h2>
-            <p className="mt-2 text-sm text-muted">{t("personalCardHint")}</p>
-            <DesktopDownloadCta
-              href="/changelog"
-              className="mt-5"
-              label={t("downloadDesktop")}
-              mobileHint={t("downloadDesktopMobileHint")}
-            />
-          </AppCard>
-        </AppStaggerItem>
-
-        <AppStaggerItem>
-          <AppCard>
             <h2 className="text-lg font-semibold tracking-tight">{t("gettingStartedTitle")}</h2>
             <ol className="mt-5 space-y-4">
               {gettingStartedSteps.map(({ key, step }) => (
@@ -150,6 +107,12 @@ export default async function OverviewPage({ params }: { params: Promise<{ local
                 </li>
               ))}
             </ol>
+            <DesktopDownloadCta
+              href="/changelog"
+              className="mt-5"
+              label={t("downloadDesktop")}
+              mobileHint={t("downloadDesktopMobileHint")}
+            />
           </AppCard>
         </AppStaggerItem>
       </AppStaggerList>

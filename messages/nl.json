@@ -27,8 +27,6 @@
     "navMembers": "Leden",
     "navInvites": "Uitnodigingen",
     "navTeamSettings": "Teaminstellingen",
-    "accountKindPersonal": "Persoonlijk",
-    "accountKindTeam": "Team",
     "backToWebsite": "← Terug naar website",
     "backToWebsiteShort": "Terug naar website",
     "appearance": "Weergave",
@@ -40,19 +38,15 @@
     "notSignedInHint": "Log in met hetzelfde account als in de desktop-app.",
     "goToSignIn": "Naar inloggen",
     "overviewTitle": "Overzicht",
-    "overviewPersonalSubtitle": "Je vergaderingen blijven op je apparaat. Gebruik de desktop-app om op te nemen en te transcriberen.",
-    "overviewTeamSubtitle": "Beheer je team en uitnodigingen via het menu links.",
     "overviewMemberSubtitle": "Je zit in een team. Open je team via het menu links om leden te bekijken.",
-    "overviewTeamSetupSubtitle": "Teamaccounts hebben één team. Maak het aan om leden uit te nodigen.",
+    "overviewWelcomeSubtitle": "Je vergaderingen blijven op je apparaat. Gebruik de desktop-app om op te nemen en te transcriberen.",
     "memberOfTeam": "Lid · {team}",
     "memberDesktopHint": "Gebruik de MeetingRoom desktop-app voor vergaderingen. Je teamlidmaatschap beheer je hier op het web.",
     "viewTeam": "Team openen",
-    "personalCardTitle": "Persoonlijk account",
-    "personalCardHint": "Teams worden apart beheerd. Je beheerder kan team-modus voor dit account inschakelen.",
     "downloadDesktop": "Desktop-app downloaden",
-    "downloadDesktopMobileHint": "MeetingRoom voor Windows installeer je op een computer. Open deze pagina op een desktop of laptop om de app te downloaden.",
+    "downloadDesktopMobileHint": "MeetingRoom werkt op Windows x64 en Apple Silicon Macs. Open deze pagina op een ondersteunde desktop of laptop om de app te downloaden.",
     "gettingStartedTitle": "Aan de slag",
-    "gettingStartedStep1": "Download en installeer MeetingRoom voor Windows.",
+    "gettingStartedStep1": "Download en installeer MeetingRoom via het changelog (Windows x64 of Apple Silicon Mac).",
     "gettingStartedStep2": "Log in met je e-mailadres op deze website.",
     "gettingStartedStep3": "Neem je eerste vergadering op — audio en AI blijven lokaal.",
     "yourTeamLabel": "Jouw team",
@@ -61,10 +55,8 @@
     "setupTeamPageTitle": "Team instellen",
     "setupTeamPageSubtitle": "Kies een naam voor je organisatie. Daarna kun je mensen uitnodigen.",
     "settingsTitle": "Account",
-    "settingsSubtitle": "Je inloggegevens en accounttype.",
+    "settingsSubtitle": "Je inloggegevens en profiel.",
     "settingsEmail": "E-mail",
-    "settingsAccountKind": "Accounttype",
-    "settingsAccountKindHint": "Om te wisselen tussen persoonlijk en team: pas profiles.account_kind aan in Supabase.",
     "profileSectionTitle": "Je profiel",
     "profileSectionHint": "Zichtbaar voor teamgenoten in de ledenlijst.",
     "profileFullName": "Volledige naam",
@@ -165,13 +157,11 @@
     "creatingTeam": "Bezig…",
     "errorNameRequired": "Voer een teamnaam in.",
     "errorSlugConflict": "Die korte naam is bezet. Probeer een andere teamnaam.",
-    "errorTeamLimitReached": "Teamaccounts kunnen maar één team aanmaken.",
+    "errorTeamLimitReached": "Je kunt maar bij één team horen. Verlaat je huidige team voordat je een nieuw team aanmaakt.",
     "errorNotAuthenticated": "Je moet opnieuw inloggen.",
     "unknownError": "Er ging iets mis: {message}",
     "dbErrorTitle": "Kon teams niet uit de database laden.",
     "dbErrorHint": "Heb je de Supabase-migraties nog niet uitgevoerd? Pas dan de SQL-bestanden in supabase/migrations in deze repo toe.",
-    "personalModeTitle": "Dit is een persoonlijk account",
-    "personalModeHint": "Teams zijn uitgeschakeld voor persoonlijke accounts. Zet je account in Supabase op team-modus (profiles.account_kind = team) om teams te gebruiken.",
     "configTitle": "Configuratie nodig",
     "configMissingEnv": "Zet NEXT_PUBLIC_SUPABASE_URL en NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY in je omgeving om teams op de website te gebruiken.",
     "configUnexpected": "Onverwachte fout: ",
@@ -284,6 +274,7 @@
       "emailRequired": "Je sessie heeft geen e-mail. Log in met e-mail/wachtwoord (of een aanbieder die e-mail doorgeeft).",
       "invalidOrExpired": "De uitnodigingslink is ongeldig of verlopen. Vraag je beheerder om een nieuwe uitnodiging.",
       "emailMismatch": "Log in met het uitgenodigde e-mailadres om te accepteren.",
+      "alreadyInTeam": "Je zit al in een team. Verlaat je huidige team voordat je deze uitnodiging accepteert.",
       "emailMismatchDetail": "Deze uitnodiging is gestuurd naar {invited}, maar je bent ingelogd als {signedIn}. Log uit en log in met het uitgenodigde adres.",
       "badToken": "Deze uitnodigingslink is ongeldig opgemaakt. Gebruik de volledige link uit je e-mail.",
       "rpcMissing": "Uitnodigingen zijn nog niet ingesteld in de database. Voer supabase/migrations/20260528130000_invite_preview_and_email.sql uit in de Supabase SQL Editor en probeer opnieuw.",
@@ -714,11 +705,11 @@
       },
       {
         "question": "Welke platformen worden ondersteund?",
-        "answer": "MeetingRoom is momenteel beschikbaar voor Windows. macOS- en Linux-ondersteuning is gepland voor toekomstige versies."
+        "answer": "MeetingRoom draait op Windows 10 of 11 (64-bit / x64) en macOS op Apple Silicon (M1-chip of nieuwer). Intel Macs, 32-bit Windows en Linux worden niet ondersteund."
       },
       {
         "question": "Wat zijn de systeemvereisten?",
-        "answer": "MeetingRoom vereist een moderne computer met minimaal 8GB RAM. Voor de beste ervaring met AI-functies worden 16GB RAM en een dedicated GPU aanbevolen."
+        "answer": "U heeft Windows 10/11 (64-bit) of macOS op Apple Silicon (M1 of nieuwer) nodig, plus minimaal 8GB RAM. Voor de beste AI-prestaties wordt 16GB RAM aanbevolen."
       },
       {
         "question": "Hoe werkt de licentie?",
@@ -837,11 +828,19 @@
         "description": "Installeer MeetingRoom, download lokale AI-modellen, neem vergaderingen op en exporteer notities."
       },
       "headline": "Documentatie",
-      "intro": "Deze gidsen helpen u MeetingRoom op Windows te installeren en aan de slag te gaan met lokale AI-vergadernotities.",
+      "intro": "Installeer MeetingRoom op een ondersteund platform en ga aan de slag met lokale AI-vergadernotities.",
       "sections": [
         {
-          "title": "Installatie (Windows)",
-          "body": "Download het installatieprogramma via het prijzengedeelte op onze website. Volg de installatiewizard en kies een locatie met voldoende ruimte voor AI-modellen (meerdere gigabytes).\n\nAls Windows SmartScreen verschijnt, kiest u alleen 'Meer informatie' en 'Toch uitvoeren' als u de uitgever (Innovolabs) vertrouwt."
+          "title": "Ondersteunde platformen",
+          "body": "MeetingRoom draait op Windows 10 of 11 (64-bit / x64) en macOS op Apple Silicon (M1-chip of nieuwer).\n\nIntel Macs, 32-bit Windows en Linux worden niet ondersteund."
+        },
+        {
+          "title": "Installatie (Windows x64)",
+          "body": "Vereist Windows 10 of 11, 64-bit (x64).\n\nDownload het installatieprogramma via het changelog op onze website. Volg de installatiewizard en kies een locatie met voldoende ruimte voor AI-modellen (meerdere gigabytes).\n\nAls Windows SmartScreen verschijnt, kiest u alleen 'Meer informatie' en 'Toch uitvoeren' als u de uitgever (Innovolabs) vertrouwt."
+        },
+        {
+          "title": "Installatie (Apple Silicon Mac)",
+          "body": "Vereist een Mac met Apple Silicon (M1-chip of nieuwer). Intel Macs worden niet ondersteund.\n\nDownload het schijfimage (.dmg) via het changelog op onze website. Open het bestand en sleep MeetingRoom naar Programma's.\n\nBij de eerste start kan macOS vragen of u een app van Innovolabs wilt openen. Als Gatekeeper de app blokkeert, ga naar Systeeminstellingen → Privacy en beveiliging en kies alleen 'Toch openen' als u de uitgever vertrouwt."
         },
         {
           "title": "Eerste start en modellen",
@@ -863,11 +862,25 @@
         "description": "Releasegeschiedenis en hoofdlijnen van MeetingRoom."
       },
       "headline": "Wijzigingslogboek",
-      "intro": "Hoofdlijnen per release. Versienummers sluiten aan bij gepubliceerde installers.",
-      "downloadWindows": "Installer downloaden — Windows",
-      "downloadMobileHint": "Open deze pagina op een Windows-computer om de installer te downloaden.",
+      "label": "Updates",
+      "intro": "Release notes en installers voor MeetingRoom.",
+      "platformRequirements": "Vereist Windows 10/11 (64-bit) of een Mac met Apple Silicon (M1 of nieuwer). Niet beschikbaar voor Intel Macs of 32-bit Windows.",
+      "platformChecking": "Controleren of uw apparaat compatibel is…",
+      "platformCompatibleWindows": "Uw apparaat is compatibel — gebruik de Windows x64-download hieronder.",
+      "platformCompatibleMac": "Uw apparaat is compatibel — gebruik de Apple Silicon-download hieronder.",
+      "platformIncompatibleIntelMac": "Uw Mac is niet compatibel. MeetingRoom vereist Apple Silicon (M1 of nieuwer).",
+      "platformIncompatibleOther": "Dit apparaat is niet compatibel. Gebruik een Windows x64-pc of een Apple Silicon Mac.",
+      "latestBadge": "Nieuwste release",
+      "previousReleases": "Eerdere releases",
+      "downloadTitle": "Downloaden",
+      "downloadWindowsShort": "Windows x64",
+      "downloadMacShort": "Apple Silicon",
+      "downloadWindows": "Installer downloaden — Windows x64",
+      "downloadMac": "Installer downloaden — Apple Silicon",
+      "downloadRecommended": "Jouw apparaat",
+      "downloadMobileHint": "Open deze pagina op een desktop of laptop om de installer te downloaden.",
       "notesEnglishHint": "De releasetekst voor deze versie staat hieronder in het Engels.",
-      "githubSyncLine": "Synchronisatie met GitHub releases (± elke vijf minuten vernieuwd). Teksten zijn meestal in het Engels.",
+      "githubSyncLine": "Live van GitHub — ververst ongeveer elke vijf minuten. Teksten kunnen in het Engels zijn.",
       "releaseNotesUnavailable": "Geen toelichting op deze GitHub-release — gebruik de installer hierboven.",
       "releases": [
         {

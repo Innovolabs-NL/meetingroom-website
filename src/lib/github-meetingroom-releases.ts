@@ -1,5 +1,5 @@
 import { releaseNotesToParagraphs } from "@/lib/meetingroom-releases";
-import type { NormalizedRelease } from "@/lib/meetingroom-releases";
+import type { NormalizedRelease, ReleaseDownloads } from "@/lib/meetingroom-releases";
 
 const DEFAULT_PUBLIC_RELEASES_REPO = "Innovolabs-NL/meetingroom-releases";
 
@@ -36,6 +36,20 @@ function pickWindowsInstallerUrl(assets: GhAsset[]): string | undefined {
   );
   const setup = candidates.find((a) => /setup|installer|nsis/i.test(a.name));
   return setup?.browser_download_url ?? candidates[0]?.browser_download_url;
+}
+
+function pickMacInstallerUrl(assets: GhAsset[]): string | undefined {
+  const candidates = assets.filter((a) => /\.dmg$/i.test(a.name) && !/\.sig$/i.test(a.name));
+  return candidates[0]?.browser_download_url;
+}
+
+function pickInstallerUrls(assets: GhAsset[]): ReleaseDownloads {
+  const windows = pickWindowsInstallerUrl(assets);
+  const mac = pickMacInstallerUrl(assets);
+  return {
+    ...(windows ? { windows } : {}),
+    ...(mac ? { mac } : {}),
+  };
 }
 
 function tagToVersion(tag: string): string {
@@ -88,11 +102,12 @@ export async function fetchGitHubMeetingRoomReleases(options?: {
         paragraphs = [];
       }
 
+      const downloads = pickInstallerUrls(r.assets ?? []);
       normalized.push({
         version,
         dateLabel: r.published_at,
         paragraphs,
-        downloadUrl: pickWindowsInstallerUrl(r.assets ?? []),
+        downloads: Object.keys(downloads).length > 0 ? downloads : undefined,
       });
     }
 

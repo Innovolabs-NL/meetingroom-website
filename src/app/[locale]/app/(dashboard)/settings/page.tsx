@@ -17,9 +17,6 @@ export default async function SettingsPage({ params }: { params: Promise<{ local
   const t = await getTranslations("appShell");
   const ctx = await getAppContext();
 
-  const accountLabel =
-    ctx.accountKind === "team" ? t("accountKindTeam") : t("accountKindPersonal");
-
   return (
     <AppPageMotion>
       <AppPageHeader title={t("settingsTitle")} subtitle={t("settingsSubtitle")} />
@@ -31,11 +28,6 @@ export default async function SettingsPage({ params }: { params: Promise<{ local
               <div>
                 <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsEmail")}</div>
                 <div className="mt-1 text-sm">{ctx.user?.email ?? t("noEmail")}</div>
-              </div>
-              <div>
-                <div className="text-xs font-medium uppercase tracking-wide text-muted">{t("settingsAccountKind")}</div>
-                <div className="mt-1 text-sm">{accountLabel}</div>
-                <p className="mt-2 text-xs text-muted">{t("settingsAccountKindHint")}</p>
               </div>
               <ProfileSettingsForm
                 initialFullName={ctx.user?.fullName ?? ""}

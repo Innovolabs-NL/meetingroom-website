@@ -27,8 +27,6 @@
     "navMembers": "Membres",
     "navInvites": "Invitations",
     "navTeamSettings": "Paramètres d’équipe",
-    "accountKindPersonal": "Personnel",
-    "accountKindTeam": "Équipe",
     "backToWebsite": "← Retour au site",
     "backToWebsiteShort": "Retour au site",
     "appearance": "Apparence",
@@ -40,19 +38,15 @@
     "notSignedInHint": "Connectez-vous avec le même compte que dans l’app de bureau.",
     "goToSignIn": "Aller à la connexion",
     "overviewTitle": "Aperçu",
-    "overviewPersonalSubtitle": "Vos réunions restent sur votre appareil. Utilisez l’app de bureau pour enregistrer et transcrire.",
-    "overviewTeamSubtitle": "Gérez votre équipe et les invitations depuis le menu.",
     "overviewMemberSubtitle": "Vous faites partie d'une équipe. Ouvrez-la dans le menu pour voir les membres.",
-    "overviewTeamSetupSubtitle": "Les comptes équipe incluent une seule équipe. Créez-la pour inviter des membres.",
+    "overviewWelcomeSubtitle": "Vos réunions restent sur votre appareil. Utilisez l’app de bureau pour enregistrer et transcrire.",
     "memberOfTeam": "Membre · {team}",
     "memberDesktopHint": "Utilisez l'application de bureau MeetingRoom pour les réunions. Votre appartenance à l'équipe se gère ici sur le web.",
     "viewTeam": "Ouvrir l'équipe",
-    "personalCardTitle": "Compte personnel",
-    "personalCardHint": "Les équipes sont gérées séparément. Votre administrateur peut activer le mode équipe.",
     "downloadDesktop": "Télécharger l’app de bureau",
-    "downloadDesktopMobileHint": "MeetingRoom pour Windows s’installe sur un ordinateur. Ouvrez cette page sur un PC ou un portable pour télécharger l’application.",
+    "downloadDesktopMobileHint": "MeetingRoom fonctionne sur Windows x64 et Mac Apple Silicon. Ouvrez cette page sur un ordinateur compatible pour télécharger l’application.",
     "gettingStartedTitle": "Premiers pas",
-    "gettingStartedStep1": "Téléchargez et installez MeetingRoom pour Windows.",
+    "gettingStartedStep1": "Téléchargez et installez MeetingRoom depuis le changelog (Windows x64 ou Mac Apple Silicon).",
     "gettingStartedStep2": "Connectez-vous avec votre e-mail sur ce site.",
     "gettingStartedStep3": "Enregistrez votre première réunion — audio et IA restent locaux.",
     "yourTeamLabel": "Votre équipe",
@@ -61,10 +55,8 @@
     "setupTeamPageTitle": "Configurer votre équipe",
     "setupTeamPageSubtitle": "Choisissez un nom pour votre organisation. Vous pourrez inviter des personnes ensuite.",
     "settingsTitle": "Compte",
-    "settingsSubtitle": "Connexion et type de compte.",
+    "settingsSubtitle": "Connexion et profil.",
     "settingsEmail": "E-mail",
-    "settingsAccountKind": "Type de compte",
-    "settingsAccountKindHint": "Pour basculer personnel/équipe : modifiez profiles.account_kind dans Supabase.",
     "profileSectionTitle": "Votre profil",
     "profileSectionHint": "Visible par les membres de l'équipe.",
     "profileFullName": "Nom complet",
@@ -165,13 +157,11 @@
     "creatingTeam": "Création…",
     "errorNameRequired": "Saisissez un nom d’équipe.",
     "errorSlugConflict": "Ce nom court est déjà pris. Essayez un autre nom.",
-    "errorTeamLimitReached": "Les comptes équipe ne peuvent créer qu’une seule équipe.",
+    "errorTeamLimitReached": "Vous ne pouvez appartenir qu’à une seule équipe. Quittez votre équipe actuelle avant d’en créer une autre.",
     "errorNotAuthenticated": "Reconnectez-vous.",
     "unknownError": "Une erreur s’est produite : {message}",
     "dbErrorTitle": "Impossible de charger les équipes depuis la base.",
     "dbErrorHint": "Migrations Supabase absentes ? Appliquez les fichiers SQL dans supabase/migrations de ce dépôt.",
-    "personalModeTitle": "C’est un compte personnel",
-    "personalModeHint": "Les équipes sont désactivées pour les comptes personnels. Pour utiliser les équipes, passez votre compte en mode équipe dans Supabase (profiles.account_kind = team).",
     "configTitle": "Configuration requise",
     "configMissingEnv": "Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY pour utiliser les équipes.",
     "configUnexpected": "Erreur inattendue : ",
@@ -274,7 +264,8 @@
     "error": {
       "emailRequired": "Votre session n’a pas d’e-mail. Connectez-vous avec e-mail/mot de passe (ou un fournisseur qui expose l’e-mail).",
       "invalidOrExpired": "Lien d’invitation invalide ou expiré.",
-      "emailMismatch": "Connectez-vous avec l’adresse invitée."
+      "emailMismatch": "Connectez-vous avec l’adresse invitée.",
+      "alreadyInTeam": "Vous êtes déjà dans une équipe. Quittez votre équipe actuelle avant d’accepter cette invitation."
     }
   },
   "hero": {
@@ -701,11 +692,11 @@
       },
       {
         "question": "Quelles plateformes sont prises en charge ?",
-        "answer": "MeetingRoom est actuellement disponible pour Windows. La prise en charge de macOS et Linux est prévue pour les futures versions."
+        "answer": "MeetingRoom fonctionne sur Windows 10 ou 11 (64 bits / x64) et macOS sur Apple Silicon (puce M1 ou plus récente). Les Mac Intel, Windows 32 bits et Linux ne sont pas pris en charge."
       },
       {
         "question": "Quelles sont les exigences système ?",
-        "answer": "MeetingRoom nécessite un ordinateur moderne avec au moins 8 Go de RAM. Pour une meilleure expérience avec les fonctionnalités IA, 16 Go de RAM et un GPU dédié sont recommandés."
+        "answer": "Il vous faut Windows 10/11 (64 bits) ou macOS sur Apple Silicon (M1 ou plus récent), plus au moins 8 Go de RAM. Pour de meilleures performances IA, 16 Go de RAM sont recommandés."
       },
       {
         "question": "Comment fonctionne la licence ?",
@@ -824,11 +815,19 @@
         "description": "Installez MeetingRoom, téléchargez les modèles d’IA locaux, enregistrez des réunions et exportez des notes."
       },
       "headline": "Documentation",
-      "intro": "Ces guides vous aident à installer MeetingRoom sur Windows et à utiliser les notes de réunion par IA locales.",
+      "intro": "Installez MeetingRoom sur une plateforme prise en charge et utilisez les notes de réunion par IA locales.",
       "sections": [
         {
-          "title": "Installation (Windows)",
-          "body": "Téléchargez l’installeur depuis la section Tarifs du site. Suivez l’assistant et choisissez un emplacement disposant de suffisamment d’espace pour les modèles d’IA (plusieurs gigaoctets).\n\nSi Windows SmartScreen s’affiche, n’utilisez « Plus d’infos » et « Exécuter quand même » que si vous faites confiance à l’éditeur (Innovolabs)."
+          "title": "Plateformes prises en charge",
+          "body": "MeetingRoom fonctionne sur Windows 10 ou 11 (64 bits / x64) et macOS sur Apple Silicon (puce M1 ou plus récente).\n\nLes Mac Intel, Windows 32 bits et Linux ne sont pas pris en charge."
+        },
+        {
+          "title": "Installation (Windows x64)",
+          "body": "Nécessite Windows 10 ou 11, 64 bits (x64).\n\nTéléchargez l’installeur depuis le changelog du site. Suivez l’assistant et choisissez un emplacement disposant de suffisamment d’espace pour les modèles d’IA (plusieurs gigaoctets).\n\nSi Windows SmartScreen s’affiche, n’utilisez « Plus d’infos » et « Exécuter quand même » que si vous faites confiance à l’éditeur (Innovolabs)."
+        },
+        {
+          "title": "Installation (Mac Apple Silicon)",
+          "body": "Nécessite un Mac avec Apple Silicon (puce M1 ou plus récente). Les Mac Intel ne sont pas pris en charge.\n\nTéléchargez l’image disque (.dmg) depuis le changelog du site. Ouvrez-la et faites glisser MeetingRoom dans Applications.\n\nAu premier lancement, macOS peut vous demander de confirmer l’ouverture d’une app d’Innovolabs. Si Gatekeeper bloque l’app, ouvrez Réglages système → Confidentialité et sécurité et choisissez « Ouvrir quand même » uniquement si vous faites confiance à l’éditeur."
         },
         {
           "title": "Premier lancement et modèles",
@@ -850,11 +849,25 @@
         "description": "Historique des versions et évolutions majeures de MeetingRoom."
       },
       "headline": "Journal des modifications",
-      "intro": "Notes synthétiques par version ; les numéros correspondent aux installeurs publiés.",
-      "downloadWindows": "Télécharger l’installeur — Windows",
-      "downloadMobileHint": "Ouvrez cette page sur un ordinateur Windows pour télécharger l’installeur.",
+      "label": "Mises à jour",
+      "intro": "Notes de version et installeurs MeetingRoom.",
+      "platformRequirements": "Nécessite Windows 10/11 (64 bits) ou un Mac Apple Silicon (M1 ou plus récent). Non disponible sur Mac Intel ni Windows 32 bits.",
+      "platformChecking": "Vérification de la compatibilité de votre appareil…",
+      "platformCompatibleWindows": "Votre appareil est compatible — utilisez le téléchargement Windows x64 ci-dessous.",
+      "platformCompatibleMac": "Votre appareil est compatible — utilisez le téléchargement Apple Silicon ci-dessous.",
+      "platformIncompatibleIntelMac": "Votre Mac n’est pas compatible. MeetingRoom nécessite Apple Silicon (M1 ou plus récent).",
+      "platformIncompatibleOther": "Cet appareil n’est pas compatible. Utilisez un PC Windows x64 ou un Mac Apple Silicon.",
+      "latestBadge": "Dernière version",
+      "previousReleases": "Versions précédentes",
+      "downloadTitle": "Télécharger",
+      "downloadWindowsShort": "Windows x64",
+      "downloadMacShort": "Apple Silicon",
+      "downloadWindows": "Télécharger l’installeur — Windows x64",
+      "downloadMac": "Télécharger l’installeur — Apple Silicon",
+      "downloadRecommended": "Votre appareil",
+      "downloadMobileHint": "Ouvrez cette page sur un ordinateur de bureau ou portable pour télécharger l’installeur.",
       "notesEnglishHint": "Les notes de version ci‑dessous sont en anglais.",
-      "githubSyncLine": "Liste synchronisée avec les publications GitHub (rafraîchie environ toutes les 5 minutes). Les notes sont souvent en anglais.",
+      "githubSyncLine": "En direct depuis GitHub — actualisation environ toutes les cinq minutes. Notes parfois en anglais.",
       "releaseNotesUnavailable": "Aucune note détaillée sur cette publication GitHub — utilisez le lien d’installation ci‑dessus.",
       "releases": [
         {

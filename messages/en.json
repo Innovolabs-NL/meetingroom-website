@@ -27,8 +27,6 @@
     "navMembers": "Members",
     "navInvites": "Invites",
     "navTeamSettings": "Team settings",
-    "accountKindPersonal": "Personal",
-    "accountKindTeam": "Team",
     "backToWebsite": "← Back to website",
     "backToWebsiteShort": "Back to website",
     "appearance": "Appearance",
@@ -40,19 +38,15 @@
     "notSignedInHint": "Sign in with the same account you use in the desktop app.",
     "goToSignIn": "Go to sign in",
     "overviewTitle": "Overview",
-    "overviewPersonalSubtitle": "Your meetings stay on your device. Use the desktop app to record and transcribe.",
-    "overviewTeamSubtitle": "Manage your team and invites from the sidebar.",
     "overviewMemberSubtitle": "You're on a team. Use the sidebar to open your team and see members.",
-    "overviewTeamSetupSubtitle": "Team accounts include one team. Create yours to invite members.",
+    "overviewWelcomeSubtitle": "Your meetings stay on your device. Use the desktop app to record and transcribe.",
     "memberOfTeam": "Member · {team}",
     "memberDesktopHint": "Use the MeetingRoom desktop app for meetings. Your team membership is managed here on the web.",
     "viewTeam": "Open team",
-    "personalCardTitle": "Personal account",
-    "personalCardHint": "Teams are managed separately. Your administrator can enable team mode for this account.",
     "downloadDesktop": "Download desktop app",
-    "downloadDesktopMobileHint": "MeetingRoom for Windows installs on a computer. Open this page on a desktop or laptop to download the app.",
+    "downloadDesktopMobileHint": "MeetingRoom installs on Windows x64 or Apple Silicon Macs. Open this page on a supported desktop or laptop to download the app.",
     "gettingStartedTitle": "Getting started",
-    "gettingStartedStep1": "Download and install MeetingRoom for Windows.",
+    "gettingStartedStep1": "Download and install MeetingRoom from the changelog (Windows x64 or Apple Silicon Mac).",
     "gettingStartedStep2": "Sign in with your email on this website.",
     "gettingStartedStep3": "Record your first meeting — audio and AI stay local.",
     "yourTeamLabel": "Your team",
@@ -61,10 +55,8 @@
     "setupTeamPageTitle": "Set up your team",
     "setupTeamPageSubtitle": "Choose a name for your organization. You can invite people after this step.",
     "settingsTitle": "Account",
-    "settingsSubtitle": "Your sign-in and account type.",
+    "settingsSubtitle": "Your sign-in and profile.",
     "settingsEmail": "Email",
-    "settingsAccountKind": "Account type",
-    "settingsAccountKindHint": "To switch between personal and team mode, update profiles.account_kind in Supabase.",
     "profileSectionTitle": "Your profile",
     "profileSectionHint": "Shown to teammates in member lists.",
     "profileFullName": "Full name",
@@ -165,14 +157,12 @@
     "creatingTeam": "Creating…",
     "errorNameRequired": "Enter a team name.",
     "errorSlugConflict": "That short name is taken. Try another team name.",
-    "errorTeamLimitReached": "Team accounts can only create one team.",
+    "errorTeamLimitReached": "You can only belong to one team. Leave your current team before creating another.",
     "errorNotAuthenticated": "You need to sign in again.",
     "createErrorPrefix": "Could not create team: ",
     "unknownError": "Something went wrong: {message}",
     "dbErrorTitle": "Could not load teams from the database.",
     "dbErrorHint": "If you have not run the Supabase migrations yet, apply the SQL files under supabase/migrations in this repository.",
-    "personalModeTitle": "This is a personal account",
-    "personalModeHint": "Teams are disabled for personal accounts. To use teams, switch your account to team mode in Supabase (profiles.account_kind = team).",
     "configTitle": "Configuration required",
     "configMissingEnv": "Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY to your environment to use teams on the website.",
     "configUnexpected": "Unexpected error: ",
@@ -286,6 +276,7 @@
       "emailRequired": "Your account session has no email. Sign in with email and password (or another provider that exposes email).",
       "invalidOrExpired": "This invite link is invalid or has expired. Ask your team admin to send a new invite.",
       "emailMismatch": "Sign in as the invited email address to accept this invite.",
+      "alreadyInTeam": "You're already on a team. Leave your current team before accepting this invite.",
       "emailMismatchDetail": "This invite was sent to {invited}, but you're signed in as {signedIn}. Sign out and sign in with the invited address.",
       "badToken": "This invite link is malformed. Use the full link from your email.",
       "rpcMissing": "Invite lookup is not set up in the database yet. Run supabase/migrations/20260528130000_invite_preview_and_email.sql in the Supabase SQL Editor, then try again.",
@@ -716,11 +707,11 @@
       },
       {
         "question": "What platforms are supported?",
-        "answer": "MeetingRoom is currently available for Windows. macOS and Linux support is planned for future releases."
+        "answer": "MeetingRoom runs on Windows 10 or 11 (64-bit / x64) and macOS on Apple Silicon (M1 chip or newer). Intel Macs, 32-bit Windows, and Linux are not supported."
       },
       {
         "question": "What are the system requirements?",
-        "answer": "MeetingRoom requires a modern computer with at least 8GB of RAM. For the best experience with AI features, 16GB of RAM and a dedicated GPU are recommended."
+        "answer": "You need Windows 10/11 (64-bit) or macOS on Apple Silicon (M1 or newer), plus at least 8GB of RAM. For the best AI performance, 16GB of RAM is recommended."
       },
       {
         "question": "How does the license work?",
@@ -839,11 +830,19 @@
         "description": "Install MeetingRoom, download local AI models, record meetings, and export notes."
       },
       "headline": "Documentation",
-      "intro": "These guides help you install MeetingRoom on Windows and get productive with local AI meeting notes.",
+      "intro": "Install MeetingRoom on a supported platform and get productive with local AI meeting notes.",
       "sections": [
         {
-          "title": "Installation (Windows)",
-          "body": "Download the installer from the pricing section on our website. Run the setup wizard and choose an install location with enough disk space for AI models (several gigabytes).\n\nIf Windows SmartScreen appears, choose “More info” and “Run anyway” only if you trust the publisher (Innovolabs)."
+          "title": "Supported platforms",
+          "body": "MeetingRoom runs on Windows 10 or 11 (64-bit / x64) and macOS on Apple Silicon (M1 chip or newer).\n\nIntel-based Macs, 32-bit Windows, and Linux are not supported."
+        },
+        {
+          "title": "Installation (Windows x64)",
+          "body": "Requires Windows 10 or 11, 64-bit (x64).\n\nDownload the installer from the changelog on our website. Run the setup wizard and choose an install location with enough disk space for AI models (several gigabytes).\n\nIf Windows SmartScreen appears, choose “More info” and “Run anyway” only if you trust the publisher (Innovolabs)."
+        },
+        {
+          "title": "Installation (Apple Silicon Mac)",
+          "body": "Requires a Mac with Apple Silicon (M1 chip or newer). Intel Macs are not supported.\n\nDownload the disk image (.dmg) from the changelog on our website. Open it and drag MeetingRoom into Applications.\n\nOn first launch, macOS may ask you to confirm that you want to open an app from Innovolabs. If Gatekeeper blocks the app, open System Settings → Privacy & Security and choose “Open Anyway” only if you trust the publisher."
         },
         {
           "title": "First launch and models",
@@ -865,10 +864,24 @@
         "description": "Release history and highlights for MeetingRoom."
       },
       "headline": "Changelog",
-      "intro": "High-level release notes. Version numbers align with published installers.",
-      "downloadWindows": "Download installer — Windows",
-      "downloadMobileHint": "Open this page on a Windows computer to download the installer.",
-      "githubSyncLine": "Synced from GitHub releases (refreshes about every five minutes). Release notes may be concise or in English.",
+      "label": "Updates",
+      "intro": "Release notes and installers for MeetingRoom.",
+      "platformRequirements": "Requires Windows 10/11 (64-bit) or a Mac with Apple Silicon (M1 or newer). Not available for Intel Macs or 32-bit Windows.",
+      "platformChecking": "Checking whether your device is compatible…",
+      "platformCompatibleWindows": "Your device is compatible — use the Windows x64 download below.",
+      "platformCompatibleMac": "Your device is compatible — use the Apple Silicon download below.",
+      "platformIncompatibleIntelMac": "Your Mac is not compatible. MeetingRoom requires Apple Silicon (M1 or newer).",
+      "platformIncompatibleOther": "This device is not compatible. Use a Windows x64 PC or an Apple Silicon Mac.",
+      "latestBadge": "Latest release",
+      "previousReleases": "Earlier releases",
+      "downloadTitle": "Download",
+      "downloadWindowsShort": "Windows x64",
+      "downloadMacShort": "Apple Silicon",
+      "downloadWindows": "Download installer — Windows x64",
+      "downloadMac": "Download installer — Apple Silicon",
+      "downloadRecommended": "Your device",
+      "downloadMobileHint": "Open this page on a desktop or laptop to download the installer.",
+      "githubSyncLine": "Live from GitHub — refreshes about every five minutes. Notes may be in English.",
       "releaseNotesUnavailable": "There is no prose description on this GitHub release — use the installer link above.",
       "releases": [
         {

@@ -39,21 +39,13 @@ export async function createTeamAction(
     if (userError) return { error: userError.message };
     if (!user) return { error: "NOT_AUTHENTICATED" };
 
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("account_kind")
-      .eq("user_id", user.id)
-      .maybeSingle();
+    const { count, error: countErr } = await supabase
+      .from("organization_members")
+      .select("id", { count: "exact", head: true })
+      .eq("user_id", user.id);
 
-    if (profile?.account_kind === "team") {
-      const { count, error: countErr } = await supabase
-        .from("organization_members")
-        .select("id", { count: "exact", head: true })
-        .eq("user_id", user.id);
-
-      if (countErr) return { error: countErr.message };
-      if ((count ?? 0) >= 1) return { error: "TEAM_LIMIT_REACHED" };
-    }
+    if (countErr) return { error: countErr.message };
+    if ((count ?? 0) >= 1) return { error: "TEAM_LIMIT_REACHED" };
 
     const baseSlug = slugify(name) || "team";
 
@@ -79,11 +71,6 @@ export async function createTeamAction(
       });
 
       if (memberError) return { error: memberError.message };
-
-      await supabase
-        .from("profiles")
-        .update({ account_kind: "team" })
-        .eq("user_id", user.id);
 
       revalidateAppPaths(org.slug);
       return { ok: true, slug: org.slug };

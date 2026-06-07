@@ -128,14 +128,12 @@ function userInitial(email?: string): string {
 
 export function AppNavContent({
   email,
-  accountKind,
   team,
   canCreateTeam,
   onNavigate,
   showLanguageSwitcher = false,
 }: {
   email?: string;
-  accountKind: "personal" | "team";
   team: AppTeam | null;
   canCreateTeam: boolean;
   onNavigate?: () => void;
@@ -144,9 +142,6 @@ export function AppNavContent({
   const t = useTranslations("appShell");
   const pathname = usePathname();
   const nav = getAppNavState(pathname, team);
-
-  const accountLabel =
-    accountKind === "team" ? t("accountKindTeam") : t("accountKindPersonal");
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
@@ -217,7 +212,6 @@ export function AppNavContent({
             </span>
             <div className="min-w-0 flex-1">
               <div className="truncate text-xs font-medium text-foreground">{email ?? t("noEmail")}</div>
-              <div className="mt-0.5 text-[10px] uppercase tracking-wide text-muted">{accountLabel}</div>
             </div>
           </div>
           {team ? (

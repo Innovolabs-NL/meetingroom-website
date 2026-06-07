@@ -8,11 +8,16 @@ export type LatestReleaseJson = {
   platforms?: Record<string, { url?: string; signature?: string }>;
 };
 
+export type ReleaseDownloads = {
+  windows?: string;
+  mac?: string;
+};
+
 export type NormalizedRelease = {
   version: string;
   dateLabel: string;
   paragraphs: string[];
-  downloadUrl?: string;
+  downloads?: ReleaseDownloads;
   /** True when body comes from mirror/latest.json (typically English). */
   fromMirror?: boolean;
 };
@@ -35,13 +40,23 @@ export function releaseNotesToParagraphs(notes: string): string[] {
   return notesToParagraphs(notes);
 }
 
-function pickWindowsUrl(platforms: LatestReleaseJson["platforms"]): string | undefined {
-  if (!platforms) return undefined;
-  return (
+function pickPlatformUrls(platforms: LatestReleaseJson["platforms"]): ReleaseDownloads {
+  if (!platforms) return {};
+
+  const windows =
     platforms["windows-x86_64"]?.url ??
     platforms["windows-x86_64-nsis"]?.url ??
-    Object.values(platforms).find((p) => p.url?.includes(".exe"))?.url
-  );
+    Object.values(platforms).find((p) => p.url?.includes(".exe"))?.url;
+
+  const mac =
+    platforms["darwin-aarch64"]?.url ??
+    platforms["darwin-x86_64"]?.url ??
+    Object.values(platforms).find((p) => p.url?.includes(".dmg"))?.url;
+
+  return {
+    ...(windows ? { windows } : {}),
+    ...(mac ? { mac } : {}),
+  };
 }
 
 /**
@@ -52,12 +67,12 @@ export function loadLatestReleaseFromMirror(): NormalizedRelease | null {
     const filePath = path.join(process.cwd(), "..", "mirror", "latest.json");
     const raw = fs.readFileSync(filePath, "utf8");
     const j = JSON.parse(raw) as LatestReleaseJson;
-    const downloadUrl = pickWindowsUrl(j.platforms);
+    const downloads = pickPlatformUrls(j.platforms);
     return {
       version: j.version,
       dateLabel: j.pub_date,
       paragraphs: notesToParagraphs(j.notes),
-      downloadUrl,
+      downloads: Object.keys(downloads).length > 0 ? downloads : undefined,
       fromMirror: true,
     };
   } catch {
