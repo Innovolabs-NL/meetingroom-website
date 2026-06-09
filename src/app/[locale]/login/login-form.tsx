@@ -78,6 +78,11 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
     : desktopQuery
       ? `/signup?${desktopQuery}`
       : "/signup";
+  const forgotHref = next
+    ? `/reset-password?next=${encodeURIComponent(next)}${desktopQuery ? `&${desktopQuery}` : ""}`
+    : desktopQuery
+      ? `/reset-password?${desktopQuery}`
+      : "/reset-password";
 
   const emailRedirectTo = authEmailRedirectUrl(locale, safeNextInternalPath(next));
 
@@ -307,6 +312,15 @@ export function LoginForm({ initialDesktopSessionEmail }: LoginFormProps) {
             required
           />
         </AuthField>
+
+        <div className="flex justify-end">
+          <Link
+            href={forgotHref}
+            className="text-sm text-muted transition-colors hover:text-accent"
+          >
+            {t("forgotPassword")}
+          </Link>
+        </div>
 
         {error ? <AuthAlert variant="error">{error}</AuthAlert> : null}
 

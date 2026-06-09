@@ -74,8 +74,10 @@ export default async function middleware(request: NextRequest) {
   const isAuthPage =
     pathnameWithoutLocale === "/login" ||
     pathnameWithoutLocale === "/signup" ||
+    pathnameWithoutLocale === "/reset-password" ||
     pathnameWithoutLocale.startsWith("/login/") ||
-    pathnameWithoutLocale.startsWith("/signup/");
+    pathnameWithoutLocale.startsWith("/signup/") ||
+    pathnameWithoutLocale.startsWith("/reset-password/");
 
   if (!user && isProtected) {
     const redirectUrl = request.nextUrl.clone();
@@ -88,7 +90,11 @@ export default async function middleware(request: NextRequest) {
     return forwardAuthCookies(response, NextResponse.redirect(redirectUrl));
   }
 
-  if (user && isAuthPage) {
+  const isResetPasswordPage =
+    pathnameWithoutLocale === "/reset-password" ||
+    pathnameWithoutLocale.startsWith("/reset-password/");
+
+  if (user && isAuthPage && !isResetPasswordPage) {
     if (isDesktopAuthSource(request.nextUrl.searchParams)) {
       return response;
     }

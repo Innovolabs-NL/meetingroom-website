@@ -11,11 +11,13 @@ export function VerificationCodeInput({
   value,
   onChange,
   disabled,
+  minLength = 6,
 }: {
   id: string;
   value: string;
   onChange: (value: string) => void;
   disabled?: boolean;
+  minLength?: number;
 }) {
   return (
     <input
@@ -30,7 +32,7 @@ export function VerificationCodeInput({
       onChange={(e) => onChange(normalizeVerificationCode(e.target.value))}
       disabled={disabled}
       required
-      minLength={6}
+      minLength={minLength}
     />
   );
 }

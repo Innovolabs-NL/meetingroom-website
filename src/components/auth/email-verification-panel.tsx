@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { AuthAlert } from "./auth-alert";
 import { AuthCardHeader } from "./auth-card";
-import { AuthField } from "./auth-field";
+import { AuthField, authInputClass } from "./auth-field";
 import { VerificationCodeInput } from "./verification-code-input";
 
 export function EmailVerificationPanel({
@@ -20,6 +20,11 @@ export function EmailVerificationPanel({
   onBack,
   backLabel,
   topSlot,
+  minCodeLength = 6,
+  editableEmail = false,
+  onEmailChange,
+  showResend = true,
+  submitLabel,
 }: {
   email: string;
   subtitle?: string;
@@ -30,12 +35,18 @@ export function EmailVerificationPanel({
   isPending: boolean;
   resendCooldown: number;
   onSubmit: (e: React.FormEvent) => void;
-  onResend: () => void;
+  onResend?: () => void;
   onBack?: () => void;
   backLabel?: string;
   topSlot?: React.ReactNode;
+  minCodeLength?: number;
+  editableEmail?: boolean;
+  onEmailChange?: (value: string) => void;
+  showResend?: boolean;
+  submitLabel?: string;
 }) {
   const t = useTranslations("auth");
+  const codeReady = verificationCode.replace(/\D/g, "").length >= minCodeLength;
 
   return (
     <>
@@ -46,10 +57,27 @@ export function EmailVerificationPanel({
         subtitle={subtitle ?? t("verificationSubtitle")}
       />
 
-      <p className="mb-5 text-sm text-muted">
-        {t("verificationSentTo")}{" "}
-        <span className="font-medium text-foreground">{email}</span>
-      </p>
+      {editableEmail ? (
+        <div className="mb-5">
+          <AuthField id="email-verification-email" label={t("email")}>
+            <input
+              id="email-verification-email"
+              className={authInputClass}
+              type="email"
+              value={email}
+              onChange={(e) => onEmailChange?.(e.target.value)}
+              placeholder={t("emailPlaceholder")}
+              autoComplete="email"
+              required
+            />
+          </AuthField>
+        </div>
+      ) : (
+        <p className="mb-5 text-sm text-muted">
+          {t("verificationSentTo")}{" "}
+          <span className="font-medium text-foreground">{email}</span>
+        </p>
+      )}
 
       {info ? <AuthAlert variant="success">{info}</AuthAlert> : null}
 
@@ -60,6 +88,7 @@ export function EmailVerificationPanel({
             value={verificationCode}
             onChange={onVerificationCodeChange}
             disabled={isPending}
+            minLength={minCodeLength}
           />
         </AuthField>
 
@@ -67,12 +96,13 @@ export function EmailVerificationPanel({
 
         <button
           type="submit"
-          disabled={isPending || verificationCode.replace(/\D/g, "").length < 6}
+          disabled={isPending || !codeReady || (editableEmail && !email.trim())}
           className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-accent px-5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-colors hover:bg-accent-hover disabled:opacity-60"
         >
-          {isPending ? t("verifying") : t("verifyEmail")}
+          {isPending ? t("verifying") : (submitLabel ?? t("verifyEmail"))}
         </button>
 
+        {showResend && onResend ? (
         <button
           type="button"
           disabled={isPending || resendCooldown > 0}
@@ -83,6 +113,7 @@ export function EmailVerificationPanel({
             ? t("resendCodeWait", { seconds: resendCooldown })
             : t("resendCode")}
         </button>
+        ) : null}
 
         {onBack ? (
           <button
