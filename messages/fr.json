@@ -22,6 +22,7 @@
     "navAccount": "Compte",
     "navOverview": "Aperçu",
     "navSetupTeam": "Configurer l’équipe",
+    "navBilling": "Facturation",
     "navAccountSettings": "Paramètres",
     "navHelp": "Aide",
     "navMembers": "Membres",
@@ -124,6 +125,7 @@
     "mobileMenuClose": "Fermer le menu",
     "mobileTitleOverview": "Aperçu",
     "mobileTitleSetupTeam": "Configurer l'équipe",
+    "mobileTitleBilling": "Facturation",
     "mobileTitleSettings": "Paramètres",
     "mobileTitleHelp": "Aide",
     "mobileTitleMembers": "Membres",
@@ -620,6 +622,34 @@
     "step3": {
       "title": "Résumer",
       "description": "Obtenez des résumés structurés, des actions à mener et discutez avec vos notes — le tout grâce à l’IA."
+    }
+  },
+  "billing": {
+    "title": "Facturation",
+    "subtitle": "Gérez votre forfait et votre abonnement.",
+    "unavailable": "Les informations de facturation ne sont pas disponibles pour le moment.",
+    "currentPlanLabel": "Forfait actuel",
+    "teamSeatsLabel": "Licences équipe",
+    "enforcementOn": "Des limites d'utilisation s'appliquent à votre compte.",
+    "enforcementOff": "Mode test — accès complet pour tous les utilisateurs connectés.",
+    "renewsOn": "Renouvellement le {date}",
+    "meetingsUsed": "{used} réunions sur {limit} utilisées ce mois-ci",
+    "seatsUsed": "{used} licences sur {total} utilisées",
+    "upgradePersonal": "Passer à Personal",
+    "upgradeTeam": "Augmenter les licences équipe",
+    "manageSubscription": "Gérer l'abonnement",
+    "openingCheckout": "Ouverture du paiement…",
+    "plans": {
+      "free": "Gratuit",
+      "personal": "Personal",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "errors": {
+      "signInRequired": "Connectez-vous pour continuer vers le paiement.",
+      "teamRequired": "Créez une équipe avant d'acheter des licences Team.",
+      "forbidden": "Seuls les propriétaires ou admins d'équipe peuvent acheter des licences Team.",
+      "notConfigured": "Le paiement n'est pas encore configuré."
     }
   },
   "pricing": {

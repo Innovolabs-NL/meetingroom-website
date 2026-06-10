@@ -13,6 +13,7 @@ function mapInviteError(raw: string, t: (key: string) => string): string {
   if (raw.includes("INVITE_INVALID_OR_EXPIRED")) return t("error.invalidOrExpired");
   if (raw.includes("INVITE_EMAIL_MISMATCH")) return t("error.emailMismatch");
   if (raw.includes("ALREADY_IN_TEAM")) return t("error.alreadyInTeam");
+  if (raw.includes("TEAM_SEATS_FULL")) return t("error.teamSeatsFull");
   return t("genericError");
 }
 

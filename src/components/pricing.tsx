@@ -2,22 +2,30 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { usePaddle, openCheckout } from "@/lib/paddle";
+import { useRouter } from "@i18n/navigation";
+
+import { startPaddleCheckout } from "@/lib/billing/checkout";
+import { usePaddle } from "@/lib/paddle";
 
 const tiers = ["personal", "team", "enterprise"] as const;
 
 export function Pricing() {
   const t = useTranslations("pricing");
   const paddle = usePaddle();
+  const router = useRouter();
 
-  function handleCheckout(tier: string) {
+  async function handleCheckout(tier: string) {
     if (tier === "enterprise") return;
-    const envKey =
-      tier === "personal"
-        ? "NEXT_PUBLIC_PADDLE_PRICE_PERSONAL"
-        : "NEXT_PUBLIC_PADDLE_PRICE_TEAM";
-    const priceId = process.env[envKey] ?? "";
-    openCheckout(paddle, priceId);
+    const plan = tier === "personal" ? "personal" : "team";
+    const result = await startPaddleCheckout(paddle, plan);
+    if (result.ok) return;
+    if (result.reason === "sign_in_required") {
+      router.push(`/login?returnTo=${encodeURIComponent("/#pricing")}`);
+      return;
+    }
+    if (result.reason === "team_required") {
+      router.push("/app/billing");
+    }
   }
 
   return (

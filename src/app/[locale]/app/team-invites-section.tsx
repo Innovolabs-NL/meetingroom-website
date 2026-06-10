@@ -19,6 +19,7 @@ function inviteErrorLabel(t: ReturnType<typeof useTranslations>, code?: string):
   if (code === "INVITE_ALREADY_PENDING") return t("errors.pendingDuplicate");
   if (code === "NOT_AUTHENTICATED") return t("errors.notAuthenticated");
   if (code === "EMAIL_NOT_CONFIGURED") return t("errors.emailNotConfigured");
+  if (code === "TEAM_SEATS_FULL") return t("errors.teamSeatsFull");
   return t("errors.generic", { message: code });
 }
 

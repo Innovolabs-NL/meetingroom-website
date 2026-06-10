@@ -22,6 +22,7 @@
     "navAccount": "Cuenta",
     "navOverview": "Resumen",
     "navSetupTeam": "Configurar equipo",
+    "navBilling": "Facturación",
     "navAccountSettings": "Ajustes",
     "navHelp": "Ayuda",
     "navMembers": "Miembros",
@@ -124,6 +125,7 @@
     "mobileMenuClose": "Cerrar menú",
     "mobileTitleOverview": "Resumen",
     "mobileTitleSetupTeam": "Configurar equipo",
+    "mobileTitleBilling": "Facturación",
     "mobileTitleSettings": "Ajustes",
     "mobileTitleHelp": "Ayuda",
     "mobileTitleMembers": "Miembros",
@@ -620,6 +622,34 @@
     "step3": {
       "title": "Resumir",
       "description": "Obtén resúmenes estructurados, acciones a seguir y chatea con tus notas — todo con IA."
+    }
+  },
+  "billing": {
+    "title": "Facturación",
+    "subtitle": "Administra tu plan y suscripción.",
+    "unavailable": "La información de facturación no está disponible ahora.",
+    "currentPlanLabel": "Plan actual",
+    "teamSeatsLabel": "Licencias de equipo",
+    "enforcementOn": "Se aplican límites de uso a tu cuenta.",
+    "enforcementOff": "Modo de prueba — acceso completo para todos los usuarios con sesión iniciada.",
+    "renewsOn": "Se renueva el {date}",
+    "meetingsUsed": "{used} de {limit} reuniones usadas este mes",
+    "seatsUsed": "{used} de {total} licencias en uso",
+    "upgradePersonal": "Mejorar a Personal",
+    "upgradeTeam": "Ampliar licencias de equipo",
+    "manageSubscription": "Gestionar suscripción",
+    "openingCheckout": "Abriendo pago…",
+    "plans": {
+      "free": "Gratis",
+      "personal": "Personal",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "errors": {
+      "signInRequired": "Inicia sesión para continuar al pago.",
+      "teamRequired": "Configura un equipo antes de comprar licencias Team.",
+      "forbidden": "Solo los propietarios o administradores del equipo pueden comprar licencias Team.",
+      "notConfigured": "El pago aún no está configurado."
     }
   },
   "pricing": {

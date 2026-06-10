@@ -22,6 +22,7 @@
     "navAccount": "Account",
     "navOverview": "Overzicht",
     "navSetupTeam": "Team instellen",
+    "navBilling": "Facturatie",
     "navAccountSettings": "Instellingen",
     "navHelp": "Help",
     "navMembers": "Leden",
@@ -124,6 +125,7 @@
     "mobileMenuClose": "Menu sluiten",
     "mobileTitleOverview": "Overzicht",
     "mobileTitleSetupTeam": "Team instellen",
+    "mobileTitleBilling": "Facturatie",
     "mobileTitleSettings": "Instellingen",
     "mobileTitleHelp": "Help",
     "mobileTitleMembers": "Leden",
@@ -633,6 +635,34 @@
     "step3": {
       "title": "Samenvatten",
       "description": "Krijg gestructureerde samenvattingen, actiepunten en chat met uw notities — allemaal aangedreven door AI."
+    }
+  },
+  "billing": {
+    "title": "Facturatie",
+    "subtitle": "Beheer je abonnement en plan.",
+    "unavailable": "Facturatiegegevens zijn nu niet beschikbaar.",
+    "currentPlanLabel": "Huidig plan",
+    "teamSeatsLabel": "Teamlicenties",
+    "enforcementOn": "Gebruikslimieten gelden voor je account.",
+    "enforcementOff": "Testmodus — volledige toegang voor alle ingelogde gebruikers.",
+    "renewsOn": "Verlengt op {date}",
+    "meetingsUsed": "{used} van {limit} vergaderingen deze maand gebruikt",
+    "seatsUsed": "{used} van {total} licenties in gebruik",
+    "upgradePersonal": "Upgrade naar Personal",
+    "upgradeTeam": "Teamlicenties upgraden",
+    "manageSubscription": "Abonnement beheren",
+    "openingCheckout": "Checkout openen…",
+    "plans": {
+      "free": "Gratis",
+      "personal": "Personal",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "errors": {
+      "signInRequired": "Log in om verder te gaan naar checkout.",
+      "teamRequired": "Stel eerst een team in voordat je Team-licenties koopt.",
+      "forbidden": "Alleen team-eigenaren of admins kunnen Team-licenties kopen.",
+      "notConfigured": "Checkout is nog niet geconfigureerd."
     }
   },
   "pricing": {

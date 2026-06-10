@@ -22,6 +22,7 @@
     "navAccount": "Account",
     "navOverview": "Overview",
     "navSetupTeam": "Set up team",
+    "navBilling": "Billing",
     "navAccountSettings": "Settings",
     "navHelp": "Help",
     "navMembers": "Members",
@@ -124,6 +125,7 @@
     "mobileMenuClose": "Close menu",
     "mobileTitleOverview": "Overview",
     "mobileTitleSetupTeam": "Set up team",
+    "mobileTitleBilling": "Billing",
     "mobileTitleSettings": "Settings",
     "mobileTitleHelp": "Help",
     "mobileTitleMembers": "Members",
@@ -238,6 +240,7 @@
     "errors": {
       "invalidEmail": "Enter a valid email address.",
       "pendingDuplicate": "An invite is already pending for that address.",
+      "teamSeatsFull": "No seats available on this team. Upgrade billing or revoke a pending invite.",
       "notAuthenticated": "You need to sign in again.",
       "notAMember": "You are not a member of this team.",
       "soleOwnerCannotLeave": "The only owner cannot leave. Promote someone else to owner first.",
@@ -277,6 +280,7 @@
       "invalidOrExpired": "This invite link is invalid or has expired. Ask your team admin to send a new invite.",
       "emailMismatch": "Sign in as the invited email address to accept this invite.",
       "alreadyInTeam": "You're already on a team. Leave your current team before accepting this invite.",
+      "teamSeatsFull": "This team has no available seats. Ask your admin to upgrade or free a seat.",
       "emailMismatchDetail": "This invite was sent to {invited}, but you're signed in as {signedIn}. Sign out and sign in with the invited address.",
       "badToken": "This invite link is malformed. Use the full link from your email.",
       "rpcMissing": "Invite lookup is not set up in the database yet. Run supabase/migrations/20260528130000_invite_preview_and_email.sql in the Supabase SQL Editor, then try again.",
@@ -635,6 +639,34 @@
     "step3": {
       "title": "Summarize",
       "description": "Get structured summaries, action items, and chat with your notes — all powered by AI."
+    }
+  },
+  "billing": {
+    "title": "Billing",
+    "subtitle": "Manage your plan and subscription.",
+    "unavailable": "Billing information is not available right now.",
+    "currentPlanLabel": "Current plan",
+    "teamSeatsLabel": "Team seats",
+    "enforcementOn": "Usage limits apply to your account.",
+    "enforcementOff": "Testing mode — full access for all signed-in users.",
+    "renewsOn": "Renews on {date}",
+    "meetingsUsed": "{used} of {limit} meetings used this month",
+    "seatsUsed": "{used} of {total} seats in use",
+    "upgradePersonal": "Upgrade to Personal",
+    "upgradeTeam": "Upgrade team seats",
+    "manageSubscription": "Manage subscription",
+    "openingCheckout": "Opening checkout…",
+    "plans": {
+      "free": "Free",
+      "personal": "Personal",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "errors": {
+      "signInRequired": "Sign in to continue to checkout.",
+      "teamRequired": "Set up a team before purchasing Team seats.",
+      "forbidden": "Only team owners or admins can purchase Team seats.",
+      "notConfigured": "Checkout is not configured yet."
     }
   },
   "pricing": {

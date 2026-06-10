@@ -4,6 +4,7 @@ import { redirect } from "@i18n/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { revalidateAppPaths } from "@/lib/app/revalidate-app";
 import { sendInviteEmail } from "@/lib/email/send-invite-email";
+import { orgHasAvailableSeat } from "@/lib/billing/seat-check";
 
 function msg(err: unknown): string {
   if (err instanceof Error) return err.message;
@@ -40,6 +41,9 @@ export async function createOrganizationInvite(
       .maybeSingle();
 
     if (orgErr || !org) return { error: orgErr?.message ?? "ORG_NOT_FOUND" };
+
+    const hasSeat = await orgHasAvailableSeat(supabase, organizationId);
+    if (!hasSeat) return { error: "TEAM_SEATS_FULL" };
 
     const expiresAt = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString();
 

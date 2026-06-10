@@ -37,7 +37,21 @@ export function usePaddle() {
   return paddle;
 }
 
-export function openCheckout(paddle: Paddle | null, priceId: string) {
-  if (!paddle || !priceId) return;
-  paddle.Checkout.open({ items: [{ priceId, quantity: 1 }] });
+export type PaddleCheckoutOptions = {
+  priceId: string;
+  quantity?: number;
+  customerEmail?: string;
+  customData?: Record<string, string>;
+};
+
+export function openCheckout(paddle: Paddle | null, options: PaddleCheckoutOptions | string) {
+  const opts: PaddleCheckoutOptions =
+    typeof options === "string" ? { priceId: options } : options;
+  if (!paddle || !opts.priceId) return;
+
+  paddle.Checkout.open({
+    items: [{ priceId: opts.priceId, quantity: opts.quantity ?? 1 }],
+    ...(opts.customerEmail ? { customer: { email: opts.customerEmail } } : {}),
+    ...(opts.customData ? { customData: opts.customData } : {}),
+  });
 }

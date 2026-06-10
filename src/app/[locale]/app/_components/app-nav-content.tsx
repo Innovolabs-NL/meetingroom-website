@@ -8,7 +8,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getAppNavState } from "./app-nav-utils";
 
-type NavIcon = "overview" | "setup" | "settings" | "help" | "members" | "invites" | "teamSettings";
+type NavIcon = "overview" | "setup" | "billing" | "settings" | "help" | "members" | "invites" | "teamSettings";
 
 function NavIconSvg({ name }: { name: NavIcon }) {
   const props = {
@@ -38,6 +38,13 @@ function NavIconSvg({ name }: { name: NavIcon }) {
         <svg {...props}>
           <path d="M12 5v14" />
           <path d="M5 12h14" />
+        </svg>
+      );
+    case "billing":
+      return (
+        <svg {...props}>
+          <rect x="2" y="5" width="20" height="14" rx="2" />
+          <path d="M2 10h20" />
         </svg>
       );
     case "settings":
@@ -160,6 +167,13 @@ export function AppNavContent({
               onNavigate={onNavigate}
             />
           ) : null}
+          <NavLink
+            href="/app/billing"
+            label={t("navBilling")}
+            icon="billing"
+            active={nav.isBilling}
+            onNavigate={onNavigate}
+          />
           <NavLink
             href="/app/settings"
             label={t("navAccountSettings")}

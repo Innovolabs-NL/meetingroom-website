@@ -22,6 +22,7 @@
     "navAccount": "Konto",
     "navOverview": "Übersicht",
     "navSetupTeam": "Team einrichten",
+    "navBilling": "Abrechnung",
     "navAccountSettings": "Einstellungen",
     "navHelp": "Hilfe",
     "navMembers": "Mitglieder",
@@ -124,6 +125,7 @@
     "mobileMenuClose": "Menü schließen",
     "mobileTitleOverview": "Übersicht",
     "mobileTitleSetupTeam": "Team einrichten",
+    "mobileTitleBilling": "Abrechnung",
     "mobileTitleSettings": "Einstellungen",
     "mobileTitleHelp": "Hilfe",
     "mobileTitleMembers": "Mitglieder",
@@ -620,6 +622,34 @@
     "step3": {
       "title": "Zusammenfassen",
       "description": "Erhalten Sie strukturierte Zusammenfassungen, Aktionspunkte und chatten Sie mit Ihren Notizen — alles mit KI."
+    }
+  },
+  "billing": {
+    "title": "Abrechnung",
+    "subtitle": "Verwalten Sie Ihren Plan und Ihr Abonnement.",
+    "unavailable": "Abrechnungsinformationen sind derzeit nicht verfügbar.",
+    "currentPlanLabel": "Aktueller Plan",
+    "teamSeatsLabel": "Team-Lizenzen",
+    "enforcementOn": "Nutzungslimits gelten für Ihr Konto.",
+    "enforcementOff": "Testmodus — voller Zugriff für alle angemeldeten Nutzer.",
+    "renewsOn": "Verlängert am {date}",
+    "meetingsUsed": "{used} von {limit} Meetings diesen Monat genutzt",
+    "seatsUsed": "{used} von {total} Lizenzen in Verwendung",
+    "upgradePersonal": "Auf Personal upgraden",
+    "upgradeTeam": "Team-Lizenzen upgraden",
+    "manageSubscription": "Abonnement verwalten",
+    "openingCheckout": "Checkout wird geöffnet…",
+    "plans": {
+      "free": "Kostenlos",
+      "personal": "Personal",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "errors": {
+      "signInRequired": "Melden Sie sich an, um zum Checkout zu gelangen.",
+      "teamRequired": "Richten Sie zuerst ein Team ein, bevor Sie Team-Lizenzen kaufen.",
+      "forbidden": "Nur Team-Inhaber oder Admins können Team-Lizenzen kaufen.",
+      "notConfigured": "Checkout ist noch nicht konfiguriert."
     }
   },
   "pricing": {

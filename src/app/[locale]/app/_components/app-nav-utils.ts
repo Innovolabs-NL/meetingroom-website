@@ -13,6 +13,7 @@ export function pathIs(pathname: string, path: string): boolean {
 export type AppNavState = {
   isOverview: boolean;
   isSetupTeam: boolean;
+  isBilling: boolean;
   isSettings: boolean;
   isHelp: boolean;
   isMembers: boolean;
@@ -34,6 +35,7 @@ export function getAppNavState(
   return {
     isOverview: pathIs(pathname, "/app"),
     isSetupTeam: pathIs(pathname, "/app/teams"),
+    isBilling: pathIs(pathname, "/app/billing"),
     isSettings: pathIs(pathname, "/app/settings"),
     isHelp: pathIs(pathname, "/app/help"),
     isMembers: teamBase !== null && pathIs(pathname, teamBase),
@@ -47,6 +49,7 @@ export function getAppNavState(
 export function getMobilePageTitleKey(pathname: string): string {
   if (pathIs(pathname, "/app")) return "mobileTitleOverview";
   if (pathIs(pathname, "/app/teams")) return "mobileTitleSetupTeam";
+  if (pathIs(pathname, "/app/billing")) return "mobileTitleBilling";
   if (pathIs(pathname, "/app/settings")) return "mobileTitleSettings";
   if (pathIs(pathname, "/app/help")) return "mobileTitleHelp";
 
